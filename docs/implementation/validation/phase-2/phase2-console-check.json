@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/",
+    "textLength": 3660,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false
+  },
+  "insight": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/insight",
+    "textLength": 2655,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false
+  },
+  "contact": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/#contact",
+    "textLength": 3660,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false
+  },
+  "consoleMessages": []
+}

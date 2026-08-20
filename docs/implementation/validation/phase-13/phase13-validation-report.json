@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-08-20T14:59:05.916Z",
+  "checks": [
+    {
+      "name": "dependency: axe-core is installed as a devDependency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "dependency: axe-core distributable build is present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "navigation (he): primary/primaryMobile/primaryFooter are all distinct",
+      "passed": true,
+      "detail": "[\"ניווט ראשי\",\"ניווט ראשי (תפריט נייד)\",\"ניווט ראשי (כותרת תחתית)\"]"
+    },
+    {
+      "name": "navigation (en): primary/primaryMobile/primaryFooter are all distinct",
+      "passed": true,
+      "detail": "[\"Primary navigation\",\"Primary navigation (mobile menu)\",\"Primary navigation (footer)\"]"
+    },
+    {
+      "name": "styles.css: .sr-only utility class is defined",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "styles.css: filled form button uses --color-accent-deep (WCAG AA contrast fix)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "InsightPage.tsx: a persistent pageHeading h1 is defined and referenced in every branch",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "qa-sweep evidence: zero axe violations across the full matrix",
+      "passed": true,
+      "detail": "totalViolations=0"
+    },
+    {
+      "name": "qa-sweep evidence: zero real tracking requests observed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "qa-sweep evidence: RTL/LTR direction correct on every page in the matrix",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "qa-sweep evidence: concept parity word-overlap is high (no major content drift)",
+      "passed": true,
+      "detail": "overlapRatio=0.9467787114845938"
+    }
+  ],
+  "passed": true
+}

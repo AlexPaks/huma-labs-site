@@ -1,0 +1,52 @@
+{
+  "successConceptA": {
+    "url": "http://localhost:4180/he/insight",
+    "analyzingVisible": false,
+    "resultVisible": true,
+    "capabilityText": "Resilience",
+    "focusItems": [
+      "קצב השינוי הנדרש מול קצב ההיערכות בפועל",
+      "בהירות התפקידים סביב האתגר",
+      "כלים קיימים מול כלים חסרים",
+      "01DISCOVERמיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.",
+      "02DESIGNהתאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.",
+      "03ACTיישום מדורג עם נקודות בדיקה קצובות בזמן."
+    ],
+    "directionTexts": [
+      "DISCOVER",
+      "מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.",
+      "DESIGN",
+      "התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.",
+      "ACT",
+      "יישום מדורג עם נקודות בדיקה קצובות בזמן."
+    ],
+    "errorTitleText": null,
+    "storage": {
+      "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\"],\"answers\":{\"challenge\":\"\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+    }
+  },
+  "successConceptC": {
+    "url": "http://localhost:4180/en/insight?concept=c",
+    "analyzingVisible": false,
+    "resultVisible": true,
+    "capabilityText": "Presence",
+    "focusItems": [
+      "The pace of required change versus the actual pace of readiness",
+      "Role clarity around the challenge",
+      "Existing tools versus missing tools"
+    ],
+    "directionTexts": [
+      "DISCOVER",
+      "A focused mapping of the gap between the current state and the desired goal.",
+      "DESIGN",
+      "Tailoring a development plan to the identified capability, at a scale that fits the organization.",
+      "ACT",
+      "Phased implementation with time-boxed checkpoints."
+    ],
+    "errorTitleText": null,
+    "storage": {
+      "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\"],\"answers\":{\"challenge\":\"\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+    }
+  },
+  "consoleMessages": []
+}

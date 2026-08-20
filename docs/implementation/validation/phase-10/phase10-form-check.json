@@ -1,0 +1,15 @@
+{
+  "contactFormSubmit": {
+    "statusText": "תודה! קיבלנו את הפנייה שלכם ונחזור אליכם בהקדם.",
+    "submitDisabled": false
+  },
+  "honeypotFieldState": {
+    "present": true,
+    "ariaHiddenOnWrapper": "true",
+    "tabIndex": -1
+  },
+  "insightDeliverySubmit": {
+    "statusText": "שלחנו לכם את הסיכום למייל."
+  },
+  "consoleMessages": []
+}

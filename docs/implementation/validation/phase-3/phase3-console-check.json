@@ -1,0 +1,190 @@
+{
+  "homeHe": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he",
+    "textLength": 3689,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "homeEn": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en",
+    "textLength": 5131,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "homeHeMobile": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he",
+    "textLength": 3689,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "homeEnMobile": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en",
+    "textLength": 5131,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "insightHe": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "insightEn": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en/insight",
+    "textLength": 3631,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "insightHeMobile": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "insightEnMobile": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en/insight",
+    "textLength": 3631,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "contactHe": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he#contact",
+    "textLength": 3689,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "contactEn": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en#contact",
+    "textLength": 5131,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "legacyHome": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he",
+    "textLength": 3689,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "legacyInsight": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "switchHeToEn": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en/insight",
+    "textLength": 3631,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "switchEnToHe": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "historyBack": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/en/insight",
+    "textLength": 3631,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "en",
+    "htmlDir": "ltr"
+  },
+  "historyForward": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "refreshedLocalizedRoute": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://127.0.0.1:4173/he/insight",
+    "textLength": 2684,
+    "hasMain": true,
+    "hasForm": true,
+    "hasViteOverlay": false,
+    "overflow": false,
+    "htmlLang": "he",
+    "htmlDir": "rtl"
+  },
+  "consoleMessages": []
+}

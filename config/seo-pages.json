@@ -1,0 +1,6 @@
+{
+  "pages": [
+    { "id": "home", "indexable": true, "priority": 1.0, "changefreq": "weekly" },
+    { "id": "insight", "indexable": true, "priority": 0.7, "changefreq": "monthly" }
+  ]
+}

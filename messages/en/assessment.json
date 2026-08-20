@@ -1,0 +1,101 @@
+{
+  "page": {
+    "hero": {
+      "eyebrow": "HUMA Organizational Insight",
+      "title": "A short mapping that translates an organizational challenge into the human capability worth developing.",
+      "body": "Six questions help us identify your organization's current leverage point. Every organization faces different challenges, and the purpose here is to sharpen where it makes sense to begin.",
+      "subtitle": "A 3-minute organizational needs assessment",
+      "panel": {
+        "eyebrow": "What we identify",
+        "title": "The central challenge is often not a lack of professional knowledge, but people's ability to remain effective when conditions change.",
+        "body": "That may appear in decision-making, communication, workload, or managers' ability to create clarity."
+      }
+    },
+    "controls": {
+      "back": "Back",
+      "continue": "Continue",
+      "progress": "Question {{current}} of {{total}}"
+    },
+    "journey": {
+      "eyebrow": "6 Questions",
+      "title": "This is what the mapping journey looks like.",
+      "body": "The questionnaire is presented here as a focused content page to create an experience that feels serious, professional, and clear."
+    }
+  },
+  "preview": {
+    "challenge": "The main challenge you are dealing with right now",
+    "impact": "Where you already see the impact",
+    "desiredChange": "What you would want to be different",
+    "audience": "Who needs this change the most",
+    "currentState": "Where you are today",
+    "tomorrowProblem": "The open question that sharpens the need"
+  },
+  "questions": {
+    "challenge": {
+      "question": "What is the main challenge you are dealing with right now?",
+      "helper": "Difficulty maintaining stability, flexibility, and effective functioning in changing conditions.",
+      "options": {
+        "copingWithChange": "Coping with change and uncertainty",
+        "loadAndBurnout": "Workload and burnout",
+        "leadershipAndManagement": "Leadership and management",
+        "communicationAndCollaboration": "Communication and collaboration",
+        "initiativeAndEngagement": "Initiative and engagement",
+        "presenceAndInfluence": "Presence and influence",
+        "other": "Another challenge..."
+      }
+    },
+    "impact": {
+      "question": "Where do you see the impact of this challenge?",
+      "options": {
+        "decisionMaking": "In the quality and speed of decision-making",
+        "employeePerformance": "In employee performance and commitment",
+        "managerCapability": "In managers' ability to lead",
+        "crossTeamCommunication": "In communication across teams",
+        "initiativeAndOwnership": "In initiative and ownership",
+        "loadAndChange": "In coping with workload and change",
+        "effectiveness": "In overall effectiveness and execution",
+        "unclearImpact": "It is still difficult for us to define the impact"
+      }
+    },
+    "desiredChange": {
+      "question": "What would you want to see happening differently?",
+      "helper": "If the process succeeds, what would be different in three to six months?",
+      "options": {
+        "confidentEmployees": "Employees acting with more confidence and independence",
+        "effectiveManagers": "Managers leading more effectively",
+        "openCommunication": "More open and clearer communication",
+        "adaptableTeams": "Teams adapting more effectively to change",
+        "loadResilience": "A stronger ability to handle workload and uncertainty",
+        "initiativeOwnership": "More initiative, engagement, and ownership",
+        "effectiveCollaboration": "More effective collaboration",
+        "other": "Something else..."
+      }
+    },
+    "audience": {
+      "question": "Who needs this change the most?",
+      "options": {
+        "leadership": "Leadership and senior managers",
+        "middleManagers": "Middle managers",
+        "employees": "Employees",
+        "specificTeam": "A specific team or unit",
+        "changeGroup": "A group currently going through change",
+        "multiplePopulations": "Several populations across the organization",
+        "unclear": "It is not yet fully clear"
+      }
+    },
+    "currentState": {
+      "question": "Where are you today?",
+      "options": {
+        "knowProblemAndGoal": "We know the problem and what we want to achieve",
+        "needToRefineNeed": "We can see the challenge, but we still need to sharpen the need",
+        "solutionUnclear": "We know something needs to change, but the solution is not yet clear",
+        "needMapping": "We first want to map and understand the need"
+      }
+    },
+    "tomorrowProblem": {
+      "question": "If you could solve one thing for your people by tomorrow, what would you choose?",
+      "helper": "There is no need to phrase it formally. Write it the way you would say it in conversation.",
+      "prompt": "An open question for a free-text response"
+    }
+  }
+}

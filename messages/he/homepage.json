@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "eyebrow": "HUMA Labs",
+    "titleLines": {
+      "line1": "היכולת של הארגון",
+      "line2": "להסתגל מתחילה",
+      "line3": "באנשים שלו."
+    },
+    "body": "HUMA מפתחת יכולות אנושיות שמאפשרות לאנשים לתקשר, להוביל, להסתגל ולפעול טוב יותר בעולם משתנה.",
+    "subtitle": "Customized organizational learning around Presence, Resilience, Adaptability & Leadership.",
+    "panel": {
+      "eyebrow": "Human Adaptability",
+      "title": "From organizational challenge to human capability.",
+      "body": "אתר שנבנה סביב תנועה, בהירות ויכולת פעולה. לא עוד סדנה מהמדף, אלא פיתוח יכולות מותאם לאתגר הארגוני."
+    },
+    "actions": {
+      "contact": "בואו נתחיל בשיחה",
+      "insight": "גלו מה הארגון שלכם צריך"
+    }
+  },
+  "context": {
+    "eyebrow": "THE CONTEXT",
+    "title": "העולם משתנה. האנשים צריכים יכולות חדשות כדי לנוע איתו.",
+    "body": {
+      "paragraph1": "טכנולוגיה משתנה. תפקידים משתנים. צוותים משתנים. אבל מאחורי כל שינוי נמצאים אנשים שצריכים לדעת להסתגל, לתקשר, להוביל ולפעול גם כשהמציאות משתנה.",
+      "paragraph2": "האתגר הוא לא רק לדעת מה לעשות. האתגר הוא להיות מסוגלים לעשות את זה בפועל."
+    }
+  },
+  "insightPreview": {
+    "eyebrow": "HUMA Organizational Insight",
+    "title": "6 שאלות קצרות שיעזרו לנו לזהות את נקודת המינוף הארגונית שלכם.",
+    "body": "כל ארגון מתמודד עם אתגרים שונים. ענו על 6 שאלות קצרות ונבין יחד איפה נמצאת כרגע נקודת המינוף המרכזית, ומה יכול לעזור לכם להתקדם.",
+    "action": "התחילו את המיפוי"
+  },
+  "capabilitiesSection": {
+    "eyebrow": "4 יכולות ליבה",
+    "title": "יתרון אנושי אחד.",
+    "body": "היכולת שאנחנו מפתחים היא במרכז. הפורמט משתנה בהתאם לצורך."
+  },
+  "capabilities": {
+    "presence": {
+      "label": "PRESENCE",
+      "title": "לתפוס מקום. ליצור השפעה.",
+      "description": "נוכחות, ביטחון, תקשורת, השפעה, הובלה, שפת גוף וקול."
+    },
+    "resilience": {
+      "label": "RESILIENCE",
+      "title": "להסתגל. להתאושש. להמשיך קדימה.",
+      "description": "התמודדות עם שינוי, לחץ, עומס ואי־ודאות תוך שמירה על גמישות ויכולת פעולה."
+    },
+    "adaptability": {
+      "label": "ADAPTABILITY",
+      "title": "לנוע עם השינוי. להסתגל.",
+      "description": "גמישות מחשבתית, אימוץ דפוסים חדשים, ופעולה אפקטיבית בתוך מציאות משתנה."
+    },
+    "leadership": {
+      "label": "LEADERSHIP",
+      "title": "להוביל. מתוך חיבור.",
+      "description": "הובלת צוותים, רתימת אנשים, ניהול אנרגיה, וקבלת החלטות בתנאי אי־ודאות."
+    }
+  },
+  "processSection": {
+    "eyebrow": "DISCOVER / DESIGN / ACT",
+    "title": "הפתרון לא מתחיל בבחירת סדנה. הוא מתחיל בהבנת הצורך.",
+    "body": "אנחנו מתחילים מהצורך שלכם, ובונים משם."
+  },
+  "process": {
+    "discover": {
+      "title": "מבינים את האתגר.",
+      "description": "מכירים את הארגון, האנשים, הצרכים והמטרות.",
+      "outcome": "תוצר: מפת צרכים ומטרות"
+    },
+    "design": {
+      "title": "בונים את הפתרון.",
+      "description": "מתאימים את התוכן, המבנה, הפורמט וההתנסות.",
+      "outcome": "תוצר: תוכנית הכשרה מותאמת"
+    },
+    "act": {
+      "title": "הופכים למידה ליכולת.",
+      "description": "מתנסים, רוכשים כלים ומחברים אותם לעולם העבודה.",
+      "outcome": "למידה ← התנסות ← התנהגות ← השפעה"
+    }
+  },
+  "challengesSection": {
+    "eyebrow": "יש לכם אתגר. אנחנו מתחילים משם.",
+    "title": "לא צריך עוד סדנה. צריך את הדבר הנכון לאתגר שלכם.",
+    "body": "בחרו את הניסוח שהכי קרוב למה שקורה אצלכם. הכיוון של HUMA מתבהר בהתאם לאתגר, לא לפי מוצר מדף.",
+    "directionLabel": "THE HUMA DIRECTION"
+  },
+  "challenges": {
+    "leadThroughChange": {
+      "statement": "המנהלים שלנו צריכים להוביל בתקופה של שינוי.",
+      "direction": "פיתוח נוכחות ניהולית, חוסן צוותי, ומתן כלים להובלה מתוך אי־ודאות."
+    },
+    "initiativeAndVoice": {
+      "statement": "העובדים צריכים להביא יותר יוזמה וקול אישי.",
+      "direction": "חיזוק PRESENCE, בניית ביטחון בתקשורת, ויצירת סביבה שמאפשרת השפעה."
+    },
+    "loadAndUncertainty": {
+      "statement": "הצוותים מתמודדים עם עומס ואי־ודאות.",
+      "direction": "בניית RESILIENCE, מתן כלים להתאוששות מהירה, וניהול אנרגיה ופוקוס."
+    },
+    "communicationAndCollaboration": {
+      "statement": "אנחנו רוצים לחזק תקשורת, חיבור ושיתוף פעולה.",
+      "direction": "פיתוח שפה ארגונית משותפת, מיומנויות תקשורת בין-אישית, ועבודה אפקטיבית יחד."
+    }
+  },
+  "formatsSection": {
+    "eyebrow": "איך זה יכול להיראות אצלכם?",
+    "title": "הפורמט משתנה בהתאם לצורך. היכולת שאנחנו מפתחים היא במרכז."
+  },
+  "formats": {
+    "employeeTraining": "Employee Training",
+    "leadershipDevelopment": "Leadership Development",
+    "teamWorkshops": "Team Workshops",
+    "keynotes": "Keynotes",
+    "learningDays": "Learning Days",
+    "customizedPrograms": "Customized Programs"
+  },
+  "outcomesSection": {
+    "eyebrow": "מה הארגון מקבל?",
+    "title": "תוצאות מורגשות, לא רק חוויית למידה."
+  },
+  "outcomes": {
+    "relevance": {
+      "label": "RELEVANCE",
+      "title": "תוכן שמותאם למציאות שלכם."
+    },
+    "practicalTools": {
+      "label": "PRACTICAL TOOLS",
+      "title": "כלים שאפשר לקחת לעבודה."
+    },
+    "experience": {
+      "label": "EXPERIENCE",
+      "title": "למידה דרך התנסות ולא רק הקשבה."
+    },
+    "application": {
+      "label": "APPLICATION",
+      "title": "חיבור בין ההכשרה להתנהגות היומיומית."
+    },
+    "adaptability": {
+      "label": "ADAPTABILITY",
+      "title": "יכולת טובה יותר להתמודד עם שינוי."
+    },
+    "impact": {
+      "label": "IMPACT",
+      "title": "פיתוח יכולות שמשרתות את הארגון לאורך זמן."
+    }
+  },
+  "contactSection": {
+    "eyebrow": "בואו נדבר",
+    "title": "ספרו לנו קצת על הארגון, האנשים והאתגר שאתם מתמודדים איתו.",
+    "body": "נכיר, נמפה ונחשוב יחד מה יכול להתאים. לא צריך עוד סדנה. צריך את הדבר הנכון לאתגר שלכם."
+  }
+}

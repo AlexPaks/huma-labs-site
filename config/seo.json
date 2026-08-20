@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://www.huma-labs.example",
+  "organizationType": "Organization",
+  "aiCrawlerPolicy": {
+    "OAI-SearchBot": "allow",
+    "GPTBot": "allow"
+  }
+}

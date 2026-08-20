@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-08-20T14:58:40.098Z",
+  "structuralValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "defaultWalkthrough": {
+    "visitedQuestionIds": [
+      "challenge",
+      "impact",
+      "desired-change",
+      "audience",
+      "current-state",
+      "tomorrow-problem"
+    ],
+    "expectedQuestionIds": [
+      "challenge",
+      "impact",
+      "desired-change",
+      "audience",
+      "current-state",
+      "tomorrow-problem"
+    ],
+    "mockResult": {
+      "isMock": true,
+      "primaryCapabilityId": "resilience",
+      "capabilityTally": {
+        "resilience": 1,
+        "leadership": 1,
+        "presence": 1
+      }
+    }
+  },
+  "validationSelfTest": {
+    "emptyAnswerRejected": true,
+    "tooLongAnswerRejected": true,
+    "validAnswerAccepted": true
+  },
+  "engineSelfTest": {
+    "branchingSkipsS2WhenBranchX": true,
+    "conditionalVisibilityShowsS2WhenBranchY": true
+  }
+}

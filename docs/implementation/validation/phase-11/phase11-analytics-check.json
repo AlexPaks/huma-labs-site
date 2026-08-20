@@ -1,0 +1,50 @@
+{
+  "initialLoad": {
+    "bannerVisible": true,
+    "bannerTitle": "אנחנו משתמשים בעוגיות"
+  },
+  "analyticsLogsAfterInitialLoad": [
+    "[mock-analytics-provider] contact_form_viewed Object",
+    "[mock-analytics-provider] consent_banner_viewed Object",
+    "[mock-analytics-provider] page_view Object"
+  ],
+  "afterAcceptAll": {
+    "bannerVisible": false,
+    "storedConsent": "{\"version\":1,\"preferences\":{\"functional\":true,\"analytics\":true,\"marketing\":true}}"
+  },
+  "navigationAndLanguageLogs": [
+    "[mock-analytics-provider] quiz_viewed Object",
+    "[mock-analytics-provider] page_view Object",
+    "[mock-analytics-provider] page_view Object",
+    "[mock-analytics-provider] language_changed Object"
+  ],
+  "urlAfterLanguageSwitch": "http://localhost:4182/en/insight",
+  "heroCtaLogs": [
+    "[mock-analytics-provider] contact_form_viewed Object",
+    "[mock-analytics-provider] page_view Object",
+    "[mock-analytics-provider] primary_cta_clicked Object"
+  ],
+  "quizAndAnalysisLogs": [
+    "[mock-analytics-provider] quiz_viewed Object",
+    "[mock-analytics-provider] page_view Object",
+    "[mock-analytics-provider] quiz_started Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_step_completed Object",
+    "[mock-analytics-provider] quiz_completed Object",
+    "[mock-analytics-provider] insight_analysis_started Object",
+    "[mock-analytics-provider] insight_analysis_completed Object",
+    "[mock-analytics-provider] insight_email_form_viewed Object",
+    "[mock-analytics-provider] insight_result_viewed Object"
+  ],
+  "contactFormLogs": [
+    "[mock-analytics-provider] contact_form_viewed Object",
+    "[mock-analytics-provider] page_view Object",
+    "[mock-analytics-provider] contact_form_started Object",
+    "[mock-analytics-provider] contact_form_submitted Object"
+  ],
+  "trackingRequests": []
+}

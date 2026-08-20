@@ -1,0 +1,48 @@
+{
+  "formId": "insight-email-form",
+  "version": "1.0.0",
+  "routingId": "insight-delivery",
+  "enabled": true,
+  "submitLabelRef": "contact-form:forms.insightEmail.actions.submit",
+  "descriptionRef": "contact-form:forms.insightEmail.description",
+  "successMessageRef": "contact-form:forms.insightEmail.success",
+  "errorMessageRef": "system:forms.reviewErrors",
+  "fields": [
+    {
+      "id": "fullName",
+      "order": 1,
+      "type": "text",
+      "labelRef": "contact-form:forms.insightEmail.fields.fullName.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "fullName"
+    },
+    {
+      "id": "role",
+      "order": 2,
+      "type": "text",
+      "labelRef": "contact-form:forms.insightEmail.fields.role.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "role"
+    },
+    {
+      "id": "organization",
+      "order": 3,
+      "type": "text",
+      "labelRef": "contact-form:forms.insightEmail.fields.organization.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "organization"
+    },
+    {
+      "id": "email",
+      "order": 4,
+      "type": "email",
+      "labelRef": "contact-form:forms.insightEmail.fields.email.label",
+      "required": true,
+      "multiple": false,
+      "serverFieldId": "email"
+    }
+  ]
+}

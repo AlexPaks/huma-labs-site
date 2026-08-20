@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "eyebrow": "HUMA Labs",
+    "titleLines": {
+      "line1": "An organization's ability",
+      "line2": "to adapt begins",
+      "line3": "with its people."
+    },
+    "body": "HUMA develops human capabilities that help people communicate, lead, adapt, and act more effectively in a changing world.",
+    "subtitle": "Customized organizational learning around Presence, Resilience, Adaptability, and Leadership.",
+    "panel": {
+      "eyebrow": "Human Adaptability",
+      "title": "From organizational challenge to human capability.",
+      "body": "A site built around movement, clarity, and the ability to act. Not another off-the-shelf workshop, but capability development tailored to the organizational challenge."
+    },
+    "actions": {
+      "contact": "Let's start the conversation",
+      "insight": "See what your organization needs"
+    }
+  },
+  "context": {
+    "eyebrow": "THE CONTEXT",
+    "title": "The world is changing. People need new capabilities to move with it.",
+    "body": {
+      "paragraph1": "Technology is changing. Roles are changing. Teams are changing. Behind every shift are people who need to know how to adapt, communicate, lead, and act even when reality keeps moving.",
+      "paragraph2": "The challenge is not only knowing what to do. The challenge is being capable of doing it in practice."
+    }
+  },
+  "insightPreview": {
+    "eyebrow": "HUMA Organizational Insight",
+    "title": "Six short questions that help us identify your organization's current leverage point.",
+    "body": "Every organization faces different challenges. Answer six short questions and we will understand together where your main leverage point sits right now and what can help you move forward.",
+    "action": "Start the assessment"
+  },
+  "capabilitiesSection": {
+    "eyebrow": "4 CORE CAPABILITIES",
+    "title": "One human advantage.",
+    "body": "The capability we develop is the center. The format changes according to the need."
+  },
+  "capabilities": {
+    "presence": {
+      "label": "PRESENCE",
+      "title": "Take your place. Create influence.",
+      "description": "Presence, confidence, communication, influence, leadership, and the embodied voice and language that help people be felt."
+    },
+    "resilience": {
+      "label": "RESILIENCE",
+      "title": "Adapt. Recover. Keep moving.",
+      "description": "Coping with change, pressure, workload, and uncertainty while preserving flexibility and the ability to act."
+    },
+    "adaptability": {
+      "label": "ADAPTABILITY",
+      "title": "Move with change. Adjust.",
+      "description": "Mental flexibility, adopting new patterns, and acting effectively inside a changing reality."
+    },
+    "leadership": {
+      "label": "LEADERSHIP",
+      "title": "Lead. From connection.",
+      "description": "Leading teams, mobilizing people, managing energy, and making decisions in conditions of uncertainty."
+    }
+  },
+  "processSection": {
+    "eyebrow": "DISCOVER / DESIGN / ACT",
+    "title": "The solution does not begin by choosing a workshop. It begins by understanding the need.",
+    "body": "We begin with your need, and build from there."
+  },
+  "process": {
+    "discover": {
+      "title": "We understand the challenge.",
+      "description": "We get to know the organization, the people, the needs, and the goals.",
+      "outcome": "Output: a map of needs and goals"
+    },
+    "design": {
+      "title": "We shape the response.",
+      "description": "We tailor the content, structure, format, and learning experience.",
+      "outcome": "Output: a customized development plan"
+    },
+    "act": {
+      "title": "We turn learning into capability.",
+      "description": "People practice, gain tools, and connect them directly to the world of work.",
+      "outcome": "Learning ← practice ← behavior ← impact"
+    }
+  },
+  "challengesSection": {
+    "eyebrow": "You have a challenge. We begin there.",
+    "title": "You do not need another workshop. You need the right response to your challenge.",
+    "body": "Choose the statement that is closest to what is happening in your organization. HUMA's direction becomes clear according to the challenge, not according to an off-the-shelf product.",
+    "directionLabel": "THE HUMA DIRECTION"
+  },
+  "challenges": {
+    "leadThroughChange": {
+      "statement": "Our managers need to lead through a period of change.",
+      "direction": "Develop managerial presence, team resilience, and practical tools for leading through uncertainty."
+    },
+    "initiativeAndVoice": {
+      "statement": "Our people need to bring more initiative and a stronger voice.",
+      "direction": "Strengthen Presence, build confidence in communication, and create an environment that allows real influence."
+    },
+    "loadAndUncertainty": {
+      "statement": "Our teams are coping with overload and uncertainty.",
+      "direction": "Build Resilience, give people tools for faster recovery, and support energy and focus under load."
+    },
+    "communicationAndCollaboration": {
+      "statement": "We want to strengthen communication, connection, and collaboration.",
+      "direction": "Develop a shared organizational language, stronger interpersonal communication, and more effective work together."
+    }
+  },
+  "formatsSection": {
+    "eyebrow": "How could this look in your organization?",
+    "title": "The format changes according to the need. The capability we develop stays at the center."
+  },
+  "formats": {
+    "employeeTraining": "Employee Training",
+    "leadershipDevelopment": "Leadership Development",
+    "teamWorkshops": "Team Workshops",
+    "keynotes": "Keynotes",
+    "learningDays": "Learning Days",
+    "customizedPrograms": "Customized Programs"
+  },
+  "outcomesSection": {
+    "eyebrow": "What does the organization gain?",
+    "title": "Outcomes that are felt in practice, not only a learning experience."
+  },
+  "outcomes": {
+    "relevance": {
+      "label": "RELEVANCE",
+      "title": "Content that is tailored to your reality."
+    },
+    "practicalTools": {
+      "label": "PRACTICAL TOOLS",
+      "title": "Tools people can take directly into the work itself."
+    },
+    "experience": {
+      "label": "EXPERIENCE",
+      "title": "Learning through practice, not only through listening."
+    },
+    "application": {
+      "label": "APPLICATION",
+      "title": "A clear connection between development and day-to-day behavior."
+    },
+    "adaptability": {
+      "label": "ADAPTABILITY",
+      "title": "A stronger ability to deal with change."
+    },
+    "impact": {
+      "label": "IMPACT",
+      "title": "Capability development that continues to serve the organization over time."
+    }
+  },
+  "contactSection": {
+    "eyebrow": "Let's talk",
+    "title": "Tell us a little about the organization, the people, and the challenge you are working with.",
+    "body": "We will get to know the situation, map the need, and think together about what truly fits. You do not need another workshop. You need the right response to your challenge."
+  }
+}

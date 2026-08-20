@@ -1,0 +1,28 @@
+{
+  "primaryCard": {
+    "eyebrow": "Your current leverage point",
+    "capability": "ADAPTABILITY",
+    "focusTitle": "What is worth examining",
+    "focusItems": {
+      "teamAdaptability": "How adaptable your teams are today",
+      "managerTools": "The tools managers have during periods of change",
+      "actingInUncertainty": "How effectively people can act in conditions of uncertainty"
+    },
+    "directionTitle": "HUMA's possible direction"
+  },
+  "contactSection": {
+    "eyebrow": "Would you like the fuller picture?",
+    "title": "Leave your details and receive a deeper readout with a key strength, a development area, and HUMA's first recommendation."
+  },
+  "actions": {
+    "restart": "Retake the assessment"
+  },
+  "analysis": {
+    "loadingTitle": "Preparing your insight",
+    "loadingBody": "We're analyzing your answers. This will take a few seconds.",
+    "errorTitle": "We couldn't complete the analysis right now",
+    "errorBody": "You can try again, or continue with a general overview instead.",
+    "retryLabel": "Try again",
+    "fallbackLabel": "Continue with a general overview"
+  }
+}

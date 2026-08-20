@@ -1,0 +1,40 @@
+{
+  "name": "huma-labs-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/generate-seo-files.mjs && tsc -b && vite build && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "validate:content": "node scripts/validate-phase2.mjs",
+    "validate:language": "node scripts/validate-phase3.mjs",
+    "validate:quiz": "node scripts/validate-phase7.mjs",
+    "server:dev": "node server/devServer.mjs",
+    "validate:llm": "node scripts/validate-phase8.mjs",
+    "validate:email": "node scripts/validate-phase10.mjs",
+    "validate:analytics": "node scripts/validate-phase11.mjs",
+    "validate:seo": "node scripts/validate-phase12.mjs",
+    "seo:generate": "node scripts/generate-seo-files.mjs",
+    "validate:qa": "node scripts/validate-phase13.mjs",
+    "validate:concept-decision": "node scripts/validate-phase14.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.118.0",
+    "nodemailer": "^9.0.5",
+    "openai": "^7.5.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.0",
+    "axe-core": "^4.13.0",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
+  }
+}

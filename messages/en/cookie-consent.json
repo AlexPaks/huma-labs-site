@@ -1,0 +1,33 @@
+{
+  "banner": {
+    "title": "We use cookies",
+    "description": "We use cookies to run the site and to understand how it is used. You can choose which cookie categories to allow.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Essential only",
+    "customize": "Customize"
+  },
+  "preferences": {
+    "title": "Cookie preferences",
+    "save": "Save preferences",
+    "close": "Close",
+    "essential": {
+      "label": "Essential",
+      "description": "Required for the site's basic functionality. Always on."
+    },
+    "functional": {
+      "label": "Functional",
+      "description": "Remember preferences such as language and display."
+    },
+    "analytics": {
+      "label": "Analytics",
+      "description": "Help us understand how the site is used so we can improve it."
+    },
+    "marketing": {
+      "label": "Marketing",
+      "description": "Used to measure the effectiveness of marketing campaigns."
+    }
+  },
+  "manage": {
+    "linkLabel": "Cookie settings"
+  }
+}

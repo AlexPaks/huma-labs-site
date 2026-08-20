@@ -1,0 +1,15 @@
+{
+  "aria": {
+    "primary": "Primary navigation",
+    "primaryMobile": "Primary navigation (mobile menu)",
+    "primaryFooter": "Primary navigation (footer)",
+    "languageSwitcher": "Language selector",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "items": {
+    "home": "Home",
+    "insight": "HUMA Organizational Insight",
+    "contact": "Contact"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "page": {
+    "hero": {
+      "eyebrow": "HUMA Organizational Insight",
+      "title": "מיפוי קצר שמתרגם אתגר ארגוני ליכולת אנושית שכדאי לפתח.",
+      "body": "6 שאלות שיעזרו לנו לזהות את נקודת המינוף הארגונית שלכם. כל ארגון מתמודד עם אתגרים שונים, והמטרה כאן היא לדייק איפה נכון להתחיל.",
+      "subtitle": "A 3-minute organizational needs assessment",
+      "panel": {
+        "eyebrow": "What we identify",
+        "title": "נראה שהאתגר המרכזי שלכם אינו חוסר בידע מקצועי, אלא היכולת של אנשים וצוותים להישאר אפקטיביים כאשר התנאים משתנים.",
+        "body": "הדבר עשוי לבוא לידי ביטוי בקבלת החלטות, בתקשורת, בניהול עומס וביכולת של מנהלים לייצר בהירות."
+      }
+    },
+    "controls": {
+      "back": "חזרה",
+      "continue": "המשך",
+      "progress": "שאלה {{current}} מתוך {{total}}"
+    },
+    "journey": {
+      "eyebrow": "6 Questions",
+      "title": "כך נראה מסלול המיפוי.",
+      "body": "השאלון כאן מוצג כעמוד תוכן ייעודי וברור יותר, כדי לייצר חוויה רצינית, מקצועית ונקייה."
+    }
+  },
+  "preview": {
+    "challenge": "האתגר המרכזי שאתם מתמודדים איתו כרגע",
+    "impact": "איפה רואים את ההשפעה",
+    "desiredChange": "מה הייתם רוצים שיקרה אחרת",
+    "audience": "מי צריך את השינוי הזה הכי הרבה",
+    "currentState": "איפה אתם נמצאים היום",
+    "tomorrowProblem": "השאלה הפתוחה שתחדד את הצורך"
+  },
+  "questions": {
+    "challenge": {
+      "question": "מה האתגר המרכזי שאתם מתמודדים איתו כרגע?",
+      "helper": "קושי לשמור על יציבות, גמישות ותפקוד בתקופות משתנות.",
+      "options": {
+        "copingWithChange": "התמודדות עם שינוי ואי־ודאות",
+        "loadAndBurnout": "עומס ושחיקה",
+        "leadershipAndManagement": "הובלה וניהול",
+        "communicationAndCollaboration": "תקשורת ושיתוף פעולה",
+        "initiativeAndEngagement": "יוזמה ומעורבות",
+        "presenceAndInfluence": "נוכחות והשפעה",
+        "other": "אתגר אחר..."
+      }
+    },
+    "impact": {
+      "question": "איפה אתם רואים את ההשפעה של האתגר הזה?",
+      "options": {
+        "decisionMaking": "באיכות ובמהירות קבלת ההחלטות",
+        "employeePerformance": "בתפקוד ובמחוברות של העובדים",
+        "managerCapability": "ביכולת של מנהלים להוביל",
+        "crossTeamCommunication": "בתקשורת בין צוותים",
+        "initiativeAndOwnership": "ביוזמה ובלקיחת אחריות",
+        "loadAndChange": "בהתמודדות עם עומס ושינויים",
+        "effectiveness": "באפקטיביות ובביצועים",
+        "unclearImpact": "עדיין קשה לנו להגדיר את ההשפעה"
+      }
+    },
+    "desiredChange": {
+      "question": "מה הייתם רוצים לראות קורה אחרת?",
+      "helper": "אם התהליך יצליח, מה יהיה שונה בעוד 3–6 חודשים?",
+      "options": {
+        "confidentEmployees": "עובדים שפועלים בביטחון ובאופן עצמאי יותר",
+        "effectiveManagers": "מנהלים שמובילים בצורה אפקטיבית יותר",
+        "openCommunication": "תקשורת פתוחה וברורה יותר",
+        "adaptableTeams": "צוותים שמסתגלים טוב יותר לשינוי",
+        "loadResilience": "יכולת טובה יותר להתמודד עם עומס ואי־ודאות",
+        "initiativeOwnership": "יותר יוזמה, מעורבות ולקיחת אחריות",
+        "effectiveCollaboration": "שיתוף פעולה אפקטיבי יותר",
+        "other": "אחר..."
+      }
+    },
+    "audience": {
+      "question": "מי צריך את השינוי הזה הכי הרבה?",
+      "options": {
+        "leadership": "הנהלה ומנהלים",
+        "middleManagers": "מנהלי ביניים",
+        "employees": "עובדים",
+        "specificTeam": "צוות או יחידה ספציפית",
+        "changeGroup": "קבוצה שנמצאת בתהליך שינוי",
+        "multiplePopulations": "מספר אוכלוסיות בארגון",
+        "unclear": "עדיין לא ברור"
+      }
+    },
+    "currentState": {
+      "question": "איפה אתם נמצאים היום?",
+      "options": {
+        "knowProblemAndGoal": "אנחנו יודעים מה הבעיה ומה אנחנו רוצים להשיג",
+        "needToRefineNeed": "אנחנו מזהים את האתגר, אבל צריכים לדייק את הצורך",
+        "solutionUnclear": "אנחנו יודעים שמשהו צריך להשתנות, אבל לא ברור לנו מה הפתרון",
+        "needMapping": "אנחנו רוצים קודם למפות ולהבין את הצורך"
+      }
+    },
+    "tomorrowProblem": {
+      "question": "אם הייתם יכולים לפתור דבר אחד אצל האנשים שלכם כבר מחר — מה הייתם בוחרים?",
+      "helper": "אין צורך לנסח את זה בצורה מקצועית. כתבו לנו כפי שהייתם אומרים את זה בשיחה.",
+      "prompt": "שאלה פתוחה לשיחה חופשית"
+    }
+  }
+}

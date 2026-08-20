@@ -1,0 +1,280 @@
+{
+  "quizId": "organizational-insight",
+  "version": "1.0.0",
+  "routingId": "organizational-insight",
+  "questions": [
+    {
+      "id": "challenge",
+      "order": 1,
+      "type": "single-choice",
+      "required": true,
+      "questionRef": "assessment:questions.challenge.question",
+      "previewRef": "assessment:preview.challenge",
+      "helperRef": "assessment:questions.challenge.helper",
+      "nextQuestionId": "impact",
+      "options": [
+        {
+          "id": "coping-with-change",
+          "labelRef": "assessment:questions.challenge.options.copingWithChange"
+        },
+        {
+          "id": "load-and-burnout",
+          "labelRef": "assessment:questions.challenge.options.loadAndBurnout"
+        },
+        {
+          "id": "leadership-and-management",
+          "labelRef": "assessment:questions.challenge.options.leadershipAndManagement"
+        },
+        {
+          "id": "communication-and-collaboration",
+          "labelRef": "assessment:questions.challenge.options.communicationAndCollaboration"
+        },
+        {
+          "id": "initiative-and-engagement",
+          "labelRef": "assessment:questions.challenge.options.initiativeAndEngagement"
+        },
+        {
+          "id": "presence-and-influence",
+          "labelRef": "assessment:questions.challenge.options.presenceAndInfluence"
+        },
+        {
+          "id": "other",
+          "labelRef": "assessment:questions.challenge.options.other"
+        }
+      ],
+      "validation": {
+        "minSelections": 1,
+        "maxSelections": 1
+      },
+      "visibleWhen": null,
+      "capabilityMapping": {
+        "coping-with-change": "resilience",
+        "load-and-burnout": "resilience",
+        "leadership-and-management": "leadership",
+        "communication-and-collaboration": "presence",
+        "initiative-and-engagement": "adaptability",
+        "presence-and-influence": "presence"
+      },
+      "scoreMapping": null
+    },
+    {
+      "id": "impact",
+      "order": 2,
+      "type": "single-choice",
+      "required": true,
+      "questionRef": "assessment:questions.impact.question",
+      "previewRef": "assessment:preview.impact",
+      "helperRef": null,
+      "nextQuestionId": "desired-change",
+      "options": [
+        {
+          "id": "decision-making",
+          "labelRef": "assessment:questions.impact.options.decisionMaking"
+        },
+        {
+          "id": "employee-performance",
+          "labelRef": "assessment:questions.impact.options.employeePerformance"
+        },
+        {
+          "id": "manager-capability",
+          "labelRef": "assessment:questions.impact.options.managerCapability"
+        },
+        {
+          "id": "cross-team-communication",
+          "labelRef": "assessment:questions.impact.options.crossTeamCommunication"
+        },
+        {
+          "id": "initiative-and-ownership",
+          "labelRef": "assessment:questions.impact.options.initiativeAndOwnership"
+        },
+        {
+          "id": "load-and-change",
+          "labelRef": "assessment:questions.impact.options.loadAndChange"
+        },
+        {
+          "id": "effectiveness",
+          "labelRef": "assessment:questions.impact.options.effectiveness"
+        },
+        {
+          "id": "unclear-impact",
+          "labelRef": "assessment:questions.impact.options.unclearImpact"
+        }
+      ],
+      "validation": {
+        "minSelections": 1,
+        "maxSelections": 1
+      },
+      "visibleWhen": null,
+      "capabilityMapping": {
+        "decision-making": "leadership",
+        "employee-performance": "adaptability",
+        "manager-capability": "leadership",
+        "cross-team-communication": "presence",
+        "initiative-and-ownership": "adaptability",
+        "load-and-change": "resilience",
+        "effectiveness": "adaptability"
+      },
+      "scoreMapping": null
+    },
+    {
+      "id": "desired-change",
+      "order": 3,
+      "type": "single-choice",
+      "required": true,
+      "questionRef": "assessment:questions.desiredChange.question",
+      "previewRef": "assessment:preview.desiredChange",
+      "helperRef": "assessment:questions.desiredChange.helper",
+      "nextQuestionId": "audience",
+      "options": [
+        {
+          "id": "confident-employees",
+          "labelRef": "assessment:questions.desiredChange.options.confidentEmployees"
+        },
+        {
+          "id": "effective-managers",
+          "labelRef": "assessment:questions.desiredChange.options.effectiveManagers"
+        },
+        {
+          "id": "open-communication",
+          "labelRef": "assessment:questions.desiredChange.options.openCommunication"
+        },
+        {
+          "id": "adaptable-teams",
+          "labelRef": "assessment:questions.desiredChange.options.adaptableTeams"
+        },
+        {
+          "id": "load-resilience",
+          "labelRef": "assessment:questions.desiredChange.options.loadResilience"
+        },
+        {
+          "id": "initiative-ownership",
+          "labelRef": "assessment:questions.desiredChange.options.initiativeOwnership"
+        },
+        {
+          "id": "effective-collaboration",
+          "labelRef": "assessment:questions.desiredChange.options.effectiveCollaboration"
+        },
+        {
+          "id": "other",
+          "labelRef": "assessment:questions.desiredChange.options.other"
+        }
+      ],
+      "validation": {
+        "minSelections": 1,
+        "maxSelections": 1
+      },
+      "visibleWhen": null,
+      "capabilityMapping": {
+        "confident-employees": "presence",
+        "effective-managers": "leadership",
+        "open-communication": "presence",
+        "adaptable-teams": "adaptability",
+        "load-resilience": "resilience",
+        "initiative-ownership": "adaptability",
+        "effective-collaboration": "presence"
+      },
+      "scoreMapping": null
+    },
+    {
+      "id": "audience",
+      "order": 4,
+      "type": "single-choice",
+      "required": true,
+      "questionRef": "assessment:questions.audience.question",
+      "previewRef": "assessment:preview.audience",
+      "helperRef": null,
+      "nextQuestionId": "current-state",
+      "options": [
+        {
+          "id": "leadership",
+          "labelRef": "assessment:questions.audience.options.leadership"
+        },
+        {
+          "id": "middle-managers",
+          "labelRef": "assessment:questions.audience.options.middleManagers"
+        },
+        {
+          "id": "employees",
+          "labelRef": "assessment:questions.audience.options.employees"
+        },
+        {
+          "id": "specific-team",
+          "labelRef": "assessment:questions.audience.options.specificTeam"
+        },
+        {
+          "id": "change-group",
+          "labelRef": "assessment:questions.audience.options.changeGroup"
+        },
+        {
+          "id": "multiple-populations",
+          "labelRef": "assessment:questions.audience.options.multiplePopulations"
+        },
+        {
+          "id": "unclear",
+          "labelRef": "assessment:questions.audience.options.unclear"
+        }
+      ],
+      "validation": {
+        "minSelections": 1,
+        "maxSelections": 1
+      },
+      "visibleWhen": null,
+      "capabilityMapping": null,
+      "scoreMapping": null
+    },
+    {
+      "id": "current-state",
+      "order": 5,
+      "type": "single-choice",
+      "required": true,
+      "questionRef": "assessment:questions.currentState.question",
+      "previewRef": "assessment:preview.currentState",
+      "helperRef": null,
+      "nextQuestionId": "tomorrow-problem",
+      "options": [
+        {
+          "id": "know-problem-and-goal",
+          "labelRef": "assessment:questions.currentState.options.knowProblemAndGoal"
+        },
+        {
+          "id": "need-to-refine-need",
+          "labelRef": "assessment:questions.currentState.options.needToRefineNeed"
+        },
+        {
+          "id": "solution-unclear",
+          "labelRef": "assessment:questions.currentState.options.solutionUnclear"
+        },
+        {
+          "id": "need-mapping",
+          "labelRef": "assessment:questions.currentState.options.needMapping"
+        }
+      ],
+      "validation": {
+        "minSelections": 1,
+        "maxSelections": 1
+      },
+      "visibleWhen": null,
+      "capabilityMapping": null,
+      "scoreMapping": null
+    },
+    {
+      "id": "tomorrow-problem",
+      "order": 6,
+      "type": "long-text",
+      "required": true,
+      "questionRef": "assessment:questions.tomorrowProblem.question",
+      "previewRef": "assessment:preview.tomorrowProblem",
+      "helperRef": "assessment:questions.tomorrowProblem.helper",
+      "promptRef": "assessment:questions.tomorrowProblem.prompt",
+      "nextQuestionId": null,
+      "options": [],
+      "validation": {
+        "minLength": 1,
+        "maxLength": 500
+      },
+      "visibleWhen": null,
+      "capabilityMapping": null,
+      "scoreMapping": null
+    }
+  ]
+}

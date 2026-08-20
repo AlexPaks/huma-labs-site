@@ -1,0 +1,226 @@
+{
+  "consentBanner": {
+    "role": "dialog",
+    "ariaLabel": "אנחנו משתמשים בעוגיות",
+    "axeViolations": []
+  },
+  "pages": [
+    {
+      "concept": "a",
+      "language": "he",
+      "page": "home",
+      "dir": "rtl",
+      "lang": "he",
+      "expectedDir": "rtl",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "a",
+      "language": "he",
+      "page": "insight",
+      "dir": "rtl",
+      "lang": "he",
+      "expectedDir": "rtl",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "a",
+      "language": "en",
+      "page": "home",
+      "dir": "ltr",
+      "lang": "en",
+      "expectedDir": "ltr",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "a",
+      "language": "en",
+      "page": "insight",
+      "dir": "ltr",
+      "lang": "en",
+      "expectedDir": "ltr",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "c",
+      "language": "he",
+      "page": "home",
+      "dir": "rtl",
+      "lang": "he",
+      "expectedDir": "rtl",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "c",
+      "language": "he",
+      "page": "insight",
+      "dir": "rtl",
+      "lang": "he",
+      "expectedDir": "rtl",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "c",
+      "language": "en",
+      "page": "home",
+      "dir": "ltr",
+      "lang": "en",
+      "expectedDir": "ltr",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    },
+    {
+      "concept": "c",
+      "language": "en",
+      "page": "insight",
+      "dir": "ltr",
+      "lang": "en",
+      "expectedDir": "ltr",
+      "dirCorrect": true,
+      "langCorrect": true,
+      "consoleErrors": [],
+      "axeMobile": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeDesktop": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "axeMobileViolations": [],
+      "axeDesktopViolations": []
+    }
+  ],
+  "quizInProgress": {
+    "axeViolations": []
+  },
+  "insightResult": {
+    "axeViolations": []
+  },
+  "conceptParity": {
+    "wordsInA": 357,
+    "wordsInC": 350,
+    "sharedWords": 338,
+    "overlapRatio": 0.9467787114845938
+  },
+  "contactFormFailure": {
+    "statusText": "נחזור אליכם בהקדם לאחר שנקבל את הפנייה.",
+    "axeViolations": []
+  },
+  "trackingRequests": []
+}

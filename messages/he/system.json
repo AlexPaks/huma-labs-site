@@ -1,0 +1,19 @@
+{
+  "errorBoundary": {
+    "brand": "HUMA",
+    "title": "Something went wrong while loading the page.",
+    "body": "Please refresh and try again."
+  },
+  "forms": {
+    "localOnly": "הטופס נשאר מקומי בלבד בשלב זה ואינו שולח מידע.",
+    "reviewErrors": "אנא עברו על השדות המסומנים ונסו שוב.",
+    "sending": "שולחים...",
+    "sendFailed": "לא הצלחנו לשלוח את הטופס כרגע. אנא נסו שוב.",
+    "honeypotLabel": "Website"
+  },
+  "conceptSwitcher": {
+    "label": "תצוגת קונספט (סקירה בלבד)",
+    "optionA": "קונספט A",
+    "optionC": "קונספט C"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "events": [
+    { "id": "page_view", "sendToCategories": ["analytics"] },
+    { "id": "language_changed", "sendToCategories": ["analytics"] },
+    { "id": "primary_cta_clicked", "sendToCategories": ["analytics", "marketing"] },
+    { "id": "secondary_cta_clicked", "sendToCategories": ["analytics"] },
+    { "id": "quiz_viewed", "sendToCategories": ["analytics"] },
+    { "id": "quiz_started", "sendToCategories": ["analytics", "marketing"] },
+    { "id": "quiz_step_completed", "sendToCategories": ["analytics"] },
+    { "id": "quiz_completed", "sendToCategories": ["analytics", "marketing"] },
+    { "id": "insight_analysis_started", "sendToCategories": ["analytics"] },
+    { "id": "insight_analysis_completed", "sendToCategories": ["analytics"] },
+    { "id": "insight_analysis_failed", "sendToCategories": ["analytics"] },
+    { "id": "insight_result_viewed", "sendToCategories": ["analytics"] },
+    { "id": "insight_email_form_viewed", "sendToCategories": ["analytics"] },
+    { "id": "insight_email_form_started", "sendToCategories": ["analytics"] },
+    { "id": "insight_email_submitted", "sendToCategories": ["analytics", "marketing"] },
+    { "id": "contact_form_viewed", "sendToCategories": ["analytics"] },
+    { "id": "contact_form_started", "sendToCategories": ["analytics"] },
+    { "id": "contact_form_submitted", "sendToCategories": ["analytics", "marketing"] },
+    { "id": "contact_form_failed", "sendToCategories": ["analytics"] },
+    { "id": "consent_banner_viewed", "sendToCategories": ["analytics"] },
+    { "id": "consent_preferences_saved", "sendToCategories": ["analytics"] },
+    { "id": "consent_withdrawn", "sendToCategories": ["analytics"] }
+  ]
+}

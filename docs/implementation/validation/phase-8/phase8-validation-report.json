@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-08-20T14:58:45.747Z",
+  "results": [
+    {
+      "name": "request-schema: valid request accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects unsupported quiz version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects unknown top-level field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects unknown option id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects over-length open text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects missing quizId",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "result-schema: valid content accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "result-schema: rejects unapproved primaryCapability",
+      "passed": true,
+      "detail": "Provider output has an invalid or missing primaryCapability."
+    },
+    {
+      "name": "result-schema: rejects primary duplicated as secondary",
+      "passed": true,
+      "detail": "Provider output lists the primary capability again as a secondary capability."
+    },
+    {
+      "name": "result-schema: rejects only two signalsToExamine",
+      "passed": true,
+      "detail": "Provider output must include exactly three non-empty signalsToExamine."
+    },
+    {
+      "name": "result-schema: rejects missing recommendedDirection.act",
+      "passed": true,
+      "detail": "Provider output has an invalid recommendedDirection."
+    },
+    {
+      "name": "prompt-loader: he loads with version and placeholder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prompt-loader: en loads with version and placeholder",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prompt-composer: placeholder replaced with localized answer text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prompt-injection-guard: flags and neutralizes known patterns",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mock-provider: produces schema-valid output (he)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mock-provider: produces schema-valid output (en)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "openai-provider: parses a well-formed chat completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "openai-provider: rejects a completion with no content",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "openai-provider: rejects non-JSON content",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "claude-provider: parses a well-formed tool_use block",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "claude-provider: rejects a response with no tool_use block",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "openai-provider: fails safe with no API key configured",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "claude-provider: fails safe with no API key configured",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rate-limiter: allows up to the limit, blocks over it, resets after the window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "end-to-end: handleAnalyzeAssessment returns a valid result via the mock provider",
+      "passed": true,
+      "detail": "{\"requestId\":\"55ef9eb0-4c97-4442-8e5b-79064572fcb2\",\"result\":{\"resultId\":\"55ef9eb0-4c97-4442-8e5b-79064572fcb2\",\"quizVersion\":\"1.0.0\",\"promptVersion\":\"1.0.0\",\"language\":\"he\",\"primaryCapability\":\"adaptability\",\"secondaryCapabilities\":[\"resilience\"],\"executiveSummary\":\"זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.\",\"organizationalAnalysis\":\"בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.\",\"possibleOrganizationalImpact\":\"חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.\",\"signalsToExamine\":[\"קצב השינוי הנדרש מול קצב ההיערכות בפועל\",\"בהירות התפקידים סביב האתגר\",\"כלים קיימים מול כלים חסרים\"],\"recommendedDirection\":{\"discover\":\"מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.\",\"design\":\"התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.\",\"act\":\"יישום מדורג עם נקודות בדיקה קצובות בזמן.\"},\"suggestedNextStep\":\"לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.\",\"disclaimer\":\"זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה.\"}}"
+    }
+  ],
+  "passed": true
+}

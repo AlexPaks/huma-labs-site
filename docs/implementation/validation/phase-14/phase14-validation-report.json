@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-20T14:59:10.962Z",
+  "checks": [
+    {
+      "name": "site config: defaultConcept matches the confirmed final production concept decision",
+      "passed": true,
+      "detail": "{\"found\":\"a\",\"expected\":\"a\"}"
+    },
+    {
+      "name": "concept C implementation is retained in the codebase (not removed)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "master plan: records a final concept decision (not still an open Phase 14 item)",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}

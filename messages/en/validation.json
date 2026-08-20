@@ -1,0 +1,8 @@
+{
+  "required": "This field is required.",
+  "email": "Please enter a valid work email address.",
+  "minLength": "The value is too short.",
+  "maxLength": "The value is too long.",
+  "invalidOption": "An unsupported option was selected.",
+  "consentRequired": "You must confirm this item to continue."
+}

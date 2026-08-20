@@ -1,0 +1,15 @@
+{
+  "aria": {
+    "primary": "ניווט ראשי",
+    "primaryMobile": "ניווט ראשי (תפריט נייד)",
+    "primaryFooter": "ניווט ראשי (כותרת תחתית)",
+    "languageSwitcher": "בחירת שפה",
+    "openMenu": "פתחו תפריט",
+    "closeMenu": "סגרו תפריט"
+  },
+  "items": {
+    "home": "בית",
+    "insight": "HUMA Organizational Insight",
+    "contact": "צרו קשר"
+  }
+}

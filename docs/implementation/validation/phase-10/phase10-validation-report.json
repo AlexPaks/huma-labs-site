@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-08-20T14:58:50.935Z",
+  "results": [
+    {
+      "name": "contact-schema: valid request accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: detects a filled honeypot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: rejects unsupported form version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: rejects unknown top-level field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: rejects unknown focus-area option",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: rejects over-length challenge text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "contact-schema: rejects invalid email format",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery-schema: valid request accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery-schema: rejects missing email",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery-schema: rejects unapproved primary capability",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery-schema: rejects too many secondary capabilities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "delivery-schema: rejects no separate recipient override accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: contact-notification (he) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: contact-notification (en) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: contact-confirmation (he) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: contact-confirmation (en) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: insight-delivery (he) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: insight-delivery (en) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mock-email-provider: sends without network access",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "smtp-email-provider: fails safe with no credentials configured",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "end-to-end: handleContactRequest sends via mock provider",
+      "passed": true,
+      "detail": "{\"requestId\":\"88a8cfc4-60d5-44cb-8afc-e724d1c4e54c\",\"status\":\"sent\"}"
+    },
+    {
+      "name": "end-to-end: handleDeliverInsightRequest sends via mock provider",
+      "passed": true,
+      "detail": "{\"requestId\":\"25a7d328-fe69-4ae9-aa00-0ca508a718a7\",\"status\":\"sent\"}"
+    },
+    {
+      "name": "end-to-end: honeypot submission returns a fake success without sending",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}

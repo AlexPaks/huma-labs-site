@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Everything below tagged data-seo-managed="true" is a no-JS fallback for
+      the bare "/" and "/insight" compatibility routes (see AppRoutes.tsx's
+      CompatibilityRedirect) and for the very first paint before React mounts.
+      Once React mounts, src/seo/DocumentHead.tsx removes every tag carrying
+      this same attribute and replaces it with the correct per-page,
+      per-language values — so there is only ever one live copy of each tag,
+      never a static/dynamic duplicate pair. A real server-side redirect for
+      the bare domain root is a Phase 16 (deployment/hosting) decision, not
+      this shell's job; the canonical link here is the crawler-safe fallback
+      until then.
+    -->
+    <meta
+      name="description"
+      content="HUMA מפתחת יכולות אנושיות שמאפשרות לאנשים, צוותים ומנהלים לתקשר, להוביל, להסתגל ולפעול טוב יותר בעולם משתנה."
+      data-seo-managed="true"
+    />
+    <meta name="robots" content="noindex,follow" data-seo-managed="true" />
+    <link rel="canonical" href="https://www.huma-labs.example/he" data-seo-managed="true" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f6f1e8'/%3E%3Cpath d='M18 16h8v13h12V16h8v32h-8V36H26v12h-8z' fill='%23181511'/%3E%3C/svg%3E"
+    />
+    <title>HUMA Labs | Human Adaptability for a Changing World</title>
+    <script>
+      (function () {
+        const firstSegment = window.location.pathname.split("/").filter(Boolean)[0];
+        const language = firstSegment === "en" ? "en" : "he";
+        const direction = language === "en" ? "ltr" : "rtl";
+        document.documentElement.lang = language;
+        document.documentElement.dir = direction;
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  </html>

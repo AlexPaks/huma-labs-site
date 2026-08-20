@@ -1,0 +1,60 @@
+{
+  "forms": {
+    "contact": {
+      "description": "נחזור אליכם בהקדם לאחר שנקבל את הפנייה.",
+      "success": "תודה! קיבלנו את הפנייה שלכם ונחזור אליכם בהקדם.",
+      "actions": {
+        "submit": "בואו נדבר"
+      },
+      "fields": {
+        "fullName": {
+          "label": "שם מלא"
+        },
+        "role": {
+          "label": "תפקיד"
+        },
+        "organization": {
+          "label": "ארגון"
+        },
+        "email": {
+          "label": "אימייל עבודה"
+        },
+        "focusAreas": {
+          "label": "מה הייתם רוצים לפתח?",
+          "options": {
+            "presence": "Presence",
+            "resilience": "Resilience",
+            "leadership": "Leadership",
+            "adaptability": "Adaptability",
+            "teamDevelopment": "Team Development",
+            "notSureYet": "לא בטוחים עדיין"
+          }
+        },
+        "challenge": {
+          "label": "ספרו לנו בקצרה על האתגר שלכם"
+        }
+      }
+    },
+    "insightEmail": {
+      "description": "נשלח לכם סיכום קצר של נקודת המינוף המרכזית שזוהתה עבורכם.",
+      "success": "שלחנו לכם את הסיכום למייל.",
+      "actions": {
+        "submit": "שלחו לי את ה-Insight"
+      },
+      "fields": {
+        "fullName": {
+          "label": "שם מלא"
+        },
+        "role": {
+          "label": "תפקיד"
+        },
+        "organization": {
+          "label": "ארגון"
+        },
+        "email": {
+          "label": "אימייל עבודה"
+        }
+      }
+    }
+  }
+}

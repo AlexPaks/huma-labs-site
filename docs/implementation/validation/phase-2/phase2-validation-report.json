@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-20T14:58:30.297Z",
+  "messageValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "contentSchemaValidation": {
+    "passed": true,
+    "referencedMessageRefCount": 185
+  },
+  "quizValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "formValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "hardcodedCopyExceptions": []
+}

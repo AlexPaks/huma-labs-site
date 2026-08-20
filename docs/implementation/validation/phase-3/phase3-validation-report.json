@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-08-20T14:58:35.212Z",
+  "contentValidation": {
+    "passed": true,
+    "issues": [],
+    "referencedMessageRefCount": 185
+  },
+  "languageValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "quizValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "formValidation": {
+    "passed": true,
+    "issues": []
+  },
+  "routeChecks": {
+    "localizedHomeRoute": true,
+    "localizedInsightRoute": true,
+    "legacyHomeRedirect": true,
+    "legacyInsightRedirect": true,
+    "queryLanguageNormalization": true,
+    "languagePersistence": true,
+    "documentLangUpdate": true,
+    "documentDirUpdate": true,
+    "htmlBootstrapDirection": true
+  },
+  "languageAuditSummary": {
+    "passed": true,
+    "userVisibleExceptions": [],
+    "technicalExceptions": 7
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "initial": {
+    "url": "http://localhost:4176/he",
+    "concept": "a",
+    "conceptStorage": null,
+    "switcherPresent": true,
+    "pressedA": "קונספט A"
+  },
+  "afterSwitchToC": {
+    "url": "http://localhost:4176/he?concept=c",
+    "concept": "c",
+    "conceptStorage": "c",
+    "switcherPresent": true,
+    "pressedA": "קונספט C"
+  },
+  "afterReloadNoQuery": {
+    "url": "http://localhost:4176/he",
+    "concept": "c",
+    "conceptStorage": "c",
+    "switcherPresent": true,
+    "pressedA": "קונספט C"
+  },
+  "afterSwitchBackToA": {
+    "url": "http://localhost:4176/he",
+    "concept": "a",
+    "conceptStorage": "a",
+    "switcherPresent": true,
+    "pressedA": "קונספט A"
+  },
+  "quizStatePreservation": {
+    "beforeSwitchMidFlow": {
+      "progressLabel": "HUMA Organizational Insightשאלה 2 מתוך 6",
+      "hasQuestionState": true
+    },
+    "afterSwitchToAMidFlow": {
+      "url": "http://localhost:4176/he/insight",
+      "progressLabel": "שאלה 2 מתוך 6",
+      "hasQuestionState": true
+    },
+    "afterSwitchBackToCMidFlow": {
+      "url": "http://localhost:4176/he/insight?concept=c",
+      "progressLabel": "HUMA Organizational Insightשאלה 2 מתוך 6",
+      "hasQuestionState": true
+    }
+  }
+}

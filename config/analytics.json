@@ -1,0 +1,33 @@
+{
+  "environment": "development",
+  "debug": true,
+  "defaultConsent": {
+    "essential": true,
+    "functional": false,
+    "analytics": false,
+    "marketing": false
+  },
+  "providers": {
+    "mock": {
+      "enabled": true,
+      "requiresConsentCategory": null
+    },
+    "google": {
+      "enabled": false,
+      "requiresConsentCategory": "analytics",
+      "gtmContainerId": "",
+      "ga4MeasurementId": "",
+      "googleAdsConversionId": ""
+    },
+    "meta": {
+      "enabled": false,
+      "requiresConsentCategory": "marketing",
+      "pixelId": ""
+    },
+    "tiktok": {
+      "enabled": false,
+      "requiresConsentCategory": "marketing",
+      "pixelId": ""
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "afterFailedAnalysis": {
+    "analyzingVisible": true,
+    "resultVisible": false,
+    "errorHeading": "לא הצלחנו להשלים את הניתוח כרגע",
+    "capabilityText": null,
+    "storage": "{\"visitedQuestionIds\":[\"challenge\",\"impact\",\"desired-change\",\"audience\",\"current-state\",\"tomorrow-problem\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"decision-making\",\"desired-change\":\"confident-employees\",\"audience\":\"leadership\",\"current-state\":\"know-problem-and-goal\",\"tomorrow-problem\":\"בדיקת כשל\"}}"
+  },
+  "afterRetryStillDown": {
+    "analyzingVisible": true,
+    "resultVisible": false,
+    "errorHeading": "לא הצלחנו להשלים את הניתוח כרגע",
+    "capabilityText": null,
+    "storage": "{\"visitedQuestionIds\":[\"challenge\",\"impact\",\"desired-change\",\"audience\",\"current-state\",\"tomorrow-problem\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"decision-making\",\"desired-change\":\"confident-employees\",\"audience\":\"leadership\",\"current-state\":\"know-problem-and-goal\",\"tomorrow-problem\":\"בדיקת כשל\"}}"
+  },
+  "afterFallbackAccepted": {
+    "analyzingVisible": false,
+    "resultVisible": true,
+    "errorHeading": null,
+    "capabilityText": "ADAPTABILITY",
+    "storage": "{\"visitedQuestionIds\":[\"challenge\"],\"answers\":{\"challenge\":\"\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+  }
+}

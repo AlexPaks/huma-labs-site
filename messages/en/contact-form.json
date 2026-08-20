@@ -1,0 +1,60 @@
+{
+  "forms": {
+    "contact": {
+      "description": "We'll get back to you shortly after we receive your message.",
+      "success": "Thank you! We received your message and will be in touch soon.",
+      "actions": {
+        "submit": "Let's start the conversation"
+      },
+      "fields": {
+        "fullName": {
+          "label": "Full name"
+        },
+        "role": {
+          "label": "Role"
+        },
+        "organization": {
+          "label": "Organization"
+        },
+        "email": {
+          "label": "Work email"
+        },
+        "focusAreas": {
+          "label": "What would you like to strengthen?",
+          "options": {
+            "presence": "Presence",
+            "resilience": "Resilience",
+            "leadership": "Leadership",
+            "adaptability": "Adaptability",
+            "teamDevelopment": "Team Development",
+            "notSureYet": "We are not sure yet"
+          }
+        },
+        "challenge": {
+          "label": "Tell us briefly about the challenge you are facing"
+        }
+      }
+    },
+    "insightEmail": {
+      "description": "We'll send you a short summary of your identified central leverage point.",
+      "success": "We've sent the summary to your email.",
+      "actions": {
+        "submit": "Send me the Insight"
+      },
+      "fields": {
+        "fullName": {
+          "label": "Full name"
+        },
+        "role": {
+          "label": "Role"
+        },
+        "organization": {
+          "label": "Organization"
+        },
+        "email": {
+          "label": "Work email"
+        }
+      }
+    }
+  }
+}

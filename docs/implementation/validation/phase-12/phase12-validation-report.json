@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-08-20T14:59:00.670Z",
+  "checks": [
+    {
+      "name": "seo-pages: registry contains exactly home and insight",
+      "passed": true,
+      "detail": "[\"home\",\"insight\"]"
+    },
+    {
+      "name": "seo-pages: all registered pages are indexable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: OAI-SearchBot is explicitly allowed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: GPTBot is explicitly allowed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: baseUrl is a placeholder, not a real production domain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html: root shell is noindex (compatibility redirect only, not real content)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "index.html: root canonical target matches config/seo.json's baseUrl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: allows default crawlers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: disallows /api/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: disallows concept-preview query URLs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: explicit OAI-SearchBot directive allows crawling",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: explicit GPTBot directive allows crawling",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "robots.txt: references the sitemap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "sitemap.xml: contains exactly the expected indexable URLs (no more, no less)",
+      "passed": true,
+      "detail": "{\"expected\":[\"https://www.huma-labs.example/he\",\"https://www.huma-labs.example/en\",\"https://www.huma-labs.example/he/insight\",\"https://www.huma-labs.example/en/insight\"],\"found\":[\"https://www.huma-labs.example/he\",\"https://www.huma-labs.example/en\",\"https://www.huma-labs.example/he/insight\",\"https://www.huma-labs.example/en/insight\"]}"
+    },
+    {
+      "name": "sitemap.xml: no URL contains a query string or /api/ path",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "sitemap.xml: declares the xhtml namespace for hreflang alternates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "seo messages: every registered page has he+en title and description",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "document-head simulation: canonical URL never carries a concept query string",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "document-head simulation: hreflang set includes both languages plus x-default",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "document-head simulation: x-default points at the default-language (he) version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "structured-data: contains only approved fields, no fabricated claims (ratings, pricing, reviews, etc.)",
+      "passed": true,
+      "detail": "[\"@context\",\"@graph\",\"@type\",\"name\",\"url\",\"description\",\"inLanguage\"]"
+    },
+    {
+      "name": "structured-data: Organization/WebSite name and description reuse already-approved homepage copy",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}

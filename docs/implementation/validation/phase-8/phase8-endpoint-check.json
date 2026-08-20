@@ -1,0 +1,77 @@
+{
+  "validRequest": {
+    "status": 200,
+    "body": {
+      "requestId": "373170fc-95c6-4387-b6ed-4e00b61ac8b5",
+      "result": {
+        "resultId": "373170fc-95c6-4387-b6ed-4e00b61ac8b5",
+        "quizVersion": "1.0.0",
+        "promptVersion": "1.0.0",
+        "language": "he",
+        "primaryCapability": "presence",
+        "secondaryCapabilities": [
+          "adaptability"
+        ],
+        "executiveSummary": "זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.",
+        "organizationalAnalysis": "בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.",
+        "possibleOrganizationalImpact": "חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.",
+        "signalsToExamine": [
+          "קצב השינוי הנדרש מול קצב ההיערכות בפועל",
+          "בהירות התפקידים סביב האתגר",
+          "כלים קיימים מול כלים חסרים"
+        ],
+        "recommendedDirection": {
+          "discover": "מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.",
+          "design": "התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.",
+          "act": "יישום מדורג עם נקודות בדיקה קצובות בזמן."
+        },
+        "suggestedNextStep": "לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.",
+        "disclaimer": "זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה."
+      }
+    }
+  },
+  "unsupportedQuizVersion": {
+    "status": 409,
+    "body": {
+      "requestId": "623bdeb6-8ec2-4b95-82eb-57fbfc90d999",
+      "error": {
+        "code": "UNSUPPORTED_QUIZ_VERSION",
+        "message": "Quiz version \"9.9.9\" is not the currently supported version \"1.0.0\"."
+      }
+    }
+  },
+  "unexpectedField": {
+    "status": 400,
+    "body": {
+      "requestId": "14582790-d012-4915-87cf-6222147ef068",
+      "error": {
+        "code": "INVALID_ASSESSMENT",
+        "message": "Unexpected field in request body: utmSource"
+      }
+    }
+  },
+  "overLengthAnswer": {
+    "status": 400,
+    "body": {
+      "requestId": "88edc579-28c1-4576-bc3c-f0dc9984e84f",
+      "error": {
+        "code": "INVALID_ASSESSMENT",
+        "message": "Answer for \"tomorrow-problem\" exceeds the 2000-character open-text limit."
+      }
+    }
+  },
+  "rateLimitStatusSequence": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    429,
+    429,
+    429,
+    429,
+    429,
+    429
+  ]
+}

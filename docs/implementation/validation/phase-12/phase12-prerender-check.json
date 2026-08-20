@@ -1,0 +1,80 @@
+{
+  "routes": [
+    {
+      "route": "/he",
+      "status": 200,
+      "bodyBytes": 23141,
+      "hasExpectedTitle": true,
+      "hasExpectedVisibleText": true,
+      "hasExpectedLangDir": true,
+      "robotsMetaCount": 1,
+      "robotsIsIndexFollow": true,
+      "canonicalLinkCount": 1,
+      "descriptionMetaCount": 1,
+      "hreflangAlternateCount": 3,
+      "hasXDefault": true,
+      "hasStructuredData": true,
+      "structuredDataMatchesExpectation": true
+    },
+    {
+      "route": "/en",
+      "status": 200,
+      "bodyBytes": 24850,
+      "hasExpectedTitle": true,
+      "hasExpectedVisibleText": true,
+      "hasExpectedLangDir": true,
+      "robotsMetaCount": 1,
+      "robotsIsIndexFollow": true,
+      "canonicalLinkCount": 1,
+      "descriptionMetaCount": 1,
+      "hreflangAlternateCount": 3,
+      "hasXDefault": true,
+      "hasStructuredData": true,
+      "structuredDataMatchesExpectation": true
+    },
+    {
+      "route": "/he/insight",
+      "status": 200,
+      "bodyBytes": 9722,
+      "hasExpectedTitle": true,
+      "hasExpectedVisibleText": true,
+      "hasExpectedLangDir": true,
+      "robotsMetaCount": 1,
+      "robotsIsIndexFollow": true,
+      "canonicalLinkCount": 1,
+      "descriptionMetaCount": 1,
+      "hreflangAlternateCount": 3,
+      "hasXDefault": true,
+      "hasStructuredData": false,
+      "structuredDataMatchesExpectation": true
+    },
+    {
+      "route": "/en/insight",
+      "status": 200,
+      "bodyBytes": 10142,
+      "hasExpectedTitle": true,
+      "hasExpectedVisibleText": true,
+      "hasExpectedLangDir": true,
+      "robotsMetaCount": 1,
+      "robotsIsIndexFollow": true,
+      "canonicalLinkCount": 1,
+      "descriptionMetaCount": 1,
+      "hreflangAlternateCount": 3,
+      "hasXDefault": true,
+      "hasStructuredData": false,
+      "structuredDataMatchesExpectation": true
+    }
+  ],
+  "staticFiles": {
+    "robotsTxt": {
+      "status": 200,
+      "allowsOaiSearchBot": true,
+      "allowsGptBot": true
+    },
+    "sitemapXml": {
+      "status": 200,
+      "urlCount": 4
+    }
+  },
+  "allPassed": true
+}

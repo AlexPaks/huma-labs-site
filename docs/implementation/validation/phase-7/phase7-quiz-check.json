@@ -1,0 +1,167 @@
+{
+  "report": {
+    "fullCompletionConceptA": {
+      "url": "http://localhost:4177/he/insight",
+      "hasQuestionState": false,
+      "hasResultState": true,
+      "progressText": null,
+      "debugResult": {
+        "payload": {
+          "quizId": "organizational-insight",
+          "quizVersion": "1.0.0",
+          "language": "he",
+          "visitedQuestionIds": [
+            "challenge",
+            "impact",
+            "desired-change",
+            "audience",
+            "current-state",
+            "tomorrow-problem"
+          ],
+          "answers": [
+            {
+              "questionId": "challenge",
+              "value": "coping-with-change"
+            },
+            {
+              "questionId": "impact",
+              "value": "decision-making"
+            },
+            {
+              "questionId": "desired-change",
+              "value": "confident-employees"
+            },
+            {
+              "questionId": "audience",
+              "value": "leadership"
+            },
+            {
+              "questionId": "current-state",
+              "value": "know-problem-and-goal"
+            },
+            {
+              "questionId": "tomorrow-problem",
+              "value": "תשובה לדוגמה עבור בדיקת Phase 7"
+            }
+          ]
+        },
+        "mockResult": {
+          "isMock": true,
+          "primaryCapabilityId": "resilience",
+          "capabilityTally": {
+            "resilience": 1,
+            "leadership": 1,
+            "presence": 1
+          }
+        }
+      },
+      "storage": {
+        "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\",\"impact\",\"desired-change\",\"audience\",\"current-state\",\"tomorrow-problem\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"decision-making\",\"desired-change\":\"confident-employees\",\"audience\":\"leadership\",\"current-state\":\"know-problem-and-goal\",\"tomorrow-problem\":\"תשובה לדוגמה עבור בדיקת Phase 7\"}}"
+      }
+    },
+    "afterRestart": {
+      "url": "http://localhost:4177/he/insight",
+      "hasQuestionState": false,
+      "hasResultState": false,
+      "progressText": null,
+      "debugResult": {
+        "payload": {
+          "quizId": "organizational-insight",
+          "quizVersion": "1.0.0",
+          "language": "he",
+          "visitedQuestionIds": [
+            "challenge",
+            "impact",
+            "desired-change",
+            "audience",
+            "current-state",
+            "tomorrow-problem"
+          ],
+          "answers": [
+            {
+              "questionId": "challenge",
+              "value": "coping-with-change"
+            },
+            {
+              "questionId": "impact",
+              "value": "decision-making"
+            },
+            {
+              "questionId": "desired-change",
+              "value": "confident-employees"
+            },
+            {
+              "questionId": "audience",
+              "value": "leadership"
+            },
+            {
+              "questionId": "current-state",
+              "value": "know-problem-and-goal"
+            },
+            {
+              "questionId": "tomorrow-problem",
+              "value": "תשובה לדוגמה עבור בדיקת Phase 7"
+            }
+          ]
+        },
+        "mockResult": {
+          "isMock": true,
+          "primaryCapabilityId": "resilience",
+          "capabilityTally": {
+            "resilience": 1,
+            "leadership": 1,
+            "presence": 1
+          }
+        }
+      },
+      "storage": {
+        "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\"],\"answers\":{\"challenge\":\"\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+      }
+    },
+    "persistenceAcrossReload": {
+      "beforeReload": {
+        "url": "http://localhost:4177/he/insight",
+        "hasQuestionState": true,
+        "hasResultState": false,
+        "progressText": "שאלה 2 מתוך 6",
+        "debugResult": null,
+        "storage": {
+          "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\",\"impact\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+        }
+      },
+      "afterReload": {
+        "url": "http://localhost:4177/he/insight",
+        "hasQuestionState": true,
+        "hasResultState": false,
+        "progressText": "שאלה 2 מתוך 6",
+        "debugResult": null,
+        "storage": {
+          "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\",\"impact\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+        }
+      }
+    },
+    "languageSwitchMidFlow": {
+      "beforeSwitch": {
+        "url": "http://localhost:4177/he/insight",
+        "hasQuestionState": true,
+        "hasResultState": false,
+        "progressText": "שאלה 2 מתוך 6",
+        "debugResult": null,
+        "storage": {
+          "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\",\"impact\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+        }
+      },
+      "afterSwitch": {
+        "url": "http://localhost:4177/en/insight",
+        "hasQuestionState": true,
+        "hasResultState": false,
+        "progressText": "Question 2 of 6",
+        "debugResult": null,
+        "storage": {
+          "huma-quiz-organizational-insight-1.0.0": "{\"visitedQuestionIds\":[\"challenge\",\"impact\"],\"answers\":{\"challenge\":\"coping-with-change\",\"impact\":\"\",\"desired-change\":\"\",\"audience\":\"\",\"current-state\":\"\",\"tomorrow-problem\":\"\"}}"
+        }
+      }
+    }
+  },
+  "consoleMessages": []
+}

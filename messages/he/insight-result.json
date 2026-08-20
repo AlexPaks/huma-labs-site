@@ -1,0 +1,28 @@
+{
+  "primaryCard": {
+    "eyebrow": "נקודת המינוף המרכזית שלכם",
+    "capability": "ADAPTABILITY",
+    "focusTitle": "מה כדאי לבחון",
+    "focusItems": {
+      "teamAdaptability": "יכולת הסתגלות של צוותים",
+      "managerTools": "כלים למנהלים בתקופות שינוי",
+      "actingInUncertainty": "יצירת יכולת פעולה בתוך אי־ודאות"
+    },
+    "directionTitle": "הכיוון האפשרי של HUMA"
+  },
+  "contactSection": {
+    "eyebrow": "רוצים לקבל את התמונה המלאה?",
+    "title": "השאירו פרטים וקבלו ניתוח מעמיק הכולל נקודת חוזק, אזור פיתוח והמלצה ראשונית של HUMA."
+  },
+  "actions": {
+    "restart": "התחילו את המבדק מחדש"
+  },
+  "analysis": {
+    "loadingTitle": "מכינים את התובנה שלכם",
+    "loadingBody": "אנחנו מנתחים את התשובות שלכם. זה ייקח כמה שניות.",
+    "errorTitle": "לא הצלחנו להשלים את הניתוח כרגע",
+    "errorBody": "אפשר לנסות שוב, או להמשיך עם סקירה כללית במקום.",
+    "retryLabel": "נסו שוב",
+    "fallbackLabel": "המשיכו עם סקירה כללית"
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "navigationItems": [
+    {
+      "id": "home",
+      "href": "/",
+      "labelRef": "navigation:items.home"
+    },
+    {
+      "id": "insight",
+      "href": "/insight",
+      "labelRef": "navigation:items.insight"
+    },
+    {
+      "id": "contact",
+      "href": "/#contact",
+      "labelRef": "navigation:items.contact"
+    }
+  ],
+  "ctaLinks": [
+    {
+      "id": "hero-contact",
+      "kind": "anchor",
+      "href": "#contact",
+      "labelRef": "homepage:hero.actions.contact",
+      "purpose": "contactConversation"
+    },
+    {
+      "id": "hero-insight",
+      "kind": "route",
+      "href": "/insight",
+      "labelRef": "homepage:hero.actions.insight",
+      "purpose": "insightAssessment"
+    },
+    {
+      "id": "insight-preview",
+      "kind": "route",
+      "href": "/insight",
+      "labelRef": "homepage:insightPreview.action",
+      "purpose": "insightAssessment"
+    }
+  ],
+  "heroStats": [
+    {
+      "id": "presence",
+      "labelRef": "common:capabilityLabels.presence"
+    },
+    {
+      "id": "resilience",
+      "labelRef": "common:capabilityLabels.resilience"
+    },
+    {
+      "id": "adaptability",
+      "labelRef": "common:capabilityLabels.adaptability"
+    },
+    {
+      "id": "leadership",
+      "labelRef": "common:capabilityLabels.leadership"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "presence",
+      "labelRef": "homepage:capabilities.presence.label",
+      "titleRef": "homepage:capabilities.presence.title",
+      "descriptionRef": "homepage:capabilities.presence.description"
+    },
+    {
+      "id": "resilience",
+      "labelRef": "homepage:capabilities.resilience.label",
+      "titleRef": "homepage:capabilities.resilience.title",
+      "descriptionRef": "homepage:capabilities.resilience.description"
+    },
+    {
+      "id": "adaptability",
+      "labelRef": "homepage:capabilities.adaptability.label",
+      "titleRef": "homepage:capabilities.adaptability.title",
+      "descriptionRef": "homepage:capabilities.adaptability.description"
+    },
+    {
+      "id": "leadership",
+      "labelRef": "homepage:capabilities.leadership.label",
+      "titleRef": "homepage:capabilities.leadership.title",
+      "descriptionRef": "homepage:capabilities.leadership.description"
+    }
+  ],
+  "processSteps": [
+    {
+      "id": "discover",
+      "order": 1,
+      "labelRef": "common:processLabels.discover",
+      "titleRef": "homepage:process.discover.title",
+      "descriptionRef": "homepage:process.discover.description",
+      "outcomeRef": "homepage:process.discover.outcome"
+    },
+    {
+      "id": "design",
+      "order": 2,
+      "labelRef": "common:processLabels.design",
+      "titleRef": "homepage:process.design.title",
+      "descriptionRef": "homepage:process.design.description",
+      "outcomeRef": "homepage:process.design.outcome"
+    },
+    {
+      "id": "act",
+      "order": 3,
+      "labelRef": "common:processLabels.act",
+      "titleRef": "homepage:process.act.title",
+      "descriptionRef": "homepage:process.act.description",
+      "outcomeRef": "homepage:process.act.outcome"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "lead-through-change",
+      "statementRef": "homepage:challenges.leadThroughChange.statement",
+      "directionRef": "homepage:challenges.leadThroughChange.direction"
+    },
+    {
+      "id": "initiative-and-voice",
+      "statementRef": "homepage:challenges.initiativeAndVoice.statement",
+      "directionRef": "homepage:challenges.initiativeAndVoice.direction"
+    },
+    {
+      "id": "load-and-uncertainty",
+      "statementRef": "homepage:challenges.loadAndUncertainty.statement",
+      "directionRef": "homepage:challenges.loadAndUncertainty.direction"
+    },
+    {
+      "id": "communication-and-collaboration",
+      "statementRef": "homepage:challenges.communicationAndCollaboration.statement",
+      "directionRef": "homepage:challenges.communicationAndCollaboration.direction"
+    }
+  ],
+  "formats": [
+    {
+      "id": "employee-training",
+      "labelRef": "homepage:formats.employeeTraining"
+    },
+    {
+      "id": "leadership-development",
+      "labelRef": "homepage:formats.leadershipDevelopment"
+    },
+    {
+      "id": "team-workshops",
+      "labelRef": "homepage:formats.teamWorkshops"
+    },
+    {
+      "id": "keynotes",
+      "labelRef": "homepage:formats.keynotes"
+    },
+    {
+      "id": "learning-days",
+      "labelRef": "homepage:formats.learningDays"
+    },
+    {
+      "id": "customized-programs",
+      "labelRef": "homepage:formats.customizedPrograms"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "relevance",
+      "labelRef": "homepage:outcomes.relevance.label",
+      "titleRef": "homepage:outcomes.relevance.title"
+    },
+    {
+      "id": "practical-tools",
+      "labelRef": "homepage:outcomes.practicalTools.label",
+      "titleRef": "homepage:outcomes.practicalTools.title"
+    },
+    {
+      "id": "experience",
+      "labelRef": "homepage:outcomes.experience.label",
+      "titleRef": "homepage:outcomes.experience.title"
+    },
+    {
+      "id": "application",
+      "labelRef": "homepage:outcomes.application.label",
+      "titleRef": "homepage:outcomes.application.title"
+    },
+    {
+      "id": "adaptability",
+      "labelRef": "homepage:outcomes.adaptability.label",
+      "titleRef": "homepage:outcomes.adaptability.title"
+    },
+    {
+      "id": "impact",
+      "labelRef": "homepage:outcomes.impact.label",
+      "titleRef": "homepage:outcomes.impact.title"
+    }
+  ],
+  "resultCard": {
+    "primaryCapabilityRef": "insight-result:primaryCard.capability",
+    "focusItemRefs": [
+      "insight-result:primaryCard.focusItems.teamAdaptability",
+      "insight-result:primaryCard.focusItems.managerTools",
+      "insight-result:primaryCard.focusItems.actingInUncertainty"
+    ],
+    "processStepIds": [
+      "discover",
+      "design",
+      "act"
+    ]
+  },
+  "pages": {
+    "home": {
+      "sectionOrder": [
+        {
+          "id": "hero",
+          "component": "hero"
+        },
+        {
+          "id": "organizational-context",
+          "component": "organizational-context"
+        },
+        {
+          "id": "organizational-insight",
+          "component": "organizational-insight"
+        },
+        {
+          "id": "core-capabilities",
+          "component": "capabilities-method"
+        },
+        {
+          "id": "huma-method",
+          "component": "capabilities-method"
+        },
+        {
+          "id": "organizational-challenges",
+          "component": "challenges-formats"
+        },
+        {
+          "id": "delivery-formats",
+          "component": "challenges-formats"
+        },
+        {
+          "id": "organizational-outcomes",
+          "component": "outcomes-contact"
+        },
+        {
+          "id": "contact",
+          "component": "outcomes-contact"
+        }
+      ],
+      "hero": {
+        "eyebrowRef": "homepage:hero.eyebrow",
+        "titleLineRefs": [
+          "homepage:hero.titleLines.line1",
+          "homepage:hero.titleLines.line2",
+          "homepage:hero.titleLines.line3"
+        ],
+        "bodyRef": "homepage:hero.body",
+        "subtitleRef": "homepage:hero.subtitle",
+        "panelEyebrowRef": "homepage:hero.panel.eyebrow",
+        "panelTitleRef": "homepage:hero.panel.title",
+        "panelBodyRef": "homepage:hero.panel.body",
+        "statIds": [
+          "presence",
+          "resilience",
+          "adaptability",
+          "leadership"
+        ],
+        "primaryCtaId": "hero-contact",
+        "secondaryCtaId": "hero-insight"
+      },
+      "context": {
+        "eyebrowRef": "homepage:context.eyebrow",
+        "titleRef": "homepage:context.title",
+        "bodyRefs": [
+          "homepage:context.body.paragraph1",
+          "homepage:context.body.paragraph2"
+        ]
+      },
+      "insightPreview": {
+        "eyebrowRef": "homepage:insightPreview.eyebrow",
+        "titleRef": "homepage:insightPreview.title",
+        "bodyRef": "homepage:insightPreview.body",
+        "ctaId": "insight-preview"
+      },
+      "capabilitiesSection": {
+        "eyebrowRef": "homepage:capabilitiesSection.eyebrow",
+        "titleRef": "homepage:capabilitiesSection.title",
+        "bodyRef": "homepage:capabilitiesSection.body",
+        "capabilityIds": [
+          "presence",
+          "resilience",
+          "adaptability",
+          "leadership"
+        ]
+      },
+      "processSection": {
+        "eyebrowRef": "homepage:processSection.eyebrow",
+        "titleRef": "homepage:processSection.title",
+        "bodyRef": "homepage:processSection.body",
+        "processStepIds": [
+          "discover",
+          "design",
+          "act"
+        ]
+      },
+      "challengesSection": {
+        "eyebrowRef": "homepage:challengesSection.eyebrow",
+        "titleRef": "homepage:challengesSection.title",
+        "bodyRef": "homepage:challengesSection.body",
+        "directionLabelRef": "homepage:challengesSection.directionLabel",
+        "challengeIds": [
+          "lead-through-change",
+          "initiative-and-voice",
+          "load-and-uncertainty",
+          "communication-and-collaboration"
+        ]
+      },
+      "formatsSection": {
+        "eyebrowRef": "homepage:formatsSection.eyebrow",
+        "titleRef": "homepage:formatsSection.title",
+        "formatIds": [
+          "employee-training",
+          "leadership-development",
+          "team-workshops",
+          "keynotes",
+          "learning-days",
+          "customized-programs"
+        ]
+      },
+      "outcomesSection": {
+        "eyebrowRef": "homepage:outcomesSection.eyebrow",
+        "titleRef": "homepage:outcomesSection.title",
+        "outcomeIds": [
+          "relevance",
+          "practical-tools",
+          "experience",
+          "application",
+          "adaptability",
+          "impact"
+        ]
+      },
+      "contactSection": {
+        "eyebrowRef": "homepage:contactSection.eyebrow",
+        "titleRef": "homepage:contactSection.title",
+        "bodyRef": "homepage:contactSection.body",
+        "formId": "contact-form"
+      }
+    },
+    "insight": {
+      "hero": {
+        "eyebrowRef": "assessment:page.hero.eyebrow",
+        "titleRef": "assessment:page.hero.title",
+        "bodyRef": "assessment:page.hero.body",
+        "subtitleRef": "assessment:page.hero.subtitle",
+        "panelEyebrowRef": "assessment:page.hero.panel.eyebrow",
+        "panelTitleRef": "assessment:page.hero.panel.title",
+        "panelBodyRef": "assessment:page.hero.panel.body"
+      },
+      "journey": {
+        "eyebrowRef": "assessment:page.journey.eyebrow",
+        "titleRef": "assessment:page.journey.title",
+        "bodyRef": "assessment:page.journey.body"
+      },
+      "resultSection": {
+        "eyebrowRef": "insight-result:primaryCard.eyebrow",
+        "focusTitleRef": "insight-result:primaryCard.focusTitle",
+        "directionTitleRef": "insight-result:primaryCard.directionTitle"
+      },
+      "contactSection": {
+        "eyebrowRef": "insight-result:contactSection.eyebrow",
+        "titleRef": "insight-result:contactSection.title",
+        "formId": "insight-email-form"
+      }
+    }
+  }
+}

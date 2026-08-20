@@ -1,0 +1,96 @@
+{
+  "formId": "contact-form",
+  "version": "1.0.0",
+  "routingId": "contact",
+  "enabled": true,
+  "submitLabelRef": "contact-form:forms.contact.actions.submit",
+  "descriptionRef": "contact-form:forms.contact.description",
+  "successMessageRef": "contact-form:forms.contact.success",
+  "errorMessageRef": "system:forms.reviewErrors",
+  "fields": [
+    {
+      "id": "fullName",
+      "order": 1,
+      "type": "text",
+      "labelRef": "contact-form:forms.contact.fields.fullName.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "fullName"
+    },
+    {
+      "id": "role",
+      "order": 2,
+      "type": "text",
+      "labelRef": "contact-form:forms.contact.fields.role.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "role"
+    },
+    {
+      "id": "organization",
+      "order": 3,
+      "type": "text",
+      "labelRef": "contact-form:forms.contact.fields.organization.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "organization"
+    },
+    {
+      "id": "email",
+      "order": 4,
+      "type": "email",
+      "labelRef": "contact-form:forms.contact.fields.email.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "email"
+    },
+    {
+      "id": "focusAreas",
+      "order": 5,
+      "type": "multi-select",
+      "labelRef": "contact-form:forms.contact.fields.focusAreas.label",
+      "required": false,
+      "multiple": true,
+      "serverFieldId": "focusAreas",
+      "options": [
+        {
+          "id": "presence",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.presence"
+        },
+        {
+          "id": "resilience",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.resilience"
+        },
+        {
+          "id": "leadership",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.leadership"
+        },
+        {
+          "id": "adaptability",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.adaptability"
+        },
+        {
+          "id": "team-development",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.teamDevelopment"
+        },
+        {
+          "id": "not-sure-yet",
+          "labelRef": "contact-form:forms.contact.fields.focusAreas.options.notSureYet"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "order": 6,
+      "type": "textarea",
+      "labelRef": "contact-form:forms.contact.fields.challenge.label",
+      "required": false,
+      "multiple": false,
+      "serverFieldId": "challenge",
+      "validation": {
+        "minLength": 0,
+        "maxLength": 1000
+      }
+    }
+  ]
+}

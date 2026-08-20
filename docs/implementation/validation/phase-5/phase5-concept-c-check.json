@@ -1,0 +1,143 @@
+{
+  "baseUrl": "http://localhost:4175",
+  "home": {
+    "heDesktop": {
+      "fileName": "concept-c-home-he-desktop.png",
+      "width": 1425,
+      "height": 5994
+    },
+    "enDesktop": {
+      "fileName": "concept-c-home-en-desktop.png",
+      "width": 1425,
+      "height": 7064
+    },
+    "heMobile": {
+      "fileName": "concept-c-home-he-mobile.png",
+      "width": 390,
+      "height": 8811
+    },
+    "enMobile": {
+      "fileName": "concept-c-home-en-mobile.png",
+      "width": 390,
+      "height": 9871
+    }
+  },
+  "insightIntro": {
+    "heDesktop": {
+      "fileName": "concept-c-insight-he-intro-desktop.png",
+      "width": 1425,
+      "height": 2526
+    },
+    "enDesktop": {
+      "fileName": "concept-c-insight-en-intro-desktop.png",
+      "width": 1425,
+      "height": 2526
+    },
+    "heMobile": {
+      "fileName": "concept-c-insight-he-intro-mobile.png",
+      "width": 390,
+      "height": 3439
+    },
+    "enMobile": {
+      "fileName": "concept-c-insight-en-intro-mobile.png",
+      "width": 390,
+      "height": 3439
+    }
+  },
+  "insightFlow": {
+    "heDesktop": {
+      "questionScreenshot": {
+        "fileName": "concept-c-insight-he-question-desktop.png",
+        "width": 1440,
+        "height": 1600
+      },
+      "resultScreenshot": {
+        "fileName": "concept-c-insight-he-result-desktop.png",
+        "width": 1440,
+        "height": 1600
+      },
+      "resultState": {
+        "title": "HUMA Labs | Human Adaptability for a Changing World",
+        "url": "http://localhost:4175/he/insight?concept=c",
+        "textLength": 785,
+        "hasMain": true,
+        "hasViteOverlay": false,
+        "duplicateIds": [],
+        "horizontalOverflow": false
+      }
+    },
+    "enDesktop": {
+      "questionScreenshot": {
+        "fileName": "concept-c-insight-en-question-desktop.png",
+        "width": 1440,
+        "height": 1600
+      },
+      "resultScreenshot": {
+        "fileName": "concept-c-insight-en-result-desktop.png",
+        "width": 1440,
+        "height": 1600
+      },
+      "resultState": {
+        "title": "HUMA Labs | Human Adaptability for a Changing World",
+        "url": "http://localhost:4175/en/insight?concept=c",
+        "textLength": 907,
+        "hasMain": true,
+        "hasViteOverlay": false,
+        "duplicateIds": [],
+        "horizontalOverflow": false
+      }
+    },
+    "heMobile": {
+      "questionScreenshot": {
+        "fileName": "concept-c-insight-he-question-mobile.png",
+        "width": 390,
+        "height": 1200
+      },
+      "resultScreenshot": {
+        "fileName": "concept-c-insight-he-result-mobile.png",
+        "width": 390,
+        "height": 1200
+      },
+      "resultState": {
+        "title": "HUMA Labs | Human Adaptability for a Changing World",
+        "url": "http://localhost:4175/he/insight?concept=c",
+        "textLength": 500,
+        "hasMain": true,
+        "hasViteOverlay": false,
+        "duplicateIds": [],
+        "horizontalOverflow": false
+      }
+    },
+    "enMobile": {
+      "questionScreenshot": {
+        "fileName": "concept-c-insight-en-question-mobile.png",
+        "width": 390,
+        "height": 1200
+      },
+      "resultScreenshot": {
+        "fileName": "concept-c-insight-en-result-mobile.png",
+        "width": 390,
+        "height": 1200
+      },
+      "resultState": {
+        "title": "HUMA Labs | Human Adaptability for a Changing World",
+        "url": "http://localhost:4175/en/insight?concept=c",
+        "textLength": 570,
+        "hasMain": true,
+        "hasViteOverlay": false,
+        "duplicateIds": [],
+        "horizontalOverflow": false
+      }
+    }
+  },
+  "consoleMessages": [],
+  "finalState": {
+    "title": "HUMA Labs | Human Adaptability for a Changing World",
+    "url": "http://localhost:4175/en/insight?concept=c",
+    "textLength": 570,
+    "hasMain": true,
+    "hasViteOverlay": false,
+    "duplicateIds": [],
+    "horizontalOverflow": false
+  }
+}

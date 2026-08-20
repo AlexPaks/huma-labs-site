@@ -1,0 +1,19 @@
+{
+  "errorBoundary": {
+    "brand": "HUMA",
+    "title": "Something went wrong while loading the page.",
+    "body": "Please refresh the page and try again."
+  },
+  "forms": {
+    "localOnly": "This form currently stays local and does not send information yet.",
+    "reviewErrors": "Please review the highlighted fields and try again.",
+    "sending": "Sending...",
+    "sendFailed": "We couldn't send the form right now. Please try again.",
+    "honeypotLabel": "Website"
+  },
+  "conceptSwitcher": {
+    "label": "Concept preview (review only)",
+    "optionA": "Concept A",
+    "optionC": "Concept C"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-08-20T14:58:55.628Z",
+  "checks": [
+    {
+      "name": "event-catalog: contains exactly the required 21 events",
+      "passed": true,
+      "detail": "{\"missing\":[],\"extra\":[]}"
+    },
+    {
+      "name": "event-catalog: no duplicate event ids",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "event-catalog: all events use only known consent categories",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: mock provider is enabled by default",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: google provider is disabled by default (never activated)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: meta provider is disabled by default (never activated)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: tiktok provider is disabled by default (never activated)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: no real provider ids are configured",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "config: default consent is opt-in (functional/analytics/marketing start false)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: accepts a clean payload",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: rejects a payload containing \"email\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: rejects a payload containing \"answers\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: rejects a payload containing \"prompt\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: rejects a payload containing \"challenge\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prohibited-payload-guard: rejects a payload containing \"stack\"",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "consent-gating: with no consent, page_view still reaches mock but not google",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "consent-gating: with full consent, page_view reaches mock and google",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "consent-gating: with analytics-only consent, contact_form_submitted does not reach meta/tiktok (marketing required)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "consent-gating: with marketing consent, contact_form_submitted reaches meta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cookie-consent messages: all four categories have he+en label and description",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "attribution-separation: prompt composer never imports attribution-service",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "attribution-separation: assessment normalizer never imports attribution-service",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}
