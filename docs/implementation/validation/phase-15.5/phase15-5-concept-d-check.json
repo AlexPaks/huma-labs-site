@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-08-20T19:22:06.683Z",
+  "baseUrl": "http://127.0.0.1:4173",
+  "browser": "Microsoft Edge headless via CDP",
+  "defaultConcept": {
+    "heDesktop": {
+      "url": "http://127.0.0.1:4173/he",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "d",
+      "lang": "he",
+      "dir": "rtl",
+      "hasMain": true,
+      "mainTextLength": 3548,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "index,follow",
+      "heroBackground": "linear-gradient(270deg, rgba(246, 241, 232, 0.9) 0%, rgba(246, 241, 232, 0.62) 34%, rgba(246, 241, 232, 0.04) 76%), url(\"http://127.0.0.1:4173/images/concept-d/hero-collective-system.jpg\")"
+    },
+    "assets": [
+      {
+        "src": "/images/concept-d/hero-collective-system.jpg",
+        "loaded": true,
+        "width": 1535,
+        "height": 1024
+      },
+      {
+        "src": "/images/concept-d/insight-collective-map.jpg",
+        "loaded": true,
+        "width": 1690,
+        "height": 931
+      },
+      {
+        "src": "/images/concept-d/capabilities-modular-system.jpg",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "/images/concept-d/outcomes-collective-movement.jpg",
+        "loaded": true,
+        "width": 1536,
+        "height": 1024
+      }
+    ],
+    "heMobile": {
+      "url": "http://127.0.0.1:4173/he",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "d",
+      "lang": "he",
+      "dir": "rtl",
+      "hasMain": true,
+      "mainTextLength": 3473,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "index,follow",
+      "heroBackground": "linear-gradient(rgba(0, 0, 0, 0) 12%, rgba(246, 241, 232, 0.15) 42%, rgba(246, 241, 232, 0.94) 78%), url(\"http://127.0.0.1:4173/images/concept-d/hero-collective-system.jpg\")"
+    },
+    "enDesktop": {
+      "url": "http://127.0.0.1:4173/en",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "d",
+      "lang": "en",
+      "dir": "ltr",
+      "hasMain": true,
+      "mainTextLength": 5070,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "index,follow",
+      "heroBackground": "linear-gradient(90deg, rgba(246, 241, 232, 0.92) 0%, rgba(246, 241, 232, 0.7) 35%, rgba(246, 241, 232, 0.06) 78%), url(\"http://127.0.0.1:4173/images/concept-d/hero-collective-system.jpg\")"
+    },
+    "enMobile": {
+      "url": "http://127.0.0.1:4173/en",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "d",
+      "lang": "en",
+      "dir": "ltr",
+      "hasMain": true,
+      "mainTextLength": 4967,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "index,follow",
+      "heroBackground": "linear-gradient(rgba(0, 0, 0, 0) 12%, rgba(246, 241, 232, 0.15) 42%, rgba(246, 241, 232, 0.94) 78%), url(\"http://127.0.0.1:4173/images/concept-d/hero-collective-system.jpg\")"
+    }
+  },
+  "previews": {
+    "conceptA": {
+      "url": "http://127.0.0.1:4173/he?concept=a",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "a",
+      "lang": "he",
+      "dir": "rtl",
+      "hasMain": true,
+      "mainTextLength": 3548,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "noindex,nofollow",
+      "heroBackground": "none"
+    },
+    "conceptC": {
+      "url": "http://127.0.0.1:4173/he?concept=c",
+      "title": "HUMA Labs | Human Adaptability for a Changing World",
+      "concept": "c",
+      "lang": "he",
+      "dir": "rtl",
+      "hasMain": true,
+      "mainTextLength": 3559,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "noindex,nofollow",
+      "heroBackground": null
+    }
+  },
+  "interaction": {
+    "clicked": true,
+    "state": {
+      "url": "http://127.0.0.1:4173/he/insight",
+      "title": "HUMA Organizational Insight | HUMA Labs",
+      "concept": "d",
+      "lang": "he",
+      "dir": "rtl",
+      "hasMain": true,
+      "mainTextLength": 543,
+      "hasFrameworkOverlay": false,
+      "horizontalOverflow": false,
+      "robots": "index,follow",
+      "heroBackground": null
+    }
+  },
+  "consoleErrors": [],
+  "passed": true
+}

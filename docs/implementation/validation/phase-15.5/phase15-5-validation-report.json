@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-08-20T19:26:04.861Z",
+  "checks": [
+    {
+      "name": "Concept D is a supported concept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D is the configured default",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D is accepted by concept resolution",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D presentation layer is scoped by data-concept",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D visual reference is persisted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D asset exists and is non-empty: public/images/concept-d/hero-collective-system.jpg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D asset exists and is non-empty: public/images/concept-d/insight-collective-map.jpg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D asset exists and is non-empty: public/images/concept-d/capabilities-modular-system.jpg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept D asset exists and is non-empty: public/images/concept-d/outcomes-collective-movement.jpg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept A implementation remains present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Concept C implementation remains present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Browser QA passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Browser QA verified Hebrew RTL and English LTR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Browser QA found no console errors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Master Plan records Phase 15.5 and Concept D default",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}

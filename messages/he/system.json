@@ -14,6 +14,7 @@
   "conceptSwitcher": {
     "label": "תצוגת קונספט (סקירה בלבד)",
     "optionA": "קונספט A",
-    "optionC": "קונספט C"
+    "optionC": "קונספט C",
+    "optionD": "קונספט D"
   }
 }

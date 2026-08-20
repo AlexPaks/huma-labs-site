@@ -1,7 +1,7 @@
 export type SupportedLanguage = "he" | "en";
 export type SupportedDirection = "rtl" | "ltr";
 
-export type SupportedConcept = "a" | "c";
+export type SupportedConcept = "a" | "c" | "d";
 
 export interface PublicSiteConfig {
   defaultLanguage: SupportedLanguage;
@@ -15,7 +15,7 @@ export interface PublicSiteConfig {
 export const siteConfig: PublicSiteConfig = {
   defaultLanguage: "he",
   supportedLanguages: ["he", "en"],
-  defaultConcept: "a",
+  defaultConcept: "d",
   showConceptSwitcher: false,
   showLanguageSwitcher: true,
 };

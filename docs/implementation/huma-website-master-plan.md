@@ -1,8 +1,8 @@
 # HUMA Website Master Working Plan
 
 Status: Authoritative planning and phase-tracking document for this workspace  
-Last updated: 2026-08-18  
-Scope: Phase 0 through Phase 3 completed and approved; Concept A implementation, final acceptance verification, and targeted localized Contact anchor correction completed in workspace; Phase 4 is completed and approved as of 2026-08-18; Phase 5 Concept C implementation is completed and approved as of 2026-08-19; Phase 6 Concept Switching is completed and approved as of 2026-08-19; Phase 7 Dynamic Assessment Engine is completed and approved as of 2026-08-19; Phase 8 Secure LLM Integration is completed and approved as of 2026-08-19; Phase 9 Dynamic Result Experience is completed and approved as of 2026-08-19; Phase 10 Secure Email Integration is completed and approved as of 2026-08-19; Phase 11 Marketing Analytics, Campaign Attribution and Cookie Consent is completed and approved as of 2026-08-20; Phase 12 SEO, Google Search and AI Search Visibility is completed and approved as of 2026-08-20; Phase 13 Responsive, Accessibility and Full QA is completed and approved as of 2026-08-20; Phase 14 Final Concept Decision is completed and approved as of 2026-08-20 — the confirmed final production concept is **Concept A**; Phase 15 Git and GitHub is complete in workspace and `READY FOR REVIEW` as of 2026-08-20, pending user approval and a manual `git push` by the user  
+Last updated: 2026-08-20
+Scope: Phases 0-14 are completed and approved; Phase 15 Git and GitHub remains `READY FOR REVIEW` pending user approval and a manual `git push`; the user subsequently approved Phase 15.5 Concept D implementation, selected the structural collective-intelligence direction, and requested Concept D as the new default. Phase 15.5 is implemented and `READY FOR REVIEW` as of 2026-08-20. Phase 16 deployment remains `NOT STARTED`.
 
 ## 1. Planning guardrails
 
@@ -26,16 +26,19 @@ Scope: Phase 0 through Phase 3 completed and approved; Concept A implementation,
 Use this authority order for planning, implementation, review, and fidelity decisions:
 
 1. Approved existing HUMA content and meaning
-2. Saved Concept A PNG files
-3. Saved Concept C PNG files
-4. Existing `docs/design-concepts/README.md`
-5. HUMA Website Master Working Plan
-6. Explicit future user approvals
+2. Saved and implemented Concept D visual direction
+3. Saved Concept A PNG files
+4. Saved Concept C PNG files
+5. Existing `docs/design-concepts/README.md`
+6. HUMA Website Master Working Plan
+7. Explicit future user approvals
 
 Clarifications:
 
 - `Concept A` remains the approved implemented baseline.
 - `Concept C` is the authoritative direction for the current `Phase 5` implementation task.
+- `Concept D` is the current production default following the user's explicit Phase 15.5 decision.
+- Concept A and Concept C remain retained preview implementations and were not deleted.
 - `Concept B` remains archived and must not be implemented.
 - `SITE123` is a content, brand, and continuity reference only.
 - `SITE123` code must not be copied.
@@ -110,6 +113,7 @@ Confirmed visual comparison or fidelity documentation:
 | Concept C | `concept-c-challenges-formats-desktop.png` | `D:\alexp\HumaLab Projects\huma-labs-site\docs\design-concepts\images\concept-c-challenges-formats-desktop.png` | Desktop | Challenges and development formats | Confirmed review asset |
 | Concept C | `concept-c-outcomes-contact-desktop.png` | `D:\alexp\HumaLab Projects\huma-labs-site\docs\design-concepts\images\concept-c-outcomes-contact-desktop.png` | Desktop | Outcomes and contact | Confirmed review asset |
 | Concept C | `concept-c-hero-mobile.png` | `D:\alexp\HumaLab Projects\huma-labs-site\docs\design-concepts\images\concept-c-hero-mobile.png` | Mobile | Hero | Confirmed review asset |
+| Concept D | `concept-d-home-desktop.png` | `D:\alexp\HumaLab Projects\huma-labs-site\docs\design-concepts\images\concept-d-home-desktop.png` | Desktop | Complete Home direction | Selected and implemented in Phase 15.5 |
 
 Current confirmed blockers from design references:
 
@@ -126,6 +130,7 @@ Current confirmed blockers from design references:
 - Phase 13 implementation evidence is saved under `docs/implementation/validation/phase-13/`, including `phase13-qa-report.md` and a new `validate:qa` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. Scope confirmed with the user before implementation: this is a QA/validation sweep over Phases 4-12 (no new production features); accessibility auditing built on `axe-core` (installed as a dev-only dependency, explicitly approved) run through the existing local headless-browser tooling. Three real, pre-existing accessibility defects (insufficient button contrast, duplicate navigation landmarks, a missing page-level heading on the Insight route) were found and fixed within this phase; the final full sweep across both concepts, both languages, and both pages at mobile and desktop viewports shows zero accessibility violations and zero real tracking requests.
 - Phase 14 implementation evidence is saved under `docs/implementation/validation/phase-14/`, including `phase14-concept-decision-report.md` and a new `validate:concept-decision` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. This is a decision phase, not an implementation phase: the user was asked to choose the final production concept after reviewing Phase 13's QA evidence (both concepts are fully implemented, fidelity-verified, and pass identical QA), and chose **Concept A**. Scope confirmed with the user: record the decision and confirm `siteConfig.defaultConcept` matches it (it already did — `"a"` — so no code change was required); Concept C's implementation is explicitly retained in the codebase, not removed, per the user's explicit choice to defer any cleanup rather than perform it now.
 - Phase 15 implementation evidence is saved under `docs/implementation/validation/phase-15/`, including `phase15-git-github-report.md` and a new `validate:git` script, and the phase is `READY FOR REVIEW` pending user approval as of `2026-08-20`. Scope confirmed with the user before implementation: a single clean initial commit representing the current final state (not a fabricated per-phase history, since the project was not tracked in Git from day one); GitHub publication targets the user's existing repository at `https://github.com/AlexPaks/huma-labs-site`, confirmed empty via `git ls-remote` before any local Git operation. The repository was initialized, `.gitignore` reviewed and hardened (added `.claude/`), two stray unreferenced `vite.config.js`/`vite.config.d.ts` build artifacts removed, a `README.md` added, and two clean commits created on `main` with the `origin` remote configured. The `git push` itself could not be completed by the agent — Windows Credential Manager (`wincred`) requires an interactive authentication prompt that this tool's non-interactive shell cannot display — so the user explicitly chose to run `git push -u origin main` themselves in their own terminal.
+- Phase 15.5 implementation evidence is saved under `docs/implementation/validation/phase-15.5/`. The user selected Concept D, approved its implementation, and requested it as the default. The implementation preserves the Concept A information architecture while adding the selected structural photo system, four responsive photographic assets, and a dedicated `data-concept="d"` presentation layer. Build, content, language, and local Edge desktop/mobile verification pass. No Git commit, push, or deployment was performed.
 
 Hero v2 persistence verification record:
 
@@ -1274,6 +1279,7 @@ Every phase must report:
 | Phase 13 | Responsive, Accessibility and Full QA | COMPLETED | 2026-08-20 | 2026-08-20 | Full QA sweep across Phases 4-12 (responsiveness, axe-core accessibility, bilingual/RTL-LTR, concept parity, tracking safety, crawlability, failure states); 3 real accessibility defects found and fixed (button contrast, duplicate nav landmarks, missing page heading); final sweep shows zero violations and zero real tracking requests; report and evidence saved under `docs/implementation/validation/phase-13/` | User approved |
 | Phase 14 | Final Concept Decision | COMPLETED | 2026-08-20 | 2026-08-20 | User reviewed Phase 13 QA evidence and selected **Concept A** as the final production concept; `siteConfig.defaultConcept` already matched, no code change required; Concept C retained in the codebase per explicit user decision; report and evidence saved under `docs/implementation/validation/phase-14/` | User approved |
 | Phase 15 | Git and GitHub | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | Repository initialized, `.gitignore` reviewed and hardened, stray build artifacts removed, README added, clean initial commits created on `main`, `origin` remote configured; the actual `git push` is a manual step for the user to run in an interactive terminal (Windows Credential Manager needs an interactive prompt this tool's non-interactive shell cannot provide); report and evidence saved under `docs/implementation/validation/phase-15/` | Pending user review |
+| Phase 15.5 | Concept D Implementation and Default Selection | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | Structural photo-led Concept D implemented without changing site structure; four image assets persisted; `defaultConcept` set to `"d"`; Hebrew/English desktop/mobile QA passed; evidence saved under `docs/implementation/validation/phase-15.5/` | Pending user review |
 | Phase 16 | Vercel Deployment | NOT STARTED | — | — | — | Not approved |
 
 Allowed statuses:
@@ -1296,6 +1302,7 @@ The final Definition of Done must include:
 - Concept A implemented and verified
 - Concept C implemented and verified
 - production concept selected
+- Concept D implemented, verified, and selected as the current default
 - Hebrew complete
 - English complete
 - RTL verified
@@ -1333,8 +1340,8 @@ Additional Definition of Done checks:
 
 ## 30. Deferred decisions and later-phase blockers
 
-- Phase 4 Concept A implementation is `COMPLETED` with `User approved` on `2026-08-18`; Phase 5 Concept C implementation is `COMPLETED` with `User approved` on `2026-08-19`. The final production concept decision was resolved in Phase 14 on `2026-08-20`: **Concept A**. See §44.
-- Final implementation concept: resolved in Phase 14 — **Concept A**. Concept C's implementation is retained in the codebase (not removed); `siteConfig.defaultConcept` already matched this decision (`"a"`) and required no code change.
+- Phase 14's historical final-concept decision selected Concept A. That decision was explicitly superseded by the user's later Phase 15.5 approval on `2026-08-20`.
+- Current implementation concept: **Concept D**. Concept A and Concept C remain retained in the codebase as preview options; `siteConfig.defaultConcept` is now `"d"`.
 - Final LLM provider and model remain unresolved. This is a Phase 8 decision.
 - Crawlable rendering strategy remains unresolved. This is a Phase 12 decision.
 - Final domain, public language root decision, and Search Console ownership remain unresolved. This is a Phase 12 and Phase 16 decision.
@@ -3190,6 +3197,59 @@ Approval state:
 - No Phase 16 work was started. No deployment was performed.
 
 Recommended Phase 15 status:
+
+- `READY FOR REVIEW`
+
+Approval state:
+
+- `Pending user review`
+
+## 46. Phase 15.5 execution record
+
+### Confirmed scope and guardrails
+
+- The user selected the second structural photo-led improvement direction, named it `Concept D`, and explicitly requested that it become the default.
+- Existing content, routes, forms, assessment logic, analytics, SEO, Hebrew RTL, and section order remained unchanged.
+- Concept A and Concept C were retained and remain available as `?concept=a` and `?concept=c` previews.
+- No Git commit, push, package installation, or deployment was performed.
+
+### Implementation outcome
+
+- Added `d` to `SupportedConcept` and concept resolution.
+- Set `siteConfig.defaultConcept` to `"d"`.
+- Added a Concept D review-switcher option in Hebrew and English.
+- Implemented Concept D as a responsive presentation layer over the existing Concept A semantic component structure, preserving the site's information architecture.
+- Persisted four production photographic assets under `public/images/concept-d/`.
+- Persisted the approved desktop direction at `docs/design-concepts/images/concept-d-home-desktop.png`.
+- Added `scripts/validate-phase15-5.mjs` and `npm run validate:concept-d`.
+
+### Validation evidence
+
+- `npm.cmd run build`: passed.
+- `npm.cmd run validate:content`: passed.
+- `npm.cmd run validate:language`: passed.
+- Local Edge CDP browser QA: passed for Hebrew/English and desktop/mobile.
+- All four Concept D image assets loaded successfully.
+- No horizontal overflow, framework overlay, or console errors were found.
+- Concept A and Concept C preview routes remain functional and `noindex,nofollow`.
+- Home-to-Organizational-Insight navigation retained Concept D.
+
+Primary evidence:
+
+- `docs/implementation/validation/phase-15.5/phase15-5-concept-d-report.md`
+- `docs/implementation/validation/phase-15.5/phase15-5-concept-d-check.json`
+- `docs/implementation/validation/phase-15.5/phase15-5-validation-report.json`
+- `docs/implementation/validation/phase-15.5/concept-d-he-home-full.png`
+
+### Exit-criteria result
+
+- Concept D is implemented and selected as the default.
+- The approved structure and meaning are preserved.
+- Desktop/mobile and RTL/LTR evidence is saved.
+- Earlier concepts remain available for review.
+- Phase 16 was not started and no deployment was performed.
+
+Recommended Phase 15.5 status:
 
 - `READY FOR REVIEW`
 

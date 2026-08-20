@@ -529,7 +529,29 @@ HUMA מוצגת כאן כארגון עם קול שכבר קיים, אך עובר
 - למרות זאת, התיאור המילולי במסמך זה משמר את כיווני `Concept A`, `Concept B`, ו-`Concept C` במלואם לצורכי החלטה.
 - התמונות משמשות ככיוון חזותי ולא כמפרט UI סופי.
 
-## 10. Decision Status
+## 10. Concept D
 
-Concept A normalized visual specification persisted and approved by user.
-Phase 4 implementation is authorized.
+`Concept D` הוא הפיתוח המבני והצילומי של `Concept A` שנבחר במפורש על ידי המשתמש.
+
+הכיוון שומר על מבנה העמוד, סדר המקטעים, התוכן, הטיפוגרפיה, רקע ה-ivory החם, טקסט ה-charcoal וה-accent הנחושתי המרוסן. הוא מוסיף מערכת צילום עקבית שממחישה כיצד יכולת אנושית הופכת ליכולת ארגונית דרך קבוצות מתואמות, מערכות מודולריות, מיפוי משותף ותנועה קולקטיבית.
+
+הרפרנס החזותי הראשי:
+
+- `docs/design-concepts/images/concept-d-home-desktop.png`
+
+נכסי הצילום המיושמים:
+
+- `public/images/concept-d/hero-collective-system.jpg`
+- `public/images/concept-d/insight-collective-map.jpg`
+- `public/images/concept-d/capabilities-modular-system.jpg`
+- `public/images/concept-d/outcomes-collective-movement.jpg`
+
+החוט הנחושתי נשאר קו שטוח שמחבר בין אתגר ארגוני, פעולה אנושית מתואמת, תהליך פיתוח ותוצאה ארגונית. הכיוון נמנע מצילומי ישיבות משרד גנריים, דמות יחידה כמטאפורה, card grids, bento layouts, נתונים מומצאים, אייקונים דקורטיביים ואפקטים זוהרים.
+
+במובייל ההצהרה הטיפוגרפית נשארת האלמנט הראשון, והצילום המבני מופיע מיד אחריה. כל התוכן נשאר HTML סמנטי, דינמי ומתורגם; טקסט האתר אינו מוטמע בתמונות.
+
+## 11. Decision Status
+
+Concept D was selected by the user and implemented as the current default in Phase 15.5.
+
+Concept A and Concept C remain retained as review previews. No deployment has been performed.

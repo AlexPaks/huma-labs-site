@@ -5,7 +5,7 @@ import { siteConfig, type SupportedConcept } from "../config/site";
 const conceptStorageKey = "huma-concept";
 
 function isSupportedConcept(value: string | null | undefined): value is SupportedConcept {
-  return value === "a" || value === "c";
+  return value === "a" || value === "c" || value === "d";
 }
 
 export function getQueryConcept(search: string) {

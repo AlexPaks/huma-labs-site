@@ -3059,3 +3059,369 @@ html[dir="rtl"] .concept-c-capabilities__process-arrow {
     display: none;
   }
 }
+
+/* Concept D keeps Concept A's information architecture and adds the approved
+   structural, photo-led visual direction as a presentation-only layer. */
+.concept-site-shell[data-concept="d"] {
+  --site-max-width: 1260px;
+}
+
+.concept-site-shell[data-concept="d"] .concept-header {
+  background: rgba(246, 241, 232, 0.94);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero {
+  overflow: hidden;
+  padding-block-start: 0;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero > .concept-container {
+  width: min(100%, 1536px);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__grid {
+  min-height: min(49rem, calc(100svh - 5rem));
+  grid-template-columns: minmax(28rem, 1fr) minmax(30rem, 1fr);
+  grid-template-areas: "ledger content";
+  gap: 0;
+  padding-block-end: 0;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__ledger {
+  isolation: isolate;
+  min-height: min(49rem, calc(100svh - 5rem));
+  align-content: start;
+  padding: clamp(4rem, 7vw, 7.5rem) clamp(2.5rem, 6vw, 6rem);
+  color: #312a24;
+  background:
+    linear-gradient(90deg, rgba(246, 241, 232, 0.92) 0%, rgba(246, 241, 232, 0.7) 35%, rgba(246, 241, 232, 0.06) 78%),
+    url("/images/concept-d/hero-collective-system.jpg") center / cover no-repeat;
+}
+
+html[dir="rtl"] .concept-site-shell[data-concept="d"] .concept-hero__ledger {
+  background:
+    linear-gradient(270deg, rgba(246, 241, 232, 0.9) 0%, rgba(246, 241, 232, 0.62) 34%, rgba(246, 241, 232, 0.04) 76%),
+    url("/images/concept-d/hero-collective-system.jpg") center / cover no-repeat;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__ledger::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-inline-end: 1px solid rgba(117, 104, 90, 0.15);
+  background: linear-gradient(180deg, rgba(246, 241, 232, 0.18), transparent 35%, rgba(24, 21, 17, 0.08));
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__change-cluster,
+.concept-site-shell[data-concept="d"] .concept-hero__challenge-lines {
+  width: min(100%, 20rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__change-list li,
+.concept-site-shell[data-concept="d"] .concept-hero__challenge-lines p {
+  border-bottom-color: rgba(49, 42, 36, 0.2);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__content {
+  align-self: center;
+  width: min(100%, 47rem);
+  max-width: none;
+  padding: clamp(4rem, 7vw, 7.5rem) clamp(2.5rem, 6vw, 6.5rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__title {
+  font-size: clamp(3.9rem, 7.15vw, 7.2rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__thread {
+  position: absolute;
+  z-index: 3;
+  inset-inline: clamp(2rem, 7vw, 7rem);
+  inset-block-end: 1.5rem;
+  width: calc(100% - clamp(4rem, 14vw, 14rem));
+  height: 7rem;
+  margin: 0;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview {
+  width: 100%;
+  max-width: none;
+  grid-template-columns: minmax(15rem, 1fr) minmax(20rem, 1.45fr) minmax(15rem, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 0.85rem 2.5rem;
+  align-items: center;
+  margin: 0;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview::before,
+.concept-site-shell[data-concept="d"] .concept-hero__preview::after {
+  content: "";
+  min-height: 15rem;
+  align-self: stretch;
+  background-position: center;
+  background-size: cover;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview::before {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  background-image: url("/images/concept-d/insight-collective-map.jpg");
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview::after {
+  grid-column: 3;
+  grid-row: 1 / -1;
+  background-image: url("/images/concept-d/capabilities-modular-system.jpg");
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview-rule,
+.concept-site-shell[data-concept="d"] .concept-hero__preview > p,
+.concept-site-shell[data-concept="d"] .concept-hero__preview-title {
+  grid-column: 2;
+}
+
+.concept-site-shell[data-concept="d"] .concept-hero__preview-title {
+  max-width: 18ch;
+  font-size: clamp(1.75rem, 2.7vw, 2.8rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-problem-insight {
+  padding-block-start: clamp(3.5rem, 7vw, 6rem);
+}
+
+.concept-site-shell[data-concept="d"] .concept-problem-insight__context {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.concept-site-shell[data-concept="d"] .concept-problem-insight__context::after {
+  content: "";
+  min-height: clamp(18rem, 31vw, 27rem);
+  background:
+    linear-gradient(180deg, transparent 72%, rgba(24, 21, 17, 0.08)),
+    url("/images/concept-d/insight-collective-map.jpg") center / cover no-repeat;
+}
+
+.concept-site-shell[data-concept="d"] .concept-problem-insight__entry {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border-inline-start: 1px solid rgba(181, 108, 73, 0.34);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.concept-site-shell[data-concept="d"] .concept-capabilities::after {
+  content: "";
+  min-height: clamp(22rem, 40vw, 34rem);
+  margin-block-start: 1rem;
+  background:
+    linear-gradient(90deg, rgba(246, 241, 232, 0.08), transparent 25%, transparent 75%, rgba(246, 241, 232, 0.08)),
+    url("/images/concept-d/capabilities-modular-system.jpg") center / cover no-repeat;
+}
+
+.concept-site-shell[data-concept="d"] .concept-capabilities__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-block: 1px solid rgba(117, 104, 90, 0.18);
+}
+
+.concept-site-shell[data-concept="d"] .concept-capabilities__item {
+  min-height: 14rem;
+  padding: 1.4rem;
+  border-top: 0;
+  border-inline-end: 1px solid rgba(117, 104, 90, 0.18);
+}
+
+.concept-site-shell[data-concept="d"] .concept-capabilities__item:last-child {
+  border-inline-end: 0;
+}
+
+.concept-site-shell[data-concept="d"] .concept-capabilities__process {
+  padding-block: 1rem 0.5rem;
+}
+
+.concept-site-shell[data-concept="d"] .concept-challenges__top,
+.concept-site-shell[data-concept="d"] .concept-challenges__bottom {
+  padding-block: 1.5rem;
+  border-block-start: 1px solid rgba(117, 104, 90, 0.16);
+}
+
+.concept-site-shell[data-concept="d"] .concept-outcomes::before {
+  content: "";
+  min-height: clamp(24rem, 45vw, 38rem);
+  background:
+    linear-gradient(180deg, rgba(246, 241, 232, 0.04), rgba(24, 21, 17, 0.1)),
+    url("/images/concept-d/outcomes-collective-movement.jpg") center / cover no-repeat;
+}
+
+.concept-site-shell[data-concept="d"] .concept-outcomes__band {
+  max-width: 58rem;
+}
+
+.concept-site-shell[data-concept="d"] .concept-outcomes__grid {
+  gap: 0;
+  border-block: 1px solid rgba(117, 104, 90, 0.18);
+}
+
+.concept-site-shell[data-concept="d"] .concept-outcomes__item {
+  min-height: 10rem;
+  padding: 1.25rem;
+  border-top: 0;
+  border-inline-end: 1px solid rgba(117, 104, 90, 0.18);
+}
+
+.concept-site-shell[data-concept="d"] .concept-outcomes__item:last-child {
+  border-inline-end: 0;
+}
+
+@media (max-width: 1080px) {
+  .concept-site-shell[data-concept="d"] .concept-hero__grid {
+    grid-template-columns: minmax(23rem, 0.9fr) minmax(27rem, 1.1fr);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__content {
+    padding-inline: clamp(2rem, 5vw, 4rem);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-capabilities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-capabilities__item:nth-child(2) {
+    border-inline-end: 0;
+  }
+}
+
+@media (max-width: 959px) {
+  .concept-site-shell[data-concept="d"] .concept-hero__grid {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "content"
+      "ledger";
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__content {
+    width: min(100%, 48rem);
+    margin-inline: auto;
+    padding-block: clamp(4rem, 10vw, 6rem);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__ledger {
+    min-height: 36rem;
+    padding: 3rem clamp(1.5rem, 7vw, 4rem);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__thread {
+    inset-inline: 8%;
+    inset-block-end: 1rem;
+    width: 84%;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview {
+    width: min(100% - 3rem, 48rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::before,
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::after {
+    grid-row: 1;
+    min-height: 13rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::before {
+    grid-column: 1;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::after {
+    grid-column: 2;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview-rule,
+  .concept-site-shell[data-concept="d"] .concept-hero__preview > p,
+  .concept-site-shell[data-concept="d"] .concept-hero__preview-title {
+    grid-column: 1 / -1;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-capabilities__item {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 719px) {
+  .concept-site-shell[data-concept="d"] .concept-hero__content {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__title {
+    font-size: clamp(2.65rem, 13vw, 4rem);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__ledger {
+    order: initial;
+    min-height: 29rem;
+    align-content: end;
+    padding: 2rem 1.25rem;
+    background:
+      linear-gradient(180deg, transparent 12%, rgba(246, 241, 232, 0.15) 42%, rgba(246, 241, 232, 0.94) 78%),
+      url("/images/concept-d/hero-collective-system.jpg") center / cover no-repeat;
+  }
+
+  html[dir="rtl"] .concept-site-shell[data-concept="d"] .concept-hero__ledger {
+    background:
+      linear-gradient(180deg, transparent 12%, rgba(246, 241, 232, 0.15) 42%, rgba(246, 241, 232, 0.94) 78%),
+      url("/images/concept-d/hero-collective-system.jpg") center / cover no-repeat;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__challenge-lines {
+    display: none;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__thread {
+    display: block;
+    height: 4rem;
+    opacity: 0.76;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview {
+    width: calc(100% - 1.5rem);
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 2rem 3.5rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::before {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 13rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview::after {
+    display: none;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-hero__preview-rule,
+  .concept-site-shell[data-concept="d"] .concept-hero__preview > p,
+  .concept-site-shell[data-concept="d"] .concept-hero__preview-title {
+    grid-column: 1;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-problem-insight__entry {
+    padding: 1.5rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-problem-insight__context::after,
+  .concept-site-shell[data-concept="d"] .concept-capabilities::after,
+  .concept-site-shell[data-concept="d"] .concept-outcomes::before {
+    min-height: 17rem;
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-capabilities__grid,
+  .concept-site-shell[data-concept="d"] .concept-outcomes__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .concept-site-shell[data-concept="d"] .concept-capabilities__item,
+  .concept-site-shell[data-concept="d"] .concept-outcomes__item {
+    border-inline-end: 0;
+  }
+}

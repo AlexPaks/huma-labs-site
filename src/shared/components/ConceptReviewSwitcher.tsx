@@ -26,6 +26,14 @@ export function ConceptReviewSwitcher() {
       >
         {t("system", "conceptSwitcher.optionC")}
       </button>
+      <button
+        aria-pressed={currentConcept === "d"}
+        className="concept-review-switcher__option"
+        onClick={() => switchConcept("d")}
+        type="button"
+      >
+        {t("system", "conceptSwitcher.optionD")}
+      </button>
     </div>
   );
 }
