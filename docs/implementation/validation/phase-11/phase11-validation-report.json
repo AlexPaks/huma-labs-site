@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T14:58:55.628Z",
+  "generatedAt": "2026-08-20T17:07:12.678Z",
   "checks": [
     {
       "name": "event-catalog: contains exactly the required 21 events",

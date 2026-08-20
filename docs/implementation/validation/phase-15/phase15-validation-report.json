@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-20T17:02:53.646Z",
+  "checks": [
+    {
+      "name": "git: repository is initialized (.git exists)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "git: current branch is main",
+      "passed": true,
+      "detail": "branch=main"
+    },
+    {
+      "name": "git: at least one commit exists on main",
+      "passed": true,
+      "detail": "commitCount=2"
+    },
+    {
+      "name": "git: origin remote points at the confirmed GitHub repository",
+      "passed": true,
+      "detail": "remoteUrl=https://github.com/AlexPaks/huma-labs-site"
+    },
+    {
+      "name": "git: working tree is clean (no uncommitted changes)",
+      "passed": false,
+      "detail": "status=\"M package.json\\n?? scripts/validate-phase15.mjs\""
+    },
+    {
+      "name": ".gitignore: excludes node_modules/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": ".gitignore: excludes dist/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": ".gitignore: excludes .env",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": ".gitignore: excludes *.tsbuildinfo",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": ".gitignore: excludes .claude/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "git: no node_modules/dist/.env files are tracked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "git: .claude/ local tooling settings are not tracked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "git: package-lock.json is tracked (reproducible installs)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "README.md exists for GitHub publication",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": false,
+  "note": "Actual `git push` to the remote is a manual step performed by the user in their own interactive terminal (Windows Credential Manager requires an interactive prompt this tool's non-interactive shell cannot provide). This validator checks the local repository state is ready to publish, not that publication has completed."
+}

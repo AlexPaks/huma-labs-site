@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T14:58:45.747Z",
+  "generatedAt": "2026-08-20T17:07:03.266Z",
   "results": [
     {
       "name": "request-schema: valid request accepted",
@@ -129,7 +129,7 @@
     {
       "name": "end-to-end: handleAnalyzeAssessment returns a valid result via the mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"55ef9eb0-4c97-4442-8e5b-79064572fcb2\",\"result\":{\"resultId\":\"55ef9eb0-4c97-4442-8e5b-79064572fcb2\",\"quizVersion\":\"1.0.0\",\"promptVersion\":\"1.0.0\",\"language\":\"he\",\"primaryCapability\":\"adaptability\",\"secondaryCapabilities\":[\"resilience\"],\"executiveSummary\":\"זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.\",\"organizationalAnalysis\":\"בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.\",\"possibleOrganizationalImpact\":\"חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.\",\"signalsToExamine\":[\"קצב השינוי הנדרש מול קצב ההיערכות בפועל\",\"בהירות התפקידים סביב האתגר\",\"כלים קיימים מול כלים חסרים\"],\"recommendedDirection\":{\"discover\":\"מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.\",\"design\":\"התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.\",\"act\":\"יישום מדורג עם נקודות בדיקה קצובות בזמן.\"},\"suggestedNextStep\":\"לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.\",\"disclaimer\":\"זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה.\"}}"
+      "detail": "{\"requestId\":\"9639cb21-614f-437e-996d-402737016ffd\",\"result\":{\"resultId\":\"9639cb21-614f-437e-996d-402737016ffd\",\"quizVersion\":\"1.0.0\",\"promptVersion\":\"1.0.0\",\"language\":\"he\",\"primaryCapability\":\"adaptability\",\"secondaryCapabilities\":[\"resilience\"],\"executiveSummary\":\"זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.\",\"organizationalAnalysis\":\"בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.\",\"possibleOrganizationalImpact\":\"חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.\",\"signalsToExamine\":[\"קצב השינוי הנדרש מול קצב ההיערכות בפועל\",\"בהירות התפקידים סביב האתגר\",\"כלים קיימים מול כלים חסרים\"],\"recommendedDirection\":{\"discover\":\"מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.\",\"design\":\"התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.\",\"act\":\"יישום מדורג עם נקודות בדיקה קצובות בזמן.\"},\"suggestedNextStep\":\"לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.\",\"disclaimer\":\"זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה.\"}}"
     }
   ],
   "passed": true

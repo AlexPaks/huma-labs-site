@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T14:59:05.916Z",
+  "generatedAt": "2026-08-20T17:07:22.173Z",
   "checks": [
     {
       "name": "dependency: axe-core is installed as a devDependency",

@@ -2,7 +2,7 @@
 
 Status: Authoritative planning and phase-tracking document for this workspace  
 Last updated: 2026-08-18  
-Scope: Phase 0 through Phase 3 completed and approved; Concept A implementation, final acceptance verification, and targeted localized Contact anchor correction completed in workspace; Phase 4 is completed and approved as of 2026-08-18; Phase 5 Concept C implementation is completed and approved as of 2026-08-19; Phase 6 Concept Switching is completed and approved as of 2026-08-19; Phase 7 Dynamic Assessment Engine is completed and approved as of 2026-08-19; Phase 8 Secure LLM Integration is completed and approved as of 2026-08-19; Phase 9 Dynamic Result Experience is completed and approved as of 2026-08-19; Phase 10 Secure Email Integration is completed and approved as of 2026-08-19; Phase 11 Marketing Analytics, Campaign Attribution and Cookie Consent is completed and approved as of 2026-08-20; Phase 12 SEO, Google Search and AI Search Visibility is completed and approved as of 2026-08-20; Phase 13 Responsive, Accessibility and Full QA is completed and approved as of 2026-08-20; Phase 14 Final Concept Decision is complete in workspace and `READY FOR REVIEW` as of 2026-08-20, pending user approval — the confirmed final production concept is **Concept A**  
+Scope: Phase 0 through Phase 3 completed and approved; Concept A implementation, final acceptance verification, and targeted localized Contact anchor correction completed in workspace; Phase 4 is completed and approved as of 2026-08-18; Phase 5 Concept C implementation is completed and approved as of 2026-08-19; Phase 6 Concept Switching is completed and approved as of 2026-08-19; Phase 7 Dynamic Assessment Engine is completed and approved as of 2026-08-19; Phase 8 Secure LLM Integration is completed and approved as of 2026-08-19; Phase 9 Dynamic Result Experience is completed and approved as of 2026-08-19; Phase 10 Secure Email Integration is completed and approved as of 2026-08-19; Phase 11 Marketing Analytics, Campaign Attribution and Cookie Consent is completed and approved as of 2026-08-20; Phase 12 SEO, Google Search and AI Search Visibility is completed and approved as of 2026-08-20; Phase 13 Responsive, Accessibility and Full QA is completed and approved as of 2026-08-20; Phase 14 Final Concept Decision is completed and approved as of 2026-08-20 — the confirmed final production concept is **Concept A**; Phase 15 Git and GitHub is complete in workspace and `READY FOR REVIEW` as of 2026-08-20, pending user approval and a manual `git push` by the user  
 
 ## 1. Planning guardrails
 
@@ -124,7 +124,8 @@ Current confirmed blockers from design references:
 - Phase 11 implementation evidence is saved under `docs/implementation/validation/phase-11/`, including `phase11-marketing-analytics-report.md` and a new `validate:analytics` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. Scope confirmed with the user before implementation: build the full provider architecture including real Google/Meta/TikTok adapters, but never activate any of them or load any real tracking script — matching the master plan's "Do not add tracking scripts" guardrail and the same mock-first pattern used in Phases 8 and 10. No real tracking script was ever loaded and no real tracking network request was ever sent, confirmed via a `Network.requestWillBeSent` browser check across a full realistic session (consent flow, navigation, quiz completion, form submission) showing zero requests to any Google/Meta/TikTok host.
 - Phase 12 implementation evidence is saved under `docs/implementation/validation/phase-12/`, including `phase12-seo-report.md` and a new `validate:seo` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. Scope confirmed with the user before implementation: crawlable rendering via build-time pre-rendering using the existing local headless-browser tooling (no new npm dependency, no SSR conversion); `robots.txt` explicitly allows both `OAI-SearchBot` and `GPTBot`; a placeholder base domain (`https://www.huma-labs.example`) is used everywhere a real domain is needed, pending the final-domain decision (§23). Verified via a genuine non-JS-executing HTTP fetch (Node's `fetch`, no script execution) against the real `npm run build` output showing correct, non-duplicated SEO tags and real visible content on all four indexable routes.
 - Phase 13 implementation evidence is saved under `docs/implementation/validation/phase-13/`, including `phase13-qa-report.md` and a new `validate:qa` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. Scope confirmed with the user before implementation: this is a QA/validation sweep over Phases 4-12 (no new production features); accessibility auditing built on `axe-core` (installed as a dev-only dependency, explicitly approved) run through the existing local headless-browser tooling. Three real, pre-existing accessibility defects (insufficient button contrast, duplicate navigation landmarks, a missing page-level heading on the Insight route) were found and fixed within this phase; the final full sweep across both concepts, both languages, and both pages at mobile and desktop viewports shows zero accessibility violations and zero real tracking requests.
-- Phase 14 implementation evidence is saved under `docs/implementation/validation/phase-14/`, including `phase14-concept-decision-report.md` and a new `validate:concept-decision` script, and the phase is `READY FOR REVIEW` pending user approval as of `2026-08-20`. This is a decision phase, not an implementation phase: the user was asked to choose the final production concept after reviewing Phase 13's QA evidence (both concepts are fully implemented, fidelity-verified, and pass identical QA), and chose **Concept A**. Scope confirmed with the user: record the decision and confirm `siteConfig.defaultConcept` matches it (it already did — `"a"` — so no code change was required); Concept C's implementation is explicitly retained in the codebase, not removed, per the user's explicit choice to defer any cleanup rather than perform it now.
+- Phase 14 implementation evidence is saved under `docs/implementation/validation/phase-14/`, including `phase14-concept-decision-report.md` and a new `validate:concept-decision` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. This is a decision phase, not an implementation phase: the user was asked to choose the final production concept after reviewing Phase 13's QA evidence (both concepts are fully implemented, fidelity-verified, and pass identical QA), and chose **Concept A**. Scope confirmed with the user: record the decision and confirm `siteConfig.defaultConcept` matches it (it already did — `"a"` — so no code change was required); Concept C's implementation is explicitly retained in the codebase, not removed, per the user's explicit choice to defer any cleanup rather than perform it now.
+- Phase 15 implementation evidence is saved under `docs/implementation/validation/phase-15/`, including `phase15-git-github-report.md` and a new `validate:git` script, and the phase is `READY FOR REVIEW` pending user approval as of `2026-08-20`. Scope confirmed with the user before implementation: a single clean initial commit representing the current final state (not a fabricated per-phase history, since the project was not tracked in Git from day one); GitHub publication targets the user's existing repository at `https://github.com/AlexPaks/huma-labs-site`, confirmed empty via `git ls-remote` before any local Git operation. The repository was initialized, `.gitignore` reviewed and hardened (added `.claude/`), two stray unreferenced `vite.config.js`/`vite.config.d.ts` build artifacts removed, a `README.md` added, and two clean commits created on `main` with the `origin` remote configured. The `git push` itself could not be completed by the agent — Windows Credential Manager (`wincred`) requires an interactive authentication prompt that this tool's non-interactive shell cannot display — so the user explicitly chose to run `git push -u origin main` themselves in their own terminal.
 
 Hero v2 persistence verification record:
 
@@ -1271,8 +1272,8 @@ Every phase must report:
 | Phase 11 | Marketing Analytics, Campaign Attribution and Cookie Consent | COMPLETED | 2026-08-19 | 2026-08-19 | Event catalog, provider abstraction (mock + real Google/Meta/TikTok, all disabled by default), consent-aware tracking chokepoint, cookie consent banner, and campaign attribution implemented and verified with zero real tracking requests ever sent; report and evidence saved under `docs/implementation/validation/phase-11/` | User approved |
 | Phase 12 | SEO, Google Search and AI Search Visibility | COMPLETED | 2026-08-20 | 2026-08-20 | Build-time pre-rendering, canonical/hreflang/localized metadata, robots.txt (OAI-SearchBot and GPTBot explicitly allowed), sitemap.xml, and home-page structured data implemented and verified via a non-JS HTTP fetch against real build output; report and evidence saved under `docs/implementation/validation/phase-12/` | User approved |
 | Phase 13 | Responsive, Accessibility and Full QA | COMPLETED | 2026-08-20 | 2026-08-20 | Full QA sweep across Phases 4-12 (responsiveness, axe-core accessibility, bilingual/RTL-LTR, concept parity, tracking safety, crawlability, failure states); 3 real accessibility defects found and fixed (button contrast, duplicate nav landmarks, missing page heading); final sweep shows zero violations and zero real tracking requests; report and evidence saved under `docs/implementation/validation/phase-13/` | User approved |
-| Phase 14 | Final Concept Decision | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | User reviewed Phase 13 QA evidence and selected **Concept A** as the final production concept; `siteConfig.defaultConcept` already matched, no code change required; Concept C retained in the codebase per explicit user decision; report and evidence saved under `docs/implementation/validation/phase-14/` | Pending user review |
-| Phase 15 | Git and GitHub | NOT STARTED | — | — | — | Not approved |
+| Phase 14 | Final Concept Decision | COMPLETED | 2026-08-20 | 2026-08-20 | User reviewed Phase 13 QA evidence and selected **Concept A** as the final production concept; `siteConfig.defaultConcept` already matched, no code change required; Concept C retained in the codebase per explicit user decision; report and evidence saved under `docs/implementation/validation/phase-14/` | User approved |
+| Phase 15 | Git and GitHub | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | Repository initialized, `.gitignore` reviewed and hardened, stray build artifacts removed, README added, clean initial commits created on `main`, `origin` remote configured; the actual `git push` is a manual step for the user to run in an interactive terminal (Windows Credential Manager needs an interactive prompt this tool's non-interactive shell cannot provide); report and evidence saved under `docs/implementation/validation/phase-15/` | Pending user review |
 | Phase 16 | Vercel Deployment | NOT STARTED | — | — | — | Not approved |
 
 Allowed statuses:
@@ -3111,6 +3112,84 @@ Approval state:
 - No Phase 15 or later work was started. No Git modification was performed. No deployment was performed.
 
 Recommended Phase 14 status:
+
+- `READY FOR REVIEW`
+
+Approval state:
+
+- `User approved`
+
+## 45. Phase 15 execution record
+
+### Confirmed scope and guardrails for Phase 15
+
+- User explicitly approved Phase 15 Git and GitHub on `2026-08-20`, in the same conversation turn as approving Phase 14 as complete.
+- Before implementation, the user was asked how to build the initial Git history, since the repository had never been under version control (no `.git` existed, confirmed via `git status` returning "not a git repository"). Decision: a single clean initial commit representing the current final state — not a fabricated, retroactive per-phase commit history, since the actual work was not done through Git in sequence and reconstructing "Phase N" commit messages against the final file contents would be misleading, not genuinely historical.
+- The user was also asked about GitHub publication readiness, since `gh` CLI is not installed in this environment and the agent had no way to know whether a repository already existed. The user confirmed an existing repository at `https://github.com/AlexPaks/huma-labs-site` and provided its URL. `git ls-remote` against that URL (read-only, no local state changed) confirmed it was completely empty before any local Git operation — no risk of overwriting existing remote history.
+- No deployment was performed (guardrail #10, "GitHub and deployment remain prohibited before their phases" — GitHub is now in scope for this phase; deployment remains Phase 16's).
+
+### Files created in Phase 15
+
+- `README.md`
+- `scripts/validate-phase15.mjs`
+- `docs/implementation/validation/phase-15/phase15-validation-report.json`
+- `docs/implementation/validation/phase-15/phase15-git-github-report.md`
+
+### Existing files changed in Phase 15
+
+- `.gitignore` (added `.claude/`)
+- `package.json` (added `validate:git` script)
+- `docs/implementation/huma-website-master-plan.md`
+
+### Files removed in Phase 15
+
+- `vite.config.js`, `vite.config.d.ts` — stray, unreferenced build byproducts (a previous `tsc` run had accidentally compiled `vite.config.ts` into these files at the repository root; nothing imports them, and `vite.config.ts` is the only file Vite's dev/build/preview commands actually load). Confirmed unreferenced via a repo-wide grep before deletion, and confirmed `tsc -b` still passes cleanly after removal.
+
+### Implementation outcome
+
+- Reviewed the pre-existing `.gitignore` (created in an earlier phase) and confirmed it already correctly excludes `node_modules/`, `dist/`, `.env`/`.env.*` (with an explicit `.env.example` allow-exception), `*.tsbuildinfo`, and `.tmp-vite-*.log`. Added `.claude/` (this tool's local session settings, analogous to `.vscode/settings.json` — machine-specific, never meant for a shared repository).
+- Scanned for any real `.env`/secret files before staging anything; only the placeholder `.env.example` (no real credentials) exists on disk.
+- Removed the two stray build-artifact files described above.
+- Ran `git init -b main`, staged everything with `git add -A`, and reviewed the staged file list (355 files) by top-level directory before committing — confirmed no `node_modules/`, `dist/`, `.env`, `.claude/`, or `.tsbuildinfo` entries were staged.
+- Created the initial commit summarizing the full Phase 0-14 history and explicitly restating the "no real credentials, no real network calls, no deployment" guardrail record in the commit message itself.
+- Added a `README.md` (setup instructions, script reference, project structure, current phase status, guardrail summary) as a second commit — kept separate from the initial commit per this tool's own git-safety convention of never bundling unrelated changes into a single commit after the fact.
+- Added `origin` pointing at the user-provided GitHub repository URL.
+- Attempted `git push -u origin main`; it hung waiting on an interactive Windows Credential Manager (`wincred`) authentication prompt this tool's non-interactive shell cannot display, and was terminated by a command timeout. No partial or corrupted state resulted — `git status` afterward confirmed a clean working tree and both commits intact. The user was informed and explicitly chose to run the push themselves in their own interactive terminal, where the credential prompt can be answered.
+- Added `scripts/validate-phase15.mjs` (`npm run validate:git`) as a regression guard: repository initialized, on `main`, at least one commit, `origin` matches the confirmed URL, working tree clean, the five key `.gitignore` patterns present, no `node_modules`/`dist`/`.env` files tracked, `.claude/` not tracked, `package-lock.json` tracked, and `README.md` exists.
+
+### Commands executed for Phase 15
+
+- `git ls-remote https://github.com/AlexPaks/huma-labs-site` (read-only, confirmed the remote was empty before any local operation)
+- `git init -b main`
+- `git add -A`, `git status --short` (reviewed before committing)
+- `git commit` ×2 (initial commit; README commit)
+- `git remote add origin https://github.com/AlexPaks/huma-labs-site`
+- `git push -u origin main` (did not complete — see above)
+- `npm.cmd run build`
+- `npm.cmd run validate:content` through `npm.cmd run validate:concept-decision` (all 9 prior validators)
+- `npm.cmd run validate:git` (new)
+
+### Validation results
+
+- Build and all nine prior validators: all still passed, confirming no regression — the only application-affecting change this phase made was removing two unused stray build-artifact files, already confirmed safe via a clean `tsc -b` run.
+- New Git validation result: passed once the Phase 15 deliverables (this validator, the README, the `package.json` script, and this master-plan update) were committed as a third commit — repository initialized on `main`, two prior commits present, `origin` correctly configured, working tree clean, all five key `.gitignore` patterns present, no unwanted files tracked, `package-lock.json` tracked, `README.md` present. Full report: `docs/implementation/validation/phase-15/phase15-validation-report.json`.
+
+### Known issues and deferred items retained after Phase 15
+
+- **The actual `git push` to GitHub has not completed.** The user must run `git push -u origin main` in their own interactive terminal from `D:\alexp\HumaLab Projects\huma-labs-site`; Windows Credential Manager will prompt for GitHub authentication at that point.
+- Branch-protection rules, PR templates, and CI configuration were not set up — not requested and not implied by "PR readiness" at this stage (there is nothing to open a PR against yet, since this is the initial publication).
+- Vercel Deployment (Phase 16) remains not started, and remains explicitly prohibited until then.
+
+### Phase 15 exit-criteria result
+
+- A Git repository exists locally with a clean, reviewed initial history on `main`.
+- No secrets, dependencies, or build output were committed — verified via an explicit pre-commit review and a post-commit regression-guard script.
+- The `origin` remote is configured against the user's confirmed, pre-verified-empty GitHub repository.
+- `README.md` and version-control regression-guard tooling are in place for PR readiness.
+- The actual push to GitHub is explicitly deferred to the user, by their own choice, for an environment-specific authentication reason — not silently skipped or claimed as done.
+- No Phase 16 work was started. No deployment was performed.
+
+Recommended Phase 15 status:
 
 - `READY FOR REVIEW`
 

@@ -17,7 +17,8 @@
     "validate:seo": "node scripts/validate-phase12.mjs",
     "seo:generate": "node scripts/generate-seo-files.mjs",
     "validate:qa": "node scripts/validate-phase13.mjs",
-    "validate:concept-decision": "node scripts/validate-phase14.mjs"
+    "validate:concept-decision": "node scripts/validate-phase14.mjs",
+    "validate:git": "node scripts/validate-phase15.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.118.0",
