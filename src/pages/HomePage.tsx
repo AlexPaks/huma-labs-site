@@ -141,7 +141,7 @@ export function HomePage() {
         return (
           <ProblemInsightSection
             body={contextParagraphs}
-            changeItems={[...contextChangeItems, ...contextTitleParts.slice(1)].slice(0, 4)}
+            changeItems={[...contextChangeItems, ...contextTitleParts.slice(1)].slice(0, 6)}
             challengeLines={contextChallengeLines}
             headingId="organizational-context-heading"
             label={tRef(homePage.context.eyebrowRef)}

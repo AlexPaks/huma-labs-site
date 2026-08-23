@@ -1580,6 +1580,13 @@ html[dir="rtl"] .concept-insight-flow__prompt {
   .concept-insight-flow__thread {
     opacity: 0.62;
   }
+
+  .concept-problem-insight {
+    grid-template-areas:
+      "entry"
+      "context"
+      "thread";
+  }
 }
 
 @media (max-width: 719px) {
