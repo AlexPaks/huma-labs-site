@@ -961,6 +961,10 @@ a {
   border-top: 1px solid rgba(117, 104, 90, 0.18);
 }
 
+.concept-contact {
+  grid-template-areas: "form content";
+}
+
 .concept-contact__form,
 .concept-result__contact .concept-form {
   padding: clamp(1.4rem, 3vw, 2rem);
@@ -992,6 +996,14 @@ a {
 .concept-result__contact-copy {
   display: grid;
   gap: 1rem;
+}
+
+.concept-contact__content {
+  grid-area: content;
+}
+
+.concept-contact__form {
+  grid-area: form;
 }
 
 .concept-contact__title,
@@ -1499,6 +1511,12 @@ html[dir="rtl"] .concept-insight-flow__prompt {
   .concept-result--page .concept-result__panel,
   .concept-result--page .concept-result__contact {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .concept-contact {
+    grid-template-areas:
+      "content"
+      "form";
   }
 
   .concept-capabilities__process-steps {

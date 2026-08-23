@@ -56,14 +56,14 @@ export function OutcomesContactSection({
         </div>
 
         <div className="concept-contact" id={contactSectionId}>
-          <div className="concept-contact__form">
-            <ContactForm formId={formId} />
-          </div>
-
           <div className="concept-contact__content">
             <p className="concept-kicker">{contactLabel}</p>
             <h3 className="concept-contact__title">{contactTitle}</h3>
             <p className="concept-contact__body">{contactBody}</p>
+          </div>
+
+          <div className="concept-contact__form">
+            <ContactForm formId={formId} />
           </div>
         </div>
       </div>
