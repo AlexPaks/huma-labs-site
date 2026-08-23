@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-23T10:52:33.536Z",
+  "networkRequestsSent": 0,
+  "realEmailsSent": 0,
+  "results": [
+    {
+      "name": "configuration: missing credentials fail before a network request",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "sandbox: builds an authenticated Brevo request without delivery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live mode: omits the Brevo sandbox header",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email service: selects Brevo and renders the existing template",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "errors: classifies provider rejection without exposing credentials",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": true
+}

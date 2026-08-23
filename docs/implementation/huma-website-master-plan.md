@@ -2,7 +2,7 @@
 
 Status: Authoritative planning and phase-tracking document for this workspace  
 Last updated: 2026-08-20
-Scope: Phases 0-14 are completed and approved; Phase 15 Git and GitHub remains `READY FOR REVIEW` pending user approval and a manual `git push`; the user subsequently approved Phase 15.5 Concept D implementation, selected the structural collective-intelligence direction, and requested Concept D as the new default. Phase 15.5 is implemented and `READY FOR REVIEW` as of 2026-08-20. Phase 16 deployment remains `NOT STARTED`.
+Scope: Phases 0-14 are completed and approved; Phase 15 Git and GitHub and Phase 15.5 Concept D remain recorded as `READY FOR REVIEW`; the user subsequently requested the completed Brevo Transactional Email integration be formalized as Phase 15.6. Phase 15.6 is implemented and `READY FOR REVIEW` as of 2026-08-23. Phase 16 deployment remains `NOT STARTED`; readiness was audited without linking, configuring Vercel, or deploying.
 
 ## 1. Planning guardrails
 
@@ -131,6 +131,8 @@ Current confirmed blockers from design references:
 - Phase 14 implementation evidence is saved under `docs/implementation/validation/phase-14/`, including `phase14-concept-decision-report.md` and a new `validate:concept-decision` script, and the phase is `COMPLETED` with `User approved` on `2026-08-20`. This is a decision phase, not an implementation phase: the user was asked to choose the final production concept after reviewing Phase 13's QA evidence (both concepts are fully implemented, fidelity-verified, and pass identical QA), and chose **Concept A**. Scope confirmed with the user: record the decision and confirm `siteConfig.defaultConcept` matches it (it already did — `"a"` — so no code change was required); Concept C's implementation is explicitly retained in the codebase, not removed, per the user's explicit choice to defer any cleanup rather than perform it now.
 - Phase 15 implementation evidence is saved under `docs/implementation/validation/phase-15/`, including `phase15-git-github-report.md` and a new `validate:git` script, and the phase is `READY FOR REVIEW` pending user approval as of `2026-08-20`. Scope confirmed with the user before implementation: a single clean initial commit representing the current final state (not a fabricated per-phase history, since the project was not tracked in Git from day one); GitHub publication targets the user's existing repository at `https://github.com/AlexPaks/huma-labs-site`, confirmed empty via `git ls-remote` before any local Git operation. The repository was initialized, `.gitignore` reviewed and hardened (added `.claude/`), two stray unreferenced `vite.config.js`/`vite.config.d.ts` build artifacts removed, a `README.md` added, and two clean commits created on `main` with the `origin` remote configured. The `git push` itself could not be completed by the agent — Windows Credential Manager (`wincred`) requires an interactive authentication prompt that this tool's non-interactive shell cannot display — so the user explicitly chose to run `git push -u origin main` themselves in their own terminal.
 - Phase 15.5 implementation evidence is saved under `docs/implementation/validation/phase-15.5/`. The user selected Concept D, approved its implementation, and requested it as the default. The implementation preserves the Concept A information architecture while adding the selected structural photo system, four responsive photographic assets, and a dedicated `data-concept="d"` presentation layer. Build, content, language, and local Edge desktop/mobile verification pass. No Git commit, push, or deployment was performed.
+- Phase 15.6 implementation evidence is saved under `docs/implementation/validation/phase-15.6/`. The user selected Brevo for transactional email and requested the work be formalized as Phase 15.6. A direct server-side Brevo provider was added to the existing Phase 10 abstraction with sandbox enabled by default; mock and SMTP remain available. No Brevo network request or real email was sent. During readiness inspection, exposed working-tree credentials were moved from `.env.example` to gitignored `.env.local`; Git history was clean, but both keys require rotation before external validation or deployment.
+- Phase 16 readiness evidence is saved under `docs/implementation/validation/phase-16-readiness/`. The audit confirmed the build path and three Vercel functions are present, while identifying blocking work: credential rotation, production-domain approval, Phase 15.6 commit/push, Vercel CLI/project link, sensitive environment configuration, Preview deployment, and end-to-end provider/SEO/log verification. Phase 16 remains `NOT STARTED`.
 
 Hero v2 persistence verification record:
 
@@ -1108,7 +1110,7 @@ Rule:
 | Phase 13 | Responsive, Accessibility and Full QA | Validate responsiveness, accessibility, bilingual behavior, concept parity, tracking safety, crawlability, and failure states | Phases 4-12 |
 | Phase 14 | Final Concept Decision | Confirm the final production concept direction after QA evidence and stakeholder review | Phase 13 |
 | Phase 15 | Git and GitHub | Prepare version-control workflow, commits, branch strategy, and PR readiness after implementation approval | Phase 14 |
-| Phase 16 | Vercel Deployment | Configure production delivery only after implementation and review are complete | Phases 11-15 |
+| Phase 16 | Vercel Deployment | Configure production delivery only after implementation and review are complete | Phases 11-15.6 |
 
 ## 25. Phase-specific requirements
 
@@ -1280,6 +1282,7 @@ Every phase must report:
 | Phase 14 | Final Concept Decision | COMPLETED | 2026-08-20 | 2026-08-20 | User reviewed Phase 13 QA evidence and selected **Concept A** as the final production concept; `siteConfig.defaultConcept` already matched, no code change required; Concept C retained in the codebase per explicit user decision; report and evidence saved under `docs/implementation/validation/phase-14/` | User approved |
 | Phase 15 | Git and GitHub | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | Repository initialized, `.gitignore` reviewed and hardened, stray build artifacts removed, README added, clean initial commits created on `main`, `origin` remote configured; the actual `git push` is a manual step for the user to run in an interactive terminal (Windows Credential Manager needs an interactive prompt this tool's non-interactive shell cannot provide); report and evidence saved under `docs/implementation/validation/phase-15/` | Pending user review |
 | Phase 15.5 | Concept D Implementation and Default Selection | READY FOR REVIEW | 2026-08-20 | 2026-08-20 | Structural photo-led Concept D implemented without changing site structure; four image assets persisted; `defaultConcept` set to `"d"`; Hebrew/English desktop/mobile QA passed; evidence saved under `docs/implementation/validation/phase-15.5/` | Pending user review |
+| Phase 15.6 | Brevo Transactional Email Integration | READY FOR REVIEW | 2026-08-22 | 2026-08-23 | Direct server-side Brevo provider, sandbox-first configuration, no-network validation, regression coverage, and credential-template correction completed; evidence saved under `docs/implementation/validation/phase-15.6/` | Pending user review |
 | Phase 16 | Vercel Deployment | NOT STARTED | — | — | — | Not approved |
 
 Allowed statuses:
@@ -2772,6 +2775,7 @@ While writing the "the client cannot add a recipient-override field" test case, 
 
 - The contact-confirmation template exists but is not sent — remains an open product decision (§23).
 - Real SMTP credentials were never configured or used; the final email provider choice remains open.
+- This historical open decision was resolved on `2026-08-22` when the user selected Brevo. The later Brevo integration uses its server-side Transactional Email API and does not alter the completed historical Phase 10 record.
 - Rate limiting remains in-memory/per-process, the same documented limitation as Phase 8.
 - Lint and test-runner tooling remain unavailable in the current repository.
 - Marketing analytics, campaign attribution, cookie consent (Phase 11) and SEO/search visibility (Phase 12) remain not started.
@@ -2793,6 +2797,7 @@ Recommended Phase 10 status:
 Approval state:
 
 - `Pending user review`
+
 
 ## 41. Phase 11 execution record
 
@@ -3256,4 +3261,62 @@ Recommended Phase 15.5 status:
 Approval state:
 
 - `Pending user review`
+
+## 47. Phase 15.6 execution record and Phase 16 readiness
+
+### Confirmed scope and guardrails
+
+- On `2026-08-23`, the user requested that the completed Brevo email work be formalized as `Phase 15.6` and that the workspace be prepared for Phase 16.
+- Phase 15.6 includes transactional email provider implementation and no-network validation only.
+- SMS, Brevo marketing, Vercel linking, environment upload, Preview deployment, production deployment, domain changes, and provider calls remain outside this phase.
+- Phase 16 remains `NOT STARTED` and requires explicit execution approval.
+
+### Phase 15.6 implementation
+
+- Added a direct Brevo Transactional Email provider behind the existing email-provider contract.
+- Preserved mock and SMTP alternatives, existing contact and Insight endpoints, validation schemas, templates, rate limits, and honeypot behavior.
+- Added sandbox-first configuration and dedicated `validate:phase15-6` evidence.
+- Added `server:dev:env` so the local API can load gitignored `.env.local` explicitly.
+- No real Brevo request or email delivery occurred.
+
+### Credential correction
+
+- Readiness inspection found real OpenAI and Brevo values in the working-tree `.env.example`.
+- Values were moved to gitignored `.env.local`; `.env.example` was restored to empty mock-first defaults.
+- Read-only inspection found no secret values in Git `HEAD` or repository history.
+- Both credentials must be revoked and replaced because they appeared in command output.
+
+### Phase 16 readiness result
+
+Prepared:
+
+- Production build path and Vercel SPA configuration exist.
+- Vercel Node adapters exist for all three API routes.
+- Production environment-variable inventory is documented.
+- Automated readiness audit is available as `npm run validate:phase16-readiness`.
+
+Blocking Phase 16 execution:
+
+1. Rotate OpenAI and Brevo credentials.
+2. Approve and configure the final production domain instead of `huma-labs.example`.
+3. Review, approve, commit, and push Phase 15.6.
+4. Install or invoke a pinned Vercel CLI and link the intended project.
+5. Configure sensitive Production/Preview environment variables.
+6. Create and validate a Preview deployment before production promotion.
+7. Verify browser routes, APIs, OpenAI, Brevo, SEO output, and Vercel logs.
+
+Primary evidence:
+
+- `docs/implementation/validation/phase-15.6/phase15-6-brevo-email-report.md`
+- `docs/implementation/validation/phase-15.6/phase15-6-validation-report.json`
+- `docs/implementation/validation/phase-16-readiness/phase16-readiness-report.md`
+- `docs/implementation/validation/phase-16-readiness/phase16-readiness-report.json`
+
+Recommended Phase 15.6 status:
+
+- `READY FOR REVIEW`
+
+Phase 16 status:
+
+- `NOT STARTED`
 

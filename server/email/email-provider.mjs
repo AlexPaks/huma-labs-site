@@ -8,7 +8,7 @@ export class EmailError extends Error {
 }
 
 /**
- * Shared contract every email provider (mock, SMTP) implements. The
+ * Shared contract every email provider (mock, SMTP, Brevo) implements. The
  * endpoint only ever depends on this shape, never on a specific provider.
  *
  * @typedef {object} OutgoingEmail

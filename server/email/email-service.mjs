@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { brevoEmailProvider } from "./providers/brevo-email-provider.mjs";
 import { mockEmailProvider } from "./providers/mock-email-provider.mjs";
 import { smtpEmailProvider } from "./providers/smtp-email-provider.mjs";
 import { EmailError } from "./email-provider.mjs";
@@ -10,6 +11,7 @@ const versionCommentPattern = /^<!--\s*templateVersion:\s*([^\s]+)\s*-->/;
 const EMAIL_SEND_TIMEOUT_MS = 15_000;
 
 const providersById = {
+  brevo: brevoEmailProvider,
   mock: mockEmailProvider,
   smtp: smtpEmailProvider,
 };
