@@ -9,4 +9,4 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
-Sitemap: https://www.huma-labs.example/sitemap.xml
+Sitemap: https://www.huma-labs.org/sitemap.xml

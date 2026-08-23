@@ -3009,8 +3009,40 @@ html[dir="rtl"] .concept-c-capabilities__process-arrow {
 
 @media (max-width: 640px) {
   .concept-consent-banner {
-    inset-inline: 0.5rem;
+    inset-inline: 0.75rem;
+    inset-block-end: max(0.75rem, env(safe-area-inset-bottom));
+    max-height: calc(100svh - 1.5rem);
+    overflow-y: auto;
     padding: 1rem;
+    border-radius: 0.75rem;
+    background: rgba(252, 250, 246, 0.98);
+    backdrop-filter: blur(12px);
+  }
+
+  .concept-consent-banner__summary {
+    gap: 0.75rem;
+  }
+
+  .concept-consent-banner__description {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .concept-consent-banner__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 0.75rem;
+  }
+
+  .concept-consent-banner__actions .concept-button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .concept-consent-banner__actions .concept-text-link {
+    min-height: 2.5rem;
+    justify-content: center;
+    font-size: 0.9rem;
   }
 }
 
