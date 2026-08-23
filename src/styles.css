@@ -3428,9 +3428,7 @@ html[dir="rtl"] .concept-site-shell[data-concept="d"] .concept-hero__ledger {
   }
 
   .concept-site-shell[data-concept="d"] .concept-hero__thread {
-    display: block;
-    height: 4rem;
-    opacity: 0.76;
+    display: none;
   }
 
   .concept-site-shell[data-concept="d"] .concept-hero__preview {

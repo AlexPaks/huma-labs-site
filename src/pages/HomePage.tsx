@@ -60,9 +60,11 @@ export function HomePage() {
   const insightPreviewCta = ctaLinksById[homePage.insightPreview.ctaId];
   const contextTitleParts = toSentenceFragments(tRef(homePage.context.titleRef));
   const contextParagraphs = homePage.context.bodyRefs.map((ref) => tRef(ref));
-  const contextChangeItems = toSentenceFragments(
-    tRef(homePage.context.bodyRefs[0]),
-  ).slice(0, 3);
+  const contextChangeItems = tRef(homePage.context.bodyRefs[0])
+    .split(/(?<=[.!?])\s+|,\s*/u)
+    .map((item) => item.trim().replace(/[.!?]+$/u, ""))
+    .filter(Boolean)
+    .slice(0, 6);
   const contextChallengeLines = toSentenceFragments(
     tRef(homePage.context.bodyRefs[1]),
   );
