@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-seo-files.mjs && tsc -b && vite build && node scripts/prerender.mjs",
+    "build": "node scripts/generate-seo-files.mjs && tsc -b && vite build",
     "preview": "vite preview",
     "validate:content": "node scripts/validate-phase2.mjs",
     "validate:language": "node scripts/validate-phase3.mjs",

@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://www.huma-labs.example",
+  "baseUrl": "https://www.huma-labs.org",
   "organizationType": "Organization",
   "aiCrawlerPolicy": {
     "OAI-SearchBot": "allow",
