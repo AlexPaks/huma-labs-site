@@ -4,6 +4,10 @@ import { ProviderError } from "./llm-provider.mjs";
 
 const DEFAULT_MODEL = "gpt-4o-mini";
 
+function isPromptLoggingEnabled() {
+  return process.env.OPENAI_LOG_PROMPT?.trim().toLowerCase() === "true";
+}
+
 export function parseChatCompletionContent(response) {
   const content = response?.choices?.[0]?.message?.content;
 
@@ -31,12 +35,31 @@ function getClient() {
 export const openaiProvider = {
   id: "openai",
   async analyze(input, { timeoutMs }) {
-    const client = getClient();
     const model = process.env.OPENAI_MODEL || DEFAULT_MODEL;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    const promptLoggingEnabled = isPromptLoggingEnabled();
+
+    console.info("[openai-provider] request", {
+      requestId: input.requestId || null,
+      deployment: input.deployment || null,
+      model,
+      attempt: input.attempt || 1,
+      promptVersion: input.promptVersion,
+      quizVersion: input.quizVersion,
+      promptLoggingEnabled,
+    });
+
+    if (promptLoggingEnabled) {
+      // This is intentionally opt-in: prompts can include free-text quiz answers.
+      console.info("[openai-provider] prompt", {
+        requestId: input.requestId || null,
+        prompt: input.prompt,
+      });
+    }
 
     try {
+      const client = getClient();
       const response = await client.chat.completions.create(
         {
           model,
@@ -52,6 +75,14 @@ export const openaiProvider = {
         },
         { signal: controller.signal },
       );
+
+      console.info("[openai-provider] response", {
+        requestId: input.requestId || null,
+        deployment: input.deployment || null,
+        model: response.model || model,
+        attempt: input.attempt || 1,
+        openaiRequestId: response._request_id || null,
+      });
 
       return { raw: parseChatCompletionContent(response) };
     } catch (error) {

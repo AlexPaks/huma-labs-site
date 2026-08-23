@@ -24,8 +24,17 @@ const rateLimiter = createRateLimiter({ windowMs: 60_000, maxRequests: 10 });
 
 export class RequestTooLargeError extends Error {}
 
+function getDeploymentMetadata() {
+  return {
+    environment: process.env.VERCEL_ENV || process.env.NODE_ENV || "local",
+    deploymentId: process.env.VERCEL_DEPLOYMENT_ID || "local",
+    gitCommitSha: process.env.VERCEL_GIT_COMMIT_SHA || "local",
+    deploymentUrl: process.env.VERCEL_URL || null,
+  };
+}
+
 function getConfiguredProvider() {
-  const providerId = process.env.LLM_PROVIDER || "mock";
+  const providerId = process.env.LLM_PROVIDER?.trim() || "mock";
   const provider = providersById[providerId];
 
   if (!provider) {
@@ -40,7 +49,7 @@ async function callProviderWithRetry(provider, analyzeInput) {
 
   for (let attempt = 1; attempt <= MAX_PROVIDER_ATTEMPTS; attempt += 1) {
     try {
-      return await provider.analyze(analyzeInput, { timeoutMs: PROVIDER_TIMEOUT_MS });
+      return await provider.analyze({ ...analyzeInput, attempt }, { timeoutMs: PROVIDER_TIMEOUT_MS });
     } catch (error) {
       lastError = error;
 
@@ -86,6 +95,7 @@ function toSafeProviderFailureMetadata(error, provider) {
  */
 export async function handleAnalyzeAssessment({ rawBody, serializedLength, clientKey }) {
   const requestId = crypto.randomUUID();
+  const deployment = getDeploymentMetadata();
 
   const rateLimitResult = rateLimiter.check(clientKey);
   if (!rateLimitResult.allowed) {
@@ -106,7 +116,10 @@ export async function handleAnalyzeAssessment({ rawBody, serializedLength, clien
     throw error;
   }
 
-  console.info("[analyze-assessment] request", requestId, toLoggableSummary(request));
+  console.info("[analyze-assessment] request", requestId, {
+    ...toLoggableSummary(request),
+    deployment,
+  });
 
   const normalized = normalizeAssessmentForPrompt(request);
   const { prompt, promptVersion } = composeAnalysisPrompt(normalized);
@@ -115,7 +128,11 @@ export async function handleAnalyzeAssessment({ rawBody, serializedLength, clien
   try {
     provider = getConfiguredProvider();
   } catch (error) {
-    console.error("[analyze-assessment] provider unavailable", requestId, error.code);
+    console.error("[analyze-assessment] provider unavailable", requestId, {
+      code: error.code,
+      configuredProvider: process.env.LLM_PROVIDER ?? "mock",
+      deployment,
+    });
     return { status: 503, body: { requestId, error: { code: "PROVIDER_UNAVAILABLE", message: "The analysis provider is not available." } } };
   }
 
@@ -126,10 +143,15 @@ export async function handleAnalyzeAssessment({ rawBody, serializedLength, clien
       prompt,
       promptVersion,
       quizVersion: request.quizVersion,
+      requestId,
+      deployment,
     });
   } catch (error) {
     const code = error instanceof ProviderError ? error.code : "PROVIDER_UNAVAILABLE";
-    console.error("[analyze-assessment] provider failure", requestId, code, toSafeProviderFailureMetadata(error, provider));
+    console.error("[analyze-assessment] provider failure", requestId, code, {
+      ...toSafeProviderFailureMetadata(error, provider),
+      deployment,
+    });
     const status = code === "TIMEOUT" ? 504 : code === "INVALID_PROVIDER_OUTPUT" ? 502 : 503;
     return {
       status,

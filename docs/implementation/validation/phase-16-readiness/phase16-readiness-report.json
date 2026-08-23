@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:08:44.272Z",
+  "generatedAt": "2026-08-23T13:23:18.405Z",
   "phase16Status": "NOT STARTED",
   "auditCompleted": true,
   "staticReadinessChecksPassed": true,
@@ -11,7 +11,7 @@
     "brevoSandboxEnabled": false
   },
   "repository": {
-    "pendingWorkingTreeFiles": 0,
+    "pendingWorkingTreeFiles": 3,
     "vercelProjectLinked": false,
     "vercelCliAvailable": false
   },
@@ -70,9 +70,9 @@
   "blockers": [
     "Link the repository to the intended Vercel project during Phase 16.",
     "Install or invoke a pinned Vercel CLI during Phase 16; no CLI was installed in readiness work.",
-    "Replace the placeholder SEO base URL with the approved production domain and regenerate SEO files.",
     "Rotate the exposed OpenAI and Brevo credentials before any external validation or deployment.",
     "Configure the rotated credentials as sensitive Vercel environment variables for Production and approved Preview scopes.",
+    "Review, approve, commit, and push the Phase 15.6 working tree before a Git-integrated deployment.",
     "Create and verify a Vercel Preview deployment before any production promotion.",
     "Run post-preview browser, API, OpenAI, Brevo, SEO, and error-log verification before production approval."
   ]
