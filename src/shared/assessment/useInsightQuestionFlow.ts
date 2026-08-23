@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { VisibleWhenCondition } from "./assessmentCatalog";
 import {
   buildCompletionPayload,
@@ -39,54 +39,8 @@ export type InsightQuestion = {
 
 export type InsightAnswerValue = string | string[];
 
-interface PersistedFlowState {
-  visitedQuestionIds: string[];
-  answers: AnswersById;
-}
-
 function getStorageKey(quizId: string, quizVersion: string) {
   return `huma-quiz-${quizId}-${quizVersion}`;
-}
-
-function readPersistedState(storageKey: string): PersistedFlowState | null {
-  if (typeof window === "undefined") {
-    return null;
-  }
-
-  try {
-    const raw = window.localStorage.getItem(storageKey);
-    if (!raw) {
-      return null;
-    }
-
-    const parsed = JSON.parse(raw) as Partial<PersistedFlowState> | null;
-
-    if (
-      parsed &&
-      Array.isArray(parsed.visitedQuestionIds) &&
-      parsed.visitedQuestionIds.every((id) => typeof id === "string") &&
-      parsed.answers &&
-      typeof parsed.answers === "object"
-    ) {
-      return { visitedQuestionIds: parsed.visitedQuestionIds, answers: parsed.answers };
-    }
-
-    return null;
-  } catch {
-    return null;
-  }
-}
-
-function writePersistedState(storageKey: string, state: PersistedFlowState) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  try {
-    window.localStorage.setItem(storageKey, JSON.stringify(state));
-  } catch {
-    // Ignore storage failures and continue with in-memory state only.
-  }
 }
 
 function clearPersistedState(storageKey: string) {
@@ -111,12 +65,6 @@ function createEmptyAnswers(questions: InsightQuestion[]): AnswersById {
   );
 }
 
-function hasAnyAnswerValue(answers: AnswersById) {
-  return Object.values(answers).some((value) =>
-    Array.isArray(value) ? value.length > 0 : String(value ?? "").trim().length > 0,
-  );
-}
-
 export interface UseInsightQuestionFlowOptions {
   quizId: string;
   quizVersion: string;
@@ -132,34 +80,16 @@ export function useInsightQuestionFlow(
   const storageKey = getStorageKey(quizId, quizVersion);
   const firstQuestionId = questions[0]?.id ?? "";
 
+  // Quiz answers can include organizational free text. Clear data written by
+  // the earlier resume feature and keep all new answers in memory only.
   const [visitedQuestionIds, setVisitedQuestionIds] = useState<string[]>(() => {
-    const persisted = readPersistedState(storageKey);
-    const validPersistedPath = persisted?.visitedQuestionIds.filter((id) =>
-      questions.some((question) => question.id === id),
-    );
-
-    if (validPersistedPath && validPersistedPath.length > 0) {
-      return validPersistedPath;
-    }
-
+    clearPersistedState(storageKey);
     return firstQuestionId ? [firstQuestionId] : [];
   });
 
-  const [answers, setAnswers] = useState<AnswersById>(() => {
-    const persisted = readPersistedState(storageKey);
-    return { ...createEmptyAnswers(questions), ...(persisted?.answers ?? {}) };
-  });
+  const [answers, setAnswers] = useState<AnswersById>(() => createEmptyAnswers(questions));
 
   const [showValidation, setShowValidation] = useState(false);
-
-  const [hasResumedProgress] = useState<boolean>(() => {
-    const persisted = readPersistedState(storageKey);
-    if (!persisted) {
-      return false;
-    }
-
-    return persisted.visitedQuestionIds.length > 1 || hasAnyAnswerValue(persisted.answers);
-  });
 
   const visibleQuestions = getVisibleQuestions(questions, answers);
   const currentQuestionId = visitedQuestionIds[visitedQuestionIds.length - 1] ?? firstQuestionId;
@@ -172,14 +102,6 @@ export function useInsightQuestionFlow(
   const totalQuestions = visibleQuestions.length;
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : "";
   const hasAnswer = currentQuestion ? isAnswerValid(currentQuestion, currentAnswer) : false;
-
-  useEffect(() => {
-    if (!currentQuestion) {
-      return;
-    }
-
-    writePersistedState(storageKey, { visitedQuestionIds, answers });
-  }, [storageKey, currentQuestion, visitedQuestionIds, answers]);
 
   function updateSingleAnswer(nextValue: string) {
     if (!currentQuestion) {
@@ -278,7 +200,7 @@ export function useInsightQuestionFlow(
     currentIndex,
     currentQuestion,
     hasAnswer,
-    hasResumedProgress,
+    hasResumedProgress: false,
     moveBack,
     moveToQuestion,
     questions: visibleQuestions,
