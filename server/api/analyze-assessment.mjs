@@ -67,6 +67,17 @@ function toLoggableSummary(request) {
   };
 }
 
+function toSafeProviderFailureMetadata(error, provider) {
+  const cause = error instanceof ProviderError ? error.cause : undefined;
+
+  return {
+    provider: provider.id,
+    status: Number.isInteger(cause?.status) ? cause.status : null,
+    type: typeof cause?.type === "string" ? cause.type : null,
+    providerCode: typeof cause?.code === "string" ? cause.code : null,
+  };
+}
+
 /**
  * Framework-agnostic core handler: takes a parsed JSON body and a client
  * identifier (for rate limiting), returns { status, body }. Never throws for
@@ -118,7 +129,7 @@ export async function handleAnalyzeAssessment({ rawBody, serializedLength, clien
     });
   } catch (error) {
     const code = error instanceof ProviderError ? error.code : "PROVIDER_UNAVAILABLE";
-    console.error("[analyze-assessment] provider failure", requestId, code);
+    console.error("[analyze-assessment] provider failure", requestId, code, toSafeProviderFailureMetadata(error, provider));
     const status = code === "TIMEOUT" ? 504 : code === "INVALID_PROVIDER_OUTPUT" ? 502 : 503;
     return {
       status,
