@@ -32,6 +32,8 @@ function toSafeEmailFailureMetadata(error) {
     provider: process.env.EMAIL_PROVIDER?.trim() || "mock",
     hasBrevoApiKey: Boolean(process.env.BREVO_API_KEY),
     hasBrevoFromEmail: Boolean(process.env.BREVO_FROM_EMAIL?.trim()),
+    brevoFromName: process.env.BREVO_FROM_NAME?.trim() || "HUMA Labs",
+    brevoFromAddress: process.env.BREVO_FROM_EMAIL?.trim() || null,
     brevoSandbox: process.env.BREVO_SANDBOX !== "false",
     code: error instanceof EmailError ? error.code : "UNEXPECTED_ERROR",
     reason: error instanceof EmailError ? error.message : null,
