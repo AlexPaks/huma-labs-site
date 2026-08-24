@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/organizational-insight/analyze.mjs": {
+      "maxDuration": 60
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

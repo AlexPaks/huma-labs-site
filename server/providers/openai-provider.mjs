@@ -8,6 +8,10 @@ function isPromptLoggingEnabled() {
   return process.env.OPENAI_LOG_PROMPT?.trim().toLowerCase() === "true";
 }
 
+function isAbortError(error) {
+  return error?.name === "AbortError" || error?.cause?.name === "AbortError";
+}
+
 export function parseChatCompletionContent(response) {
   const content = response?.choices?.[0]?.message?.content;
 
@@ -90,7 +94,7 @@ export const openaiProvider = {
         throw error;
       }
 
-      if (error?.name === "AbortError") {
+      if (isAbortError(error)) {
         throw new ProviderError("TIMEOUT", `OpenAI request exceeded ${timeoutMs}ms.`, error);
       }
 

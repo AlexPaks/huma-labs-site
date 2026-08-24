@@ -11,7 +11,8 @@ import { mockProvider } from "../providers/mock-provider.mjs";
 import { openaiProvider } from "../providers/openai-provider.mjs";
 import { claudeProvider } from "../providers/claude-provider.mjs";
 
-const PROVIDER_TIMEOUT_MS = 20_000;
+// Leave a small buffer below the Vercel function limit for serializing a response.
+const PROVIDER_TIMEOUT_MS = 55_000;
 const MAX_PROVIDER_ATTEMPTS = 2; // one retry on a transient provider failure
 
 const providersById = {
@@ -54,7 +55,7 @@ async function callProviderWithRetry(provider, analyzeInput) {
       lastError = error;
 
       // Do not retry on a shape failure — retrying will not fix malformed output.
-      if (error instanceof ProviderError && error.code === "INVALID_PROVIDER_OUTPUT") {
+      if (error instanceof ProviderError && ["INVALID_PROVIDER_OUTPUT", "TIMEOUT"].includes(error.code)) {
         throw error;
       }
     }
