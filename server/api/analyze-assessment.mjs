@@ -78,12 +78,16 @@ function toLoggableSummary(request) {
 
 function toSafeProviderFailureMetadata(error, provider) {
   const cause = error instanceof ProviderError ? error.cause : undefined;
+  const networkCause = cause?.cause;
 
   return {
     provider: provider.id,
     status: Number.isInteger(cause?.status) ? cause.status : null,
     type: typeof cause?.type === "string" ? cause.type : null,
     providerCode: typeof cause?.code === "string" ? cause.code : null,
+    errorName: typeof cause?.name === "string" ? cause.name : null,
+    networkErrorName: typeof networkCause?.name === "string" ? networkCause.name : null,
+    networkCode: typeof networkCause?.code === "string" ? networkCause.code : null,
   };
 }
 
