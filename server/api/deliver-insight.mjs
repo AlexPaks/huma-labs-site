@@ -25,6 +25,22 @@ function toCapabilityLabel(language, capabilityId) {
   return capabilityLabelsByLanguage[language]?.[capabilityId] ?? capabilityId;
 }
 
+function toSafeEmailFailureMetadata(error) {
+  const cause = error instanceof EmailError ? error.cause : undefined;
+
+  return {
+    provider: process.env.EMAIL_PROVIDER?.trim() || "mock",
+    hasBrevoApiKey: Boolean(process.env.BREVO_API_KEY),
+    hasBrevoFromEmail: Boolean(process.env.BREVO_FROM_EMAIL?.trim()),
+    brevoSandbox: process.env.BREVO_SANDBOX !== "false",
+    code: error instanceof EmailError ? error.code : "UNEXPECTED_ERROR",
+    reason: error instanceof EmailError ? error.message : null,
+    status: Number.isInteger(cause?.status) ? cause.status : null,
+    errorName: typeof cause?.name === "string" ? cause.name : null,
+    networkCode: typeof cause?.cause?.code === "string" ? cause.cause.code : null,
+  };
+}
+
 /**
  * Framework-agnostic core handler. The recipient is always the submitter's
  * own "email" field from the validated request — there is no way for the
@@ -72,7 +88,7 @@ export async function handleDeliverInsightRequest({ rawBody, serializedLength, c
     });
   } catch (error) {
     const code = error instanceof EmailError ? error.code : "PROVIDER_UNAVAILABLE";
-    console.error("[deliver-insight] send failed", requestId, code);
+    console.error("[deliver-insight] send failed", requestId, toSafeEmailFailureMetadata(error));
     return { status: 503, body: { requestId, error: { code, message: "The email could not be sent right now. Please try again." } } };
   }
 
