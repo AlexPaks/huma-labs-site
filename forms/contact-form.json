@@ -40,7 +40,7 @@
       "order": 4,
       "type": "email",
       "labelRef": "contact-form:forms.contact.fields.email.label",
-      "required": false,
+      "required": true,
       "multiple": false,
       "serverFieldId": "email"
     },

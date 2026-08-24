@@ -21,8 +21,39 @@ const SUBJECT_BY_LANGUAGE = {
   en: "Your HUMA Organizational Insight",
 };
 
+const INTERNAL_SUBJECT_BY_LANGUAGE = {
+  he: "HUMA Organizational Insight חדש",
+  en: "New HUMA Organizational Insight submission",
+};
+
 function toCapabilityLabel(language, capabilityId) {
   return capabilityLabelsByLanguage[language]?.[capabilityId] ?? capabilityId;
+}
+
+function toBulletedList(items) {
+  return Array.isArray(items) && items.length > 0 ? items.map((item) => `- ${item}`).join("\n") : "";
+}
+
+function toInsightEmailValues(insightResult) {
+  if (!insightResult) {
+    return {};
+  }
+
+  return {
+    executiveSummary: insightResult.executiveSummary,
+    organizationalAnalysis: insightResult.organizationalAnalysis,
+    possibleOrganizationalImpact: insightResult.possibleOrganizationalImpact,
+    signalsToExamine: toBulletedList(insightResult.signalsToExamine),
+    discoverDirection: insightResult.recommendedDirection.discover,
+    designDirection: insightResult.recommendedDirection.design,
+    actDirection: insightResult.recommendedDirection.act,
+    suggestedNextStep: insightResult.suggestedNextStep,
+    disclaimer: insightResult.disclaimer,
+  };
+}
+
+function getInsightNotificationAddress() {
+  return process.env.INSIGHT_NOTIFICATION_EMAIL?.trim() || process.env.CONTACT_NOTIFICATION_EMAIL?.trim() || null;
 }
 
 function toSafeEmailFailureMetadata(error) {
@@ -75,18 +106,36 @@ export async function handleDeliverInsightRequest({ rawBody, serializedLength, c
   console.info("[deliver-insight] request", requestId, { hasEmail: Boolean(parsed.fields.email) });
 
   const language = rawBody.language;
+  const notificationAddress = getInsightNotificationAddress();
+
+  if (!notificationAddress) {
+    console.error("[deliver-insight] HUMA notification address is not configured", requestId);
+    return { status: 503, body: { requestId, error: { code: "PROVIDER_UNAVAILABLE", message: "Insight delivery is not available right now. Please try again." } } };
+  }
+
+  const insightValues = {
+    ...parsed.fields,
+    primaryCapability: toCapabilityLabel(language, parsed.insightContext.primaryCapability),
+    secondaryCapabilities: parsed.insightContext.secondaryCapabilities.map((id) => toCapabilityLabel(language, id)),
+    ...toInsightEmailValues(parsed.insightResult),
+  };
 
   try {
+    await sendTemplatedEmail({
+      templateName: "insight-notification",
+      language,
+      to: notificationAddress,
+      replyTo: parsed.fields.email,
+      subjectByLanguage: INTERNAL_SUBJECT_BY_LANGUAGE,
+      values: insightValues,
+    });
+
     await sendTemplatedEmail({
       templateName: "insight-delivery",
       language,
       to: parsed.fields.email,
       subjectByLanguage: SUBJECT_BY_LANGUAGE,
-      values: {
-        ...parsed.fields,
-        primaryCapability: toCapabilityLabel(language, parsed.insightContext.primaryCapability),
-        secondaryCapabilities: parsed.insightContext.secondaryCapabilities.map((id) => toCapabilityLabel(language, id)),
-      },
+      values: insightValues,
     });
   } catch (error) {
     const code = error instanceof EmailError ? error.code : "PROVIDER_UNAVAILABLE";

@@ -3,6 +3,7 @@ import path from "node:path";
 import { createBrevoEmailProvider } from "../server/email/providers/brevo-email-provider.mjs";
 import { EmailError } from "../server/email/email-provider.mjs";
 import { sendTemplatedEmail } from "../server/email/email-service.mjs";
+import { validateInsightDeliveryRequest } from "../server/schemas/insight-delivery-request.schema.mjs";
 
 const outputDirectory = path.join(process.cwd(), "docs", "implementation", "validation", "phase-15.6");
 const managedEnvironmentKeys = [
@@ -15,6 +16,21 @@ const managedEnvironmentKeys = [
 const originalEnvironment = Object.fromEntries(managedEnvironmentKeys.map((key) => [key, process.env[key]]));
 const originalFetch = globalThis.fetch;
 const results = [];
+const validInsightResult = {
+  primaryCapability: "leadership",
+  secondaryCapabilities: ["adaptability"],
+  executiveSummary: "Executive summary",
+  organizationalAnalysis: "Organizational analysis",
+  possibleOrganizationalImpact: "Possible impact",
+  signalsToExamine: ["Signal one", "Signal two", "Signal three"],
+  recommendedDirection: {
+    discover: "Discover direction",
+    design: "Design direction",
+    act: "Act direction",
+  },
+  suggestedNextStep: "Suggested next step",
+  disclaimer: "Disclaimer",
+};
 
 function record(name, passed, detail) {
   results.push({ name, passed, detail: detail ?? null });
@@ -106,10 +122,12 @@ async function main() {
     record("live mode: omits the Brevo sandbox header", livePayload.headers === undefined);
 
     configureBrevo({ sandbox: true });
+    const renderedBodies = [];
     globalThis.fetch = async (_url, options) => {
       const payload = JSON.parse(options.body);
+      renderedBodies.push(payload.textContent);
       return {
-        ok: Boolean(payload.textContent.includes("Integration body")),
+        ok: true,
         status: 201,
         json: async () => ({ messageId: "service-message-id" }),
       };
@@ -130,6 +148,47 @@ async function main() {
       },
     });
     record("email service: selects Brevo and renders the existing template", serviceResult.messageId === "service-message-id");
+
+    const insightRequest = {
+      formId: "insight-email-form",
+      formVersion: "1.0.0",
+      language: "en",
+      fields: { fullName: "Integration Test", role: "HR Lead", organization: "HUMA", email: "recipient@example.com" },
+      insightContext: { primaryCapability: "leadership", secondaryCapabilities: ["adaptability"] },
+      insightResult: validInsightResult,
+    };
+    const parsedInsightRequest = validateInsightDeliveryRequest(
+      insightRequest,
+      Buffer.byteLength(JSON.stringify(insightRequest), "utf8"),
+    );
+    await sendTemplatedEmail({
+      templateName: "insight-delivery",
+      language: "en",
+      to: "recipient@example.com",
+      subjectByLanguage: { he: "Hebrew subject", en: "Insight subject" },
+      values: {
+        ...parsedInsightRequest.fields,
+        primaryCapability: "Leadership",
+        secondaryCapabilities: ["Adaptability"],
+        executiveSummary: parsedInsightRequest.insightResult.executiveSummary,
+        organizationalAnalysis: parsedInsightRequest.insightResult.organizationalAnalysis,
+        possibleOrganizationalImpact: parsedInsightRequest.insightResult.possibleOrganizationalImpact,
+        signalsToExamine: parsedInsightRequest.insightResult.signalsToExamine.map((item) => `- ${item}`).join("\n"),
+        discoverDirection: parsedInsightRequest.insightResult.recommendedDirection.discover,
+        designDirection: parsedInsightRequest.insightResult.recommendedDirection.design,
+        actDirection: parsedInsightRequest.insightResult.recommendedDirection.act,
+        suggestedNextStep: parsedInsightRequest.insightResult.suggestedNextStep,
+        disclaimer: parsedInsightRequest.insightResult.disclaimer,
+      },
+    });
+    const insightEmailBody = renderedBodies.at(-1) || "";
+    record(
+      "insight delivery: validates and renders the full LLM result",
+      insightEmailBody.includes("Executive summary") &&
+        insightEmailBody.includes("Organizational analysis") &&
+        insightEmailBody.includes("- Signal three") &&
+        insightEmailBody.includes("Suggested next step"),
+    );
 
     const failingProvider = createBrevoEmailProvider({
       fetchImpl: async () => ({ ok: false, status: 401, json: async () => ({ message: "secret provider detail" }) }),

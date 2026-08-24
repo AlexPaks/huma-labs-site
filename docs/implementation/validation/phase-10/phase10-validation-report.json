@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T13:23:13.281Z",
+  "generatedAt": "2026-08-24T10:35:18.698Z",
   "results": [
     {
       "name": "contact-schema: valid request accepted",
@@ -92,6 +92,16 @@
       "detail": null
     },
     {
+      "name": "email-templates: insight-notification (he) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "email-templates: insight-notification (en) renders and sends via mock",
+      "passed": true,
+      "detail": null
+    },
+    {
       "name": "mock-email-provider: sends without network access",
       "passed": true,
       "detail": null
@@ -104,12 +114,12 @@
     {
       "name": "end-to-end: handleContactRequest sends via mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"e3a77ffb-9a5a-4b91-a4d4-8f855fb7f3d9\",\"status\":\"sent\"}"
+      "detail": "{\"requestId\":\"31c82c70-2423-4b8b-b731-20c5114a0811\",\"status\":\"sent\"}"
     },
     {
       "name": "end-to-end: handleDeliverInsightRequest sends via mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"d1e7ddf6-6360-476c-a3b8-86a65f7d4372\",\"status\":\"sent\"}"
+      "detail": "{\"requestId\":\"ea59c55d-3b56-4e8b-9a63-3cf5949e8de0\",\"status\":\"sent\"}"
     },
     {
       "name": "end-to-end: honeypot submission returns a fake success without sending",

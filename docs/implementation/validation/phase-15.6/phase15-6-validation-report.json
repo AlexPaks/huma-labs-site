@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T09:47:32.913Z",
+  "generatedAt": "2026-08-24T10:12:08.053Z",
   "networkRequestsSent": 0,
   "realEmailsSent": 0,
   "results": [
@@ -20,6 +20,11 @@
     },
     {
       "name": "email service: selects Brevo and renders the existing template",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "insight delivery: validates and renders the full LLM result",
       "passed": true,
       "detail": null
     },

@@ -1,11 +1,34 @@
-<!-- templateVersion: 1.0.0 -->
+<!-- templateVersion: 1.1.0 -->
 שלום {{fullName}},
 
-תודה שהשלמתם את HUMA Organizational Insight.
+תודה שהשלמתם את HUMA Organizational Insight. להלן סיכום ראשוני המבוסס על התשובות שמילאתם.
 
-נקודת המינוף המרכזית שזוהתה עבורכם: {{primaryCapability}}
-יכולות נוספות רלוונטיות: {{secondaryCapabilities}}
+יכולת מרכזית
+{{primaryCapability}}
 
-זהו סיכום ראשוני. חבר/ת צוות מ-HUMA Labs ייצור/תיצור איתכם קשר עם ניתוח מעמיק יותר.
+יכולות נוספות רלוונטיות
+{{secondaryCapabilities}}
+
+סיכום מנהלים
+{{executiveSummary}}
+
+התבוננות ארגונית
+{{organizationalAnalysis}}
+
+השפעה אפשרית
+{{possibleOrganizationalImpact}}
+
+שלושה סימנים שכדאי לבחון
+{{signalsToExamine}}
+
+כיוון מומלץ
+Discover: {{discoverDirection}}
+Design: {{designDirection}}
+Act: {{actDirection}}
+
+הצעד הבא המוצע
+{{suggestedNextStep}}
+
+{{disclaimer}}
 
 צוות HUMA Labs

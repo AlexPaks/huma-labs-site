@@ -11,6 +11,11 @@ const SUBJECT_BY_LANGUAGE = {
   en: "New contact submission from HUMA Labs",
 };
 
+const CONFIRMATION_SUBJECT_BY_LANGUAGE = {
+  he: "קיבלנו את הפנייה שלכם ל-HUMA Labs",
+  en: "We received your HUMA Labs inquiry",
+};
+
 function toLoggableSummary(fields) {
   return {
     hasFullName: Boolean(fields.fullName),
@@ -71,6 +76,14 @@ export async function handleContactRequest({ rawBody, serializedLength, clientKe
           ? parsed.fields.focusAreas
           : [],
       },
+    });
+
+    await sendTemplatedEmail({
+      templateName: "contact-confirmation",
+      language: rawBody.language,
+      to: parsed.fields.email,
+      subjectByLanguage: CONFIRMATION_SUBJECT_BY_LANGUAGE,
+      values: parsed.fields,
     });
   } catch (error) {
     const code = error instanceof EmailError ? error.code : "PROVIDER_UNAVAILABLE";

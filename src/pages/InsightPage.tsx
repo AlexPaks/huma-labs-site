@@ -193,6 +193,7 @@ export function InsightPage() {
     ? {
         primaryCapability: analysisResult.primaryCapability,
         secondaryCapabilities: analysisResult.secondaryCapabilities,
+        insightResult: analysisResult,
       }
     : { primaryCapability: FALLBACK_CAPABILITY_ID, secondaryCapabilities: [] };
 

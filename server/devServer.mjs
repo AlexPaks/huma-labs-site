@@ -10,7 +10,7 @@ import { handleContactRequest } from "./api/contact.mjs";
 import { handleDeliverInsightRequest } from "./api/deliver-insight.mjs";
 
 const PORT = Number(process.env.PORT) || 8787;
-const MAX_BODY_BYTES = 20_000;
+const MAX_BODY_BYTES = 30_000;
 
 const routes = {
   "/api/organizational-insight/analyze": (rawBody, serializedLength, clientKey) =>

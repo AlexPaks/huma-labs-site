@@ -1,5 +1,6 @@
 import { ContactForm } from "../../../components/ContactForm";
 import type { FormId } from "../../../shared/forms/formCatalog";
+import type { InsightResult } from "../../../shared/assessment/insightResultTypes";
 
 type ConceptCInsightResultSectionProps = {
   sectionId?: string;
@@ -23,6 +24,7 @@ type ConceptCInsightResultSectionProps = {
   insightContext?: {
     primaryCapability: string;
     secondaryCapabilities: string[];
+    insightResult?: InsightResult;
   };
 };
 

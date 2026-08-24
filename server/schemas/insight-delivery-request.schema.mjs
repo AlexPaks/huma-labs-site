@@ -1,5 +1,5 @@
 import insightEmailFormDefinition from "../../forms/insight-email-form.json" with { type: "json" };
-import { approvedCapabilityIds } from "./insight-result.schema.mjs";
+import { approvedCapabilityIds, validateInsightResultContent } from "./insight-result.schema.mjs";
 
 export const HONEYPOT_FIELD_KEY = "website";
 const FIELD_TEXT_MAX_LENGTH = 200;
@@ -24,17 +24,17 @@ function assert(condition, code, message) {
  * submitter's own "email" field — there is no separate recipient parameter,
  * so the client can never direct delivery to an arbitrary third-party
  * address. insightContext only accepts the already-approved structured
- * capability ids, never free-form narrative text.
+ * capability ids and an optional validated LLM insight result.
  */
 export function validateInsightDeliveryRequest(rawBody, serializedLength) {
-  assert(typeof serializedLength === "number" && serializedLength <= 10_000, "REQUEST_TOO_LARGE", "Request body is too large.");
+  assert(typeof serializedLength === "number" && serializedLength <= 30_000, "REQUEST_TOO_LARGE", "Request body is too large.");
   assert(rawBody && typeof rawBody === "object" && !Array.isArray(rawBody), "INVALID_REQUEST", "Request body must be a JSON object.");
   assert(rawBody.formId === insightEmailFormDefinition.formId, "INVALID_REQUEST", "Unknown formId.");
   assert(rawBody.formVersion === insightEmailFormDefinition.version, "UNSUPPORTED_FORM_VERSION", "Unsupported form version.");
   assert(typeof rawBody.language === "string" && supportedLanguages.has(rawBody.language), "INVALID_REQUEST", "Unsupported or missing language.");
   assert(rawBody.fields && typeof rawBody.fields === "object" && !Array.isArray(rawBody.fields), "INVALID_REQUEST", "Missing fields object.");
 
-  const allowedTopLevelKeys = new Set(["formId", "formVersion", "language", "fields", "insightContext"]);
+  const allowedTopLevelKeys = new Set(["formId", "formVersion", "language", "fields", "insightContext", "insightResult"]);
   for (const key of Object.keys(rawBody)) {
     assert(allowedTopLevelKeys.has(key), "INVALID_REQUEST", `Unexpected top-level field: ${key}`);
   }
@@ -75,6 +75,15 @@ export function validateInsightDeliveryRequest(rawBody, serializedLength) {
     assert(approvedCapabilityIds.includes(capabilityId), "INVALID_REQUEST", `Unapproved capability id: ${capabilityId}`);
   }
 
+  let insightResult = null;
+  if (rawBody.insightResult !== undefined) {
+    try {
+      insightResult = validateInsightResultContent(rawBody.insightResult);
+    } catch {
+      assert(false, "INVALID_REQUEST", "Insight result is invalid.");
+    }
+  }
+
   return {
     fields,
     isHoneypotTriggered,
@@ -82,5 +91,6 @@ export function validateInsightDeliveryRequest(rawBody, serializedLength) {
       primaryCapability: insightContext.primaryCapability,
       secondaryCapabilities,
     },
+    insightResult,
   };
 }

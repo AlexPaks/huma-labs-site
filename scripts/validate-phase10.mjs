@@ -125,6 +125,8 @@ async function main() {
     ["contact-confirmation", "en"],
     ["insight-delivery", "he"],
     ["insight-delivery", "en"],
+    ["insight-notification", "he"],
+    ["insight-notification", "en"],
   ]) {
     try {
       const result = await sendTemplatedEmail({

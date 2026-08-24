@@ -1,11 +1,34 @@
-<!-- templateVersion: 1.0.0 -->
+<!-- templateVersion: 1.1.0 -->
 Hi {{fullName}},
 
-Thank you for completing the HUMA Organizational Insight.
+Thank you for completing the HUMA Organizational Insight. Below is a preliminary summary based on the answers you shared.
 
-Your identified central leverage point: {{primaryCapability}}
-Other relevant capabilities: {{secondaryCapabilities}}
+Central capability
+{{primaryCapability}}
 
-This is a preliminary summary. A member of the HUMA Labs team will follow up with you with a deeper analysis.
+Other relevant capabilities
+{{secondaryCapabilities}}
+
+Executive summary
+{{executiveSummary}}
+
+Organizational perspective
+{{organizationalAnalysis}}
+
+Possible organizational impact
+{{possibleOrganizationalImpact}}
+
+Three signals to examine
+{{signalsToExamine}}
+
+Recommended direction
+Discover: {{discoverDirection}}
+Design: {{designDirection}}
+Act: {{actDirection}}
+
+Suggested next step
+{{suggestedNextStep}}
+
+{{disclaimer}}
 
 The HUMA Labs team
