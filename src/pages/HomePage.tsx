@@ -59,7 +59,7 @@ export function HomePage() {
     .map((question) => ({
       id: question.id,
       order: question.order,
-      label: tRef(question.previewRef),
+      label: tRef(question.questionRef),
     }));
   const heroPrimaryCta = ctaLinksById[homePage.hero.primaryCtaId];
   const heroSecondaryCta = ctaLinksById[homePage.hero.secondaryCtaId];

@@ -1668,6 +1668,10 @@ html[dir="rtl"] .concept-insight-flow__prompt {
 }
 
 @media (max-width: 719px) {
+  .concept-site-shell[data-concept="d"] .concept-hero {
+    overflow: hidden;
+  }
+
   .concept-section {
     padding-block: 4rem;
   }
@@ -4778,16 +4782,15 @@ html[dir="rtl"] .concept-site-shell[data-concept="d"] .concept-d-program-fit__so
   }
 
   .concept-site-shell[data-concept="d"] .concept-hero__subtitle {
-    max-width: none;
-    width: 138%;
-    margin-inline: -19%;
-    font-size: clamp(1.1rem, 4.5vw, 1.28rem);
-    letter-spacing: -0.055em;
-    line-height: 1.35;
+    width: 100%;
+    margin-inline: 0;
+    font-size: clamp(0.86rem, 3.5vw, 1.02rem);
+    letter-spacing: 0.02em;
+    line-height: 1.45;
     text-align: center;
-    transform: scaleX(0.66);
-    transform-origin: center;
-    white-space: nowrap;
+    text-wrap: balance;
+    transform: none;
+    white-space: normal;
   }
 
   .concept-site-shell[data-concept="d"] .concept-hero__ledger {
