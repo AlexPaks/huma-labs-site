@@ -47,7 +47,10 @@ export function ConceptCHeader() {
     <header className="concept-c-header">
       <div className="concept-container concept-c-header__inner" dir={currentDirection}>
         <NavLink className="concept-c-header__brand" to={localizeHref("/")}>
-          <ConceptCBrand siteName={t("common", "brand.siteName")} />
+          <ConceptCBrand
+            siteName={t("common", "brand.siteName")}
+            tagline={t("common", "brand.tagline")}
+          />
         </NavLink>
 
         <div className="concept-c-header__desktop">
@@ -59,9 +62,13 @@ export function ConceptCHeader() {
               <NavLink
                 key={item.id}
                 className={({ isActive }) =>
-                  isActive
-                    ? "concept-c-header__link concept-c-header__link--active"
-                    : "concept-c-header__link"
+                  [
+                    "concept-c-header__link",
+                    item.id === "insight" && "concept-c-header__link--insight",
+                    isActive && "concept-c-header__link--active",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
                 }
                 to={localizeHref(item.href)}
               >
@@ -131,9 +138,13 @@ export function ConceptCHeader() {
               <NavLink
                 key={item.id}
                 className={({ isActive }) =>
-                  isActive
-                    ? "concept-c-mobile-menu__link concept-c-mobile-menu__link--active"
-                    : "concept-c-mobile-menu__link"
+                  [
+                    "concept-c-mobile-menu__link",
+                    item.id === "insight" && "concept-c-mobile-menu__link--insight",
+                    isActive && "concept-c-mobile-menu__link--active",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
                 }
                 to={localizeHref(item.href)}
               >

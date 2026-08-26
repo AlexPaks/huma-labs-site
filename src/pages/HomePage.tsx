@@ -1,6 +1,15 @@
 import { Fragment } from "react";
 import { HomeHeroSection } from "../concepts/concept-a/sections/HomeHeroSection";
 import { ProblemInsightSection } from "../concepts/concept-a/sections/ProblemInsightSection";
+import {
+  ConceptDMethodTimelineSection,
+  type MethodTimelineStep,
+} from "../concepts/concept-a/sections/ConceptDMethodTimelineSection";
+import {
+  ConceptDCapabilitySystemSection,
+  type CapabilitySystemItem,
+} from "../concepts/concept-a/sections/ConceptDCapabilitySystemSection";
+import { ConceptDProgramFitSection } from "../concepts/concept-a/sections/ConceptDProgramFitSection";
 import { InsightOverviewSection } from "../concepts/concept-a/sections/InsightOverviewSection";
 import { CapabilitiesMethodSection } from "../concepts/concept-a/sections/CapabilitiesMethodSection";
 import { ChallengesFormatsSection } from "../concepts/concept-a/sections/ChallengesFormatsSection";
@@ -52,9 +61,6 @@ export function HomePage() {
       order: question.order,
       label: tRef(question.previewRef),
     }));
-  const sortedQuestions = [...assessmentDefinition.questions].sort(
-    (left, right) => left.order - right.order,
-  );
   const heroPrimaryCta = ctaLinksById[homePage.hero.primaryCtaId];
   const heroSecondaryCta = ctaLinksById[homePage.hero.secondaryCtaId];
   const insightPreviewCta = ctaLinksById[homePage.insightPreview.ctaId];
@@ -68,6 +74,32 @@ export function HomePage() {
   const contextChallengeLines = toSentenceFragments(
     tRef(homePage.context.bodyRefs[1]),
   );
+  const methodTimelineSteps: MethodTimelineStep[] = ["map", "design", "develop", "apply"].map((id) => ({
+    id,
+    label: tRef(`homepage:methodTimeline.steps.${id}.label`),
+    title: tRef(`homepage:methodTimeline.steps.${id}.title`),
+    description: tRef(`homepage:methodTimeline.steps.${id}.description`),
+    ...(id === "design"
+      ? {
+          detail: tRef("homepage:methodTimeline.steps.design.detail"),
+          emphasis: tRef("homepage:methodTimeline.steps.design.emphasis"),
+        }
+      : {}),
+  }));
+  const capabilitySystemChildKeys = {
+    think: ["one", "two", "three"],
+    lead: ["one", "two", "three", "four"],
+    transform: ["one", "two", "three", "four"],
+    collaborate: ["one", "two", "three", "four"],
+    adapt: ["one", "two", "three", "four", "five"],
+  } as const;
+  const capabilitySystemItems: CapabilitySystemItem[] = ["think", "lead", "transform", "collaborate", "adapt"].map((id) => ({
+    id: id as CapabilitySystemItem["id"],
+    label: tRef(`homepage:capabilitySystem.capabilities.${id}.label`),
+    children: capabilitySystemChildKeys[id as CapabilitySystemItem["id"]].map((child) =>
+      tRef(`homepage:capabilitySystem.capabilities.${id}.children.${child}`),
+    ),
+  }));
   const capabilities = homePage.capabilitiesSection.capabilityIds.map((id) => {
     const capability = capabilitiesById[id];
     return {
@@ -102,11 +134,6 @@ export function HomePage() {
       title: tRef(outcome.titleRef),
     };
   });
-  const previewQuestion = sortedQuestions[2];
-  const previewProgress = tRef("assessment:page.controls.progress", {
-    current: previewQuestion.order,
-    total: sortedQuestions.length,
-  });
   const renderedComponents = new Set<string>();
 
   function renderSection(section: { id: string; component: string }): ReactNode {
@@ -122,22 +149,35 @@ export function HomePage() {
           <HomeHeroSection
             sectionId={section.id}
             body={tRef(homePage.hero.bodyRef)}
-            challengeLines={contextChallengeLines}
-            changeItems={contextChangeItems}
-            leadLabel={contextTitleParts[0] ?? tRef(homePage.context.titleRef)}
-            previewLabel={previewProgress}
-            previewTitle={tRef(previewQuestion.questionRef)}
+            ledgerBody={tRef("homepage:heroLedger.body")}
+            ledgerConclusion={tRef("homepage:heroLedger.conclusion")}
+            ledgerConclusionLead={tRef("homepage:heroLedger.conclusionLead")}
+            ledgerEyebrow={tRef("homepage:heroLedger.eyebrow")}
+            ledgerQuestion={tRef("homepage:heroLedger.question")}
+            ledgerQuestionLead={tRef("homepage:heroLedger.questionLead")}
+            ledgerTitle={tRef("homepage:heroLedger.title")}
             onPrimaryCtaClick={() => track("primary_cta_clicked", { location: "home_hero" })}
             onSecondaryCtaClick={() => track("secondary_cta_clicked", { location: "home_hero" })}
             primaryCtaHref={localizeHref(heroPrimaryCta.href)}
             primaryCtaLabel={tRef(heroPrimaryCta.labelRef)}
             secondaryCtaHref={localizeHref(heroSecondaryCta.href)}
             secondaryCtaLabel={tRef(heroSecondaryCta.labelRef)}
+            subtitle={tRef(homePage.hero.subtitleRef)}
             titleLines={homePage.hero.titleLineRefs.map((ref) => tRef(ref))}
           />
         );
 
       case "organizational-context":
+        if (currentConcept === "d") {
+          return (
+            <ConceptDMethodTimelineSection
+              sectionId={section.id}
+              steps={methodTimelineSteps}
+              title={tRef("homepage:methodTimeline.title")}
+            />
+          );
+        }
+
         return (
           <ProblemInsightSection
             body={contextParagraphs}
@@ -165,6 +205,17 @@ export function HomePage() {
         );
 
       case "capabilities-method":
+        if (currentConcept === "d") {
+          return (
+            <ConceptDCapabilitySystemSection
+              capabilities={capabilitySystemItems}
+              sectionId="core-capabilities"
+              systemLabel={tRef("homepage:capabilitySystem.systemLabel")}
+              title={tRef("homepage:capabilitySystem.title")}
+            />
+          );
+        }
+
         return (
           <CapabilitiesMethodSection
             body={tRef(homePage.processSection.titleRef)}
@@ -175,11 +226,32 @@ export function HomePage() {
             processLabel={tRef(homePage.processSection.eyebrowRef)}
             processSectionId="huma-method"
             sectionId="core-capabilities"
+            showProcess
             title={tRef(homePage.capabilitiesSection.titleRef)}
           />
         );
 
       case "challenges-formats":
+        if (currentConcept === "d") {
+          return (
+            <ConceptDProgramFitSection
+              contactBody={tRef(homePage.contactSection.bodyRef)}
+              contactLabel={tRef(homePage.contactSection.eyebrowRef)}
+              contactSectionId="contact"
+              contactTitle={tRef(homePage.contactSection.titleRef)}
+              formId={homePage.contactSection.formId as FormId}
+              illustrationAlt={tRef("homepage:programFit.illustrationAlt")}
+              outcomesSectionId="organizational-outcomes"
+              sectionId="organizational-challenges"
+              strategicNeedsLabel={tRef("homepage:programFit.strategicNeeds")}
+              subtitle={tRef("homepage:programFit.subtitle")}
+              tailoredDesignLabel={tRef("homepage:programFit.tailoredDesign")}
+              tailoredSolutionLabel={tRef("homepage:programFit.tailoredSolution")}
+              title={tRef("homepage:programFit.title")}
+            />
+          );
+        }
+
         return (
           <ChallengesFormatsSection
             body={tRef(homePage.challengesSection.bodyRef)}
@@ -197,6 +269,10 @@ export function HomePage() {
         );
 
       case "outcomes-contact":
+        if (currentConcept === "d") {
+          return null;
+        }
+
         return (
           <OutcomesContactSection
             contactBody={tRef(homePage.contactSection.bodyRef)}

@@ -6,8 +6,8 @@
       "line2": "to adapt begins",
       "line3": "with its people."
     },
-    "body": "HUMA develops human capabilities that help people communicate, lead, adapt, and act more effectively in a changing world.",
-    "subtitle": "Customized organizational learning around Presence, Resilience, Adaptability, and Leadership.",
+    "body": "Training and development programs for employees and managers, tailored\nto your organization's business challenges - from need to implementation.",
+    "subtitle": "LEADERSHIP · ADAPTABILITY · COMMUNICATION · INNOVATION · AI",
     "panel": {
       "eyebrow": "Human Adaptability",
       "title": "From organizational challenge to human capability.",
@@ -16,6 +16,42 @@
     "actions": {
       "contact": "Let's start the conversation",
       "insight": "See what your organization needs"
+    }
+  },
+  "heroLedger": {
+    "eyebrow": "Training starts with the business need",
+    "title": "Your organization is changing. Are your capabilities changing with it?",
+    "body": "AI, new roles, market shifts, and new ways of working demand new capabilities from your people. But not every gap is solved by another course.",
+    "questionLead": "HUMA starts with the business question:",
+    "question": "What do your people need to do better for the organization to move forward?",
+    "conclusionLead": "From there, we build the training -",
+    "conclusion": "tailored to the need, the role, and the organizational reality."
+  },
+  "methodTimeline": {
+    "title": "How it works?",
+    "steps": {
+      "map": {
+        "label": "01 | MAP",
+        "title": "Understand what needs to change.",
+        "description": "We learn about the organization's challenges, goals, roles, and existing gaps, then identify the capabilities that are needed."
+      },
+      "design": {
+        "label": "02 | DESIGN",
+        "title": "Build the path.",
+        "description": "We assemble the program from a range of capabilities - leadership, thinking, communication, adaptability, innovation, AI, and more - around the specific need.",
+        "detail": "We do not choose an off-the-shelf workshop.",
+        "emphasis": "We build the right combination."
+      },
+      "develop": {
+        "label": "03 | DEVELOP",
+        "title": "Develop the capability.",
+        "description": "Employees and managers go through a process that connects knowledge, experience, practice, and feedback."
+      },
+      "apply": {
+        "label": "04 | APPLY",
+        "title": "Connect learning to work.",
+        "description": "The new capability meets real situations, tasks, and challenges from the world of work."
+      }
     }
   },
   "context": {
@@ -27,7 +63,7 @@
     }
   },
   "insightPreview": {
-    "eyebrow": "HUMA Organizational Insight",
+    "eyebrow": "HUMA Insight",
     "title": "Six short questions that help us identify your organization's current leverage point.",
     "body": "Every organization faces different challenges. Answer six short questions and we will understand together where your main leverage point sits right now and what can help you move forward.",
     "action": "Start the assessment"
@@ -36,6 +72,40 @@
     "eyebrow": "4 CORE CAPABILITIES",
     "title": "One human advantage.",
     "body": "The capability we develop is the center. The format changes according to the need."
+  },
+  "capabilitySystem": {
+    "title": "Not a course catalog. A capability system.",
+    "systemLabel": "HUMA CAPABILITY SYSTEM",
+    "capabilities": {
+      "think": {
+        "label": "THINK",
+        "children": { "one": "Critical Thinking", "two": "Decision Making", "three": "Systems Thinking" }
+      },
+      "lead": {
+        "label": "LEAD",
+        "children": { "one": "Leadership", "two": "Feedback", "three": "Influence", "four": "Change Leadership" }
+      },
+      "transform": {
+        "label": "TRANSFORM",
+        "children": { "one": "AI", "two": "Digital Fluency", "three": "Innovation", "four": "Future of Work" }
+      },
+      "collaborate": {
+        "label": "COLLABORATE",
+        "children": { "one": "Communication", "two": "Teamwork", "three": "Stakeholder Management", "four": "Negotiation" }
+      },
+      "adapt": {
+        "label": "ADAPT",
+        "children": { "one": "Adaptability", "two": "Learning Agility", "three": "Problem Solving", "four": "Change", "five": "Resilience" }
+      }
+    }
+  },
+  "programFit": {
+    "title": "Every organization gets the combination it needs.",
+    "subtitle": "Your challenge determines the program.",
+    "illustrationAlt": "A diagram showing strategic needs, tailored design, and a solution tailored to the organization.",
+    "strategicNeeds": "Strategic needs",
+    "tailoredDesign": "Tailored design",
+    "tailoredSolution": "A solution tailored to your organization"
   },
   "capabilities": {
     "presence": {

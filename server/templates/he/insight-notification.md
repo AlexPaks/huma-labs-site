@@ -1,5 +1,5 @@
 <!-- templateVersion: 1.0.0 -->
-התקבלה השלמה חדשה של HUMA Organizational Insight.
+התקבלה השלמה חדשה של התובנה הארגונית של HUMA.
 
 פרטי הפונה
 שם: {{fullName}}

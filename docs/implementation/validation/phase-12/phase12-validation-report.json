@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T17:07:17.067Z",
+  "generatedAt": "2026-08-25T14:20:19.074Z",
   "checks": [
     {
       "name": "seo-pages: registry contains exactly home and insight",
@@ -23,7 +23,7 @@
     },
     {
       "name": "config: baseUrl is a placeholder, not a real production domain",
-      "passed": true,
+      "passed": false,
       "detail": null
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "index.html: root canonical target matches config/seo.json's baseUrl",
-      "passed": true,
+      "passed": false,
       "detail": null
     },
     {
@@ -69,7 +69,7 @@
     {
       "name": "sitemap.xml: contains exactly the expected indexable URLs (no more, no less)",
       "passed": true,
-      "detail": "{\"expected\":[\"https://www.huma-labs.example/he\",\"https://www.huma-labs.example/en\",\"https://www.huma-labs.example/he/insight\",\"https://www.huma-labs.example/en/insight\"],\"found\":[\"https://www.huma-labs.example/he\",\"https://www.huma-labs.example/en\",\"https://www.huma-labs.example/he/insight\",\"https://www.huma-labs.example/en/insight\"]}"
+      "detail": "{\"expected\":[\"https://www.huma-labs.org/he\",\"https://www.huma-labs.org/en\",\"https://www.huma-labs.org/he/insight\",\"https://www.huma-labs.org/en/insight\"],\"found\":[\"https://www.huma-labs.org/he\",\"https://www.huma-labs.org/en\",\"https://www.huma-labs.org/he/insight\",\"https://www.huma-labs.org/en/insight\"]}"
     },
     {
       "name": "sitemap.xml: no URL contains a query string or /api/ path",
@@ -112,5 +112,5 @@
       "detail": null
     }
   ],
-  "passed": true
+  "passed": false
 }

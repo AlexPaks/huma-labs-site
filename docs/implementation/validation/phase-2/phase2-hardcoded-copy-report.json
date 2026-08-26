@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "file": "src\\concepts\\concept-a\\components\\ConceptAFooter.tsx",
+    "string": "contact@huma-labs.org",
+    "reason": "JSX text node remains in source.",
+    "classification": "user-visible",
+    "futurePhaseOwner": "Phase 2"
+  },
+  {
+    "file": "src\\concepts\\concept-c\\components\\ConceptCFooter.tsx",
+    "string": "contact@huma-labs.org",
+    "reason": "JSX text node remains in source.",
+    "classification": "user-visible",
+    "futurePhaseOwner": "Phase 2"
+  }
+]

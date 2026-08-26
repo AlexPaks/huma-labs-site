@@ -2,10 +2,17 @@
   "brand": {
     "name": "HUMA",
     "siteName": "HUMA Labs",
-    "tagline": "Human Adaptability for a Changing World",
+    "tagline": "Human Capability Building",
     "hebrewTagline": "Developing human capabilities for a changing world."
   },
   "copyright": "© 2026 HUMA Labs. Human Adaptability for a Changing World",
+  "footer": {
+    "description": "Developing human capabilities for the changing world of work.",
+    "contactLabel": "Let's talk",
+    "contactAction": "Leave your details",
+    "navigationLabel": "Navigate",
+    "socialLabel": "Follow us"
+  },
   "capabilityLabels": {
     "presence": "Presence",
     "resilience": "Resilience",
@@ -18,7 +25,7 @@
     "design": "DESIGN",
     "act": "ACT"
   },
-  "organizationInsightLabel": "HUMA Organizational Insight",
+  "organizationInsightLabel": "HUMA Insight",
   "languageNames": {
     "he": "עברית",
     "en": "English"

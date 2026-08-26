@@ -1,7 +1,7 @@
 <!-- templateVersion: 1.1.0 -->
 Hi {{fullName}},
 
-Thank you for completing the HUMA Organizational Insight. Below is a preliminary summary based on the answers you shared.
+Thank you for completing HUMA Insight. Below is a preliminary summary based on the answers you shared.
 
 Central capability
 {{primaryCapability}}

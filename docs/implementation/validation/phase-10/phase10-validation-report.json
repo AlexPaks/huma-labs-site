@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T10:35:18.698Z",
+  "generatedAt": "2026-08-25T14:20:04.622Z",
   "results": [
     {
       "name": "contact-schema: valid request accepted",
@@ -114,12 +114,12 @@
     {
       "name": "end-to-end: handleContactRequest sends via mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"31c82c70-2423-4b8b-b731-20c5114a0811\",\"status\":\"sent\"}"
+      "detail": "{\"requestId\":\"b738572a-ac74-45c9-b28e-98e0d733f5fc\",\"status\":\"sent\"}"
     },
     {
       "name": "end-to-end: handleDeliverInsightRequest sends via mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"ea59c55d-3b56-4e8b-9a63-3cf5949e8de0\",\"status\":\"sent\"}"
+      "detail": "{\"requestId\":\"15d58a9c-6333-4298-8f2f-4dcf42d0b7cc\",\"status\":\"sent\"}"
     },
     {
       "name": "end-to-end: honeypot submission returns a fake success without sending",

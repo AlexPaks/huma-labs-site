@@ -106,6 +106,7 @@ export function ConceptCHomePage() {
         secondaryCtaLabel={tRef(heroSecondaryCta.labelRef)}
         sectionId="hero"
         statLabels={siteStructure.heroStats.map((item) => tRef(item.labelRef))}
+        subtitle={tRef(homePage.hero.subtitleRef)}
         titleLines={homePage.hero.titleLineRefs.map((ref) => tRef(ref))}
       />
 

@@ -47,7 +47,10 @@ export function ConceptAHeader() {
     <header className="concept-header">
       <div className="concept-container concept-header__inner" dir={currentDirection}>
         <NavLink className="concept-header__brand" to={localizeHref("/")}>
-          <ConceptABrand siteName={t("common", "brand.siteName")} />
+          <ConceptABrand
+            siteName={t("common", "brand.siteName")}
+            tagline={t("common", "brand.tagline")}
+          />
         </NavLink>
 
         <div className="concept-header__desktop">
@@ -59,9 +62,13 @@ export function ConceptAHeader() {
               <NavLink
                 key={item.id}
                 className={({ isActive }) =>
-                  isActive
-                    ? "concept-header__link concept-header__link--active"
-                    : "concept-header__link"
+                  [
+                    "concept-header__link",
+                    item.id === "insight" && "concept-header__link--insight",
+                    isActive && "concept-header__link--active",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
                 }
                 to={localizeHref(item.href)}
               >
@@ -131,9 +138,13 @@ export function ConceptAHeader() {
               <NavLink
                 key={item.id}
                 className={({ isActive }) =>
-                  isActive
-                    ? "concept-mobile-menu__link concept-mobile-menu__link--active"
-                    : "concept-mobile-menu__link"
+                  [
+                    "concept-mobile-menu__link",
+                    item.id === "insight" && "concept-mobile-menu__link--insight",
+                    isActive && "concept-mobile-menu__link--active",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
                 }
                 to={localizeHref(item.href)}
               >

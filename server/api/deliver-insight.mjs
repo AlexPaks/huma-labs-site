@@ -17,13 +17,13 @@ const capabilityLabelsByLanguage = {
 };
 
 const SUBJECT_BY_LANGUAGE = {
-  he: "HUMA Organizational Insight שלכם",
-  en: "Your HUMA Organizational Insight",
+  he: "התובנה הארגונית שלכם מ-HUMA",
+  en: "Your HUMA Insight",
 };
 
 const INTERNAL_SUBJECT_BY_LANGUAGE = {
-  he: "HUMA Organizational Insight חדש",
-  en: "New HUMA Organizational Insight submission",
+  he: "תובנה ארגונית חדשה של HUMA",
+  en: "New HUMA Insight submission",
 };
 
 function toCapabilityLabel(language, capabilityId) {

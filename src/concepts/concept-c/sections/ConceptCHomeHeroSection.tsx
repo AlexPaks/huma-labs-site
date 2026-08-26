@@ -6,6 +6,7 @@ type ConceptCHomeHeroSectionProps = {
   eyebrow: string;
   titleLines: string[];
   body: string;
+  subtitle: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
   secondaryCtaLabel: string;
@@ -22,6 +23,7 @@ export function ConceptCHomeHeroSection({
   eyebrow,
   titleLines,
   body,
+  subtitle,
   primaryCtaLabel,
   primaryCtaHref,
   secondaryCtaLabel,
@@ -53,6 +55,7 @@ export function ConceptCHomeHeroSection({
             ))}
           </h1>
           <p className="concept-c-hero__body">{body}</p>
+          <p className="concept-c-hero__subtitle">{subtitle}</p>
 
           <div className="concept-c-hero__actions">
             <Link
@@ -62,7 +65,11 @@ export function ConceptCHomeHeroSection({
             >
               {primaryCtaLabel}
             </Link>
-            <Link className="concept-c-text-link" onClick={onSecondaryCtaClick} to={secondaryCtaHref}>
+            <Link
+              className="concept-button concept-c-button concept-c-button--insight"
+              onClick={onSecondaryCtaClick}
+              to={secondaryCtaHref}
+            >
               {secondaryCtaLabel}
             </Link>
           </div>

@@ -1,5 +1,5 @@
 <!-- templateVersion: 1.0.0 -->
-A new HUMA Organizational Insight has been completed.
+A new HUMA Insight has been completed.
 
 Contact details
 Name: {{fullName}}

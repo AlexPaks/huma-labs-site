@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T17:06:46.939Z",
+  "generatedAt": "2026-08-25T16:37:27.566Z",
   "messageValidation": {
     "passed": true,
     "issues": []
@@ -16,5 +16,20 @@
     "passed": true,
     "issues": []
   },
-  "hardcodedCopyExceptions": []
+  "hardcodedCopyExceptions": [
+    {
+      "file": "src\\concepts\\concept-a\\components\\ConceptAFooter.tsx",
+      "string": "contact@huma-labs.org",
+      "reason": "JSX text node remains in source.",
+      "classification": "user-visible",
+      "futurePhaseOwner": "Phase 2"
+    },
+    {
+      "file": "src\\concepts\\concept-c\\components\\ConceptCFooter.tsx",
+      "string": "contact@huma-labs.org",
+      "reason": "JSX text node remains in source.",
+      "classification": "user-visible",
+      "futurePhaseOwner": "Phase 2"
+    }
+  ]
 }

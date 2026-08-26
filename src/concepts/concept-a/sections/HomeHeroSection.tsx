@@ -3,34 +3,40 @@ import { ConceptAThread } from "../components/ConceptAThread";
 
 type HomeHeroSectionProps = {
   sectionId?: string;
-  leadLabel: string;
-  changeItems: string[];
-  challengeLines: string[];
+  ledgerEyebrow: string;
+  ledgerTitle: string;
+  ledgerBody: string;
+  ledgerQuestionLead: string;
+  ledgerQuestion: string;
+  ledgerConclusionLead: string;
+  ledgerConclusion: string;
   titleLines: string[];
   body: string;
+  subtitle: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
   secondaryCtaLabel: string;
   secondaryCtaHref: string;
-  previewLabel: string;
-  previewTitle: string;
   onPrimaryCtaClick?: () => void;
   onSecondaryCtaClick?: () => void;
 };
 
 export function HomeHeroSection({
   sectionId,
-  leadLabel,
-  changeItems,
-  challengeLines,
+  ledgerEyebrow,
+  ledgerTitle,
+  ledgerBody,
+  ledgerQuestionLead,
+  ledgerQuestion,
+  ledgerConclusionLead,
+  ledgerConclusion,
   titleLines,
   body,
+  subtitle,
   primaryCtaLabel,
   primaryCtaHref,
   secondaryCtaLabel,
   secondaryCtaHref,
-  previewLabel,
-  previewTitle,
   onPrimaryCtaClick,
   onSecondaryCtaClick,
 }: HomeHeroSectionProps) {
@@ -39,19 +45,21 @@ export function HomeHeroSection({
       <div className="concept-container">
         <div className="concept-hero__grid">
           <aside className="concept-hero__ledger">
-            <div className="concept-hero__change-cluster">
-              <p className="concept-kicker">{leadLabel}</p>
-              <ul className="concept-hero__change-list">
-                {changeItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="concept-hero__challenge-lines">
-              {challengeLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+            <div aria-hidden="true" className="concept-hero__ledger-image" />
+            <div className="concept-hero__ledger-copy">
+              <p className="concept-kicker">{ledgerEyebrow}</p>
+              <h2 className="concept-hero__ledger-title">{ledgerTitle}</h2>
+              <p className="concept-hero__ledger-body">{ledgerBody}</p>
+              <p className="concept-hero__ledger-question">
+                <strong>{ledgerQuestionLead}</strong>
+                <br />
+                <strong>{ledgerQuestion}</strong>
+              </p>
+              <p className="concept-hero__ledger-conclusion">
+                {ledgerConclusionLead}
+                <br />
+                <strong>{ledgerConclusion}</strong>
+              </p>
             </div>
           </aside>
 
@@ -62,11 +70,12 @@ export function HomeHeroSection({
               ))}
             </h1>
             <p className="concept-hero__body">{body}</p>
+            <p className="concept-hero__subtitle">{subtitle}</p>
             <div className="concept-hero__actions">
               <Link className="concept-button" onClick={onPrimaryCtaClick} to={primaryCtaHref}>
                 {primaryCtaLabel}
               </Link>
-              <Link className="concept-text-link" onClick={onSecondaryCtaClick} to={secondaryCtaHref}>
+              <Link className="concept-button concept-button--insight" onClick={onSecondaryCtaClick} to={secondaryCtaHref}>
                 {secondaryCtaLabel}
               </Link>
             </div>
@@ -82,12 +91,6 @@ export function HomeHeroSection({
             path="M84 28 C126 28 154 28 192 28 C244 28 278 44 316 74 C356 106 430 114 540 114 L864 114"
             viewBox="0 0 920 156"
           />
-        </div>
-
-        <div className="concept-hero__preview">
-          <div className="concept-hero__preview-rule" />
-          <p className="concept-kicker">{previewLabel}</p>
-          <h2 className="concept-hero__preview-title">{previewTitle}</h2>
         </div>
       </div>
     </section>
