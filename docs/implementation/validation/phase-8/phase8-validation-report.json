@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:51:26.622Z",
+  "generatedAt": "2026-08-29T13:10:15.935Z",
   "results": [
     {
       "name": "request-schema: valid request accepted",
@@ -18,6 +18,21 @@
     },
     {
       "name": "request-schema: rejects unknown option id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects duplicate multiple-choice option",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects too many multiple-choice options",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "request-schema: rejects contradictory structured options",
       "passed": true,
       "detail": null
     },
@@ -67,7 +82,7 @@
       "detail": null
     },
     {
-      "name": "prompt-composer: placeholder replaced with localized answer text",
+      "name": "prompt-composer: structured context replaces the prompt placeholder",
       "passed": true,
       "detail": null
     },
@@ -129,7 +144,7 @@
     {
       "name": "end-to-end: handleAnalyzeAssessment returns a valid result via the mock provider",
       "passed": true,
-      "detail": "{\"requestId\":\"0611fd22-d129-4568-8709-31fffe31a270\",\"result\":{\"resultId\":\"0611fd22-d129-4568-8709-31fffe31a270\",\"quizVersion\":\"1.0.0\",\"promptVersion\":\"1.0.0\",\"language\":\"he\",\"primaryCapability\":\"adaptability\",\"secondaryCapabilities\":[\"resilience\"],\"executiveSummary\":\"זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.\",\"organizationalAnalysis\":\"בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.\",\"possibleOrganizationalImpact\":\"חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.\",\"signalsToExamine\":[\"קצב השינוי הנדרש מול קצב ההיערכות בפועל\",\"בהירות התפקידים סביב האתגר\",\"כלים קיימים מול כלים חסרים\"],\"recommendedDirection\":{\"discover\":\"מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.\",\"design\":\"התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.\",\"act\":\"יישום מדורג עם נקודות בדיקה קצובות בזמן.\"},\"suggestedNextStep\":\"לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.\",\"disclaimer\":\"זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה.\"}}"
+      "detail": "{\"requestId\":\"77e70a57-05ed-4352-951e-99d676c2c09c\",\"result\":{\"resultId\":\"77e70a57-05ed-4352-951e-99d676c2c09c\",\"quizVersion\":\"1.1.0\",\"promptVersion\":\"1.1.0\",\"language\":\"he\",\"primaryCapability\":\"resilience\",\"secondaryCapabilities\":[\"presence\"],\"executiveSummary\":\"זהו ניתוח לדוגמה (Mock) המבוסס על מבנה קבוע, ללא קריאה אמיתית למודל שפה. הוא משמש לבדיקת התשתית בלבד.\",\"organizationalAnalysis\":\"בהתבסס על התשובות שסופקו, מסתמנת נקודת מינוף מרכזית אחת שכדאי להעמיק בה בשיחה עם צוות HUMA.\",\"possibleOrganizationalImpact\":\"חיזוק היכולת המזוהה עשוי לתמוך בהתמודדות טובה יותר עם האתגר הארגוני שתואר.\",\"signalsToExamine\":[\"קצב השינוי הנדרש מול קצב ההיערכות בפועל\",\"בהירות התפקידים סביב האתגר\",\"כלים קיימים מול כלים חסרים\"],\"recommendedDirection\":{\"discover\":\"מיפוי ממוקד של הפער בין המצב הנוכחי ליעד הרצוי.\",\"design\":\"התאמת תוכנית פיתוח ליכולת שזוהתה, בקנה מידה שמתאים לארגון.\",\"act\":\"יישום מדורג עם נקודות בדיקה קצובות בזמן.\"},\"suggestedNextStep\":\"לתאם שיחת עומק עם צוות HUMA כדי לבחון את הממצאים לעומק.\",\"disclaimer\":\"זהו ניתוח ראשוני בלבד ואינו מהווה אבחון סופי או התחייבות לתוצאה.\"}}"
     }
   ],
   "passed": true

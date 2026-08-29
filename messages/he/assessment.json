@@ -14,7 +14,11 @@
     "controls": {
       "back": "חזרה",
       "continue": "המשך",
-      "progress": "שאלה {{current}} מתוך {{total}}"
+      "progress": "שאלה {{current}} מתוך {{total}}",
+      "selectionCount": "נבחרו {{selected}} מתוך {{max}}",
+      "selectionLimit": "ניתן לבחור עד {{max}} אפשרויות בשאלה זו.",
+      "selectionConflict": "לא ניתן לבחור יחד אפשרויות שסותרות זו את זו.",
+      "answersCleared": "בחירות מאוחרות שלא התאימו לתשובה המעודכנת נוקו."
     },
     "journey": {
       "eyebrow": "6 Questions",

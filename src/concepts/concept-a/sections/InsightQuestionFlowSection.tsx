@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { ConceptAThread } from "../components/ConceptAThread";
 import type {
   InsightAnswerValue,
   InsightQuestion,
@@ -22,6 +21,8 @@ type InsightQuestionFlowSectionProps = {
   onSingleAnswerChange: (nextValue: string) => void;
   onMultipleAnswerToggle: (optionId: string) => void;
   validationMessage: string;
+  selectionFeedback?: string | null;
+  selectionCountLabel?: (selected: number, max: number) => string;
   variant?: "default" | "page";
   dataPrimaryState?: "question";
 };
@@ -43,6 +44,8 @@ export function InsightQuestionFlowSection({
   onSingleAnswerChange,
   onMultipleAnswerToggle,
   validationMessage,
+  selectionFeedback,
+  selectionCountLabel,
   variant = "default",
   dataPrimaryState,
 }: InsightQuestionFlowSectionProps) {
@@ -52,6 +55,8 @@ export function InsightQuestionFlowSection({
   const hasAnswer = Array.isArray(currentAnswer)
     ? currentAnswer.length > 0
     : String(currentAnswer).trim().length > 0;
+  const selectedCount = Array.isArray(currentAnswer) ? currentAnswer.length : 0;
+  const maxSelections = currentQuestion.validation.maxSelections ?? 0;
 
   useEffect(() => {
     if (currentIndex === initialIndexRef.current) {
@@ -127,8 +132,14 @@ export function InsightQuestionFlowSection({
                 />
               </label>
             ) : (
-              <div className="concept-answer-list">
-                {currentQuestion.options.map((option) => {
+              <>
+                {currentQuestion.type === "multiple-choice" && selectionCountLabel ? (
+                  <p aria-live="polite" className="concept-insight-flow__helper">
+                    {selectionCountLabel(selectedCount, maxSelections)}
+                  </p>
+                ) : null}
+                <div className="concept-answer-list">
+                  {currentQuestion.options.map((option) => {
                   const isSelected = Array.isArray(currentAnswer)
                     ? currentAnswer.includes(option.id)
                     : currentAnswer === option.id;
@@ -157,9 +168,15 @@ export function InsightQuestionFlowSection({
                       <span>{option.label}</span>
                     </button>
                   );
-                })}
-              </div>
+                  })}
+                </div>
+              </>
             )}
+            {selectionFeedback ? (
+              <p aria-live="polite" className="concept-insight-flow__error">
+                {selectionFeedback}
+              </p>
+            ) : null}
             {showValidation ? (
               <p
                 aria-live="polite"
@@ -170,22 +187,11 @@ export function InsightQuestionFlowSection({
               </p>
             ) : null}
           </div>
-
-          <ConceptAThread
-            className="concept-insight-flow__thread"
-            dots={[
-              { cx: 42, cy: 22, r: 6, filled: true },
-              { cx: 510, cy: 78, r: 7 },
-              { cx: 982, cy: 78, r: 6, filled: true },
-            ]}
-            path="M42 22 C156 22 244 78 362 78 L982 78"
-            viewBox="0 0 1040 116"
-          />
         </div>
 
         <div className="concept-insight-flow__controls">
           <button
-            className="concept-text-link"
+            className="concept-button concept-insight-flow__back"
             disabled={currentIndex === 0}
             onClick={onBack}
             type="button"

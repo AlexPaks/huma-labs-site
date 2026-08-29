@@ -15,6 +15,12 @@ export type InsightQuestionOption = {
   id: string;
   label: string;
   nextQuestionId?: string | null;
+  analysis?: {
+    themes?: string[];
+    audienceScope?: string;
+    isAmbiguous?: boolean;
+    conflictsWith?: Array<{ questionId: string; optionId: string }>;
+  };
 };
 
 export type InsightQuestion = {
@@ -38,6 +44,7 @@ export type InsightQuestion = {
 };
 
 export type InsightAnswerValue = string | string[];
+export type InsightSelectionIssue = "selection-limit" | "selection-conflict" | "answers-cleared" | null;
 
 function getStorageKey(quizId: string, quizVersion: string) {
   return `huma-quiz-${quizId}-${quizVersion}`;
@@ -62,6 +69,61 @@ function getInitialAnswerValue(question: InsightQuestion): InsightAnswerValue {
 function createEmptyAnswers(questions: InsightQuestion[]): AnswersById {
   return Object.fromEntries(
     questions.map((question) => [question.id, getInitialAnswerValue(question)]),
+  );
+}
+
+function toValueList(value: InsightAnswerValue | undefined): string[] {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value ? [value] : [];
+}
+
+function hasSelectionConflict(answers: AnswersById, questions: InsightQuestion[]) {
+  for (const question of questions) {
+    for (const optionId of toValueList(answers[question.id])) {
+      const option = question.options.find((candidate) => candidate.id === optionId);
+      const conflictsWith = option?.analysis?.conflictsWith ?? [];
+
+      if (conflictsWith.some((conflict) => toValueList(answers[conflict.questionId]).includes(conflict.optionId))) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function pruneInconsistentAnswers(answers: AnswersById, questions: InsightQuestion[]) {
+  const pruned: AnswersById = {};
+
+  for (const question of [...questions].sort((left, right) => left.order - right.order)) {
+    if (question.type === "short-text" || question.type === "long-text") {
+      pruned[question.id] = answers[question.id] ?? "";
+      continue;
+    }
+
+    const acceptedValues: string[] = [];
+    for (const optionId of toValueList(answers[question.id])) {
+      const candidate = {
+        ...pruned,
+        [question.id]: question.type === "multiple-choice" ? [...acceptedValues, optionId] : optionId,
+      };
+      if (!hasSelectionConflict(candidate, questions)) {
+        acceptedValues.push(optionId);
+      }
+    }
+
+    pruned[question.id] = question.type === "multiple-choice" ? acceptedValues : acceptedValues[0] ?? "";
+  }
+
+  return pruned;
+}
+
+function hasRemovedAnswer(before: AnswersById, after: AnswersById, questions: InsightQuestion[]) {
+  return questions.some((question) =>
+    toValueList(before[question.id]).some((optionId) => !toValueList(after[question.id]).includes(optionId)),
   );
 }
 
@@ -90,6 +152,7 @@ export function useInsightQuestionFlow(
   const [answers, setAnswers] = useState<AnswersById>(() => createEmptyAnswers(questions));
 
   const [showValidation, setShowValidation] = useState(false);
+  const [selectionIssue, setSelectionIssue] = useState<InsightSelectionIssue>(null);
 
   const visibleQuestions = getVisibleQuestions(questions, answers);
   const currentQuestionId = visitedQuestionIds[visitedQuestionIds.length - 1] ?? firstQuestionId;
@@ -109,10 +172,12 @@ export function useInsightQuestionFlow(
     }
 
     setShowValidation(false);
-    setAnswers((current) => ({
-      ...current,
-      [currentQuestion.id]: nextValue,
-    }));
+    const nextAnswers = pruneInconsistentAnswers(
+      { ...answers, [currentQuestion.id]: nextValue },
+      questions,
+    );
+    setSelectionIssue(hasRemovedAnswer(answers, nextAnswers, questions) ? "answers-cleared" : null);
+    setAnswers(nextAnswers);
   }
 
   function updateMultipleAnswer(optionId: string) {
@@ -121,19 +186,30 @@ export function useInsightQuestionFlow(
     }
 
     setShowValidation(false);
-    setAnswers((current) => {
-      const currentValues = Array.isArray(current[currentQuestion.id])
-        ? [...(current[currentQuestion.id] as string[])]
-        : [];
-      const nextValues = currentValues.includes(optionId)
-        ? currentValues.filter((value) => value !== optionId)
-        : [...currentValues, optionId];
+    const currentValues = Array.isArray(answers[currentQuestion.id])
+      ? [...(answers[currentQuestion.id] as string[])]
+      : [];
 
-      return {
-        ...current,
-        [currentQuestion.id]: nextValues,
-      };
-    });
+    if (currentValues.includes(optionId)) {
+      setSelectionIssue(null);
+      setAnswers({ ...answers, [currentQuestion.id]: currentValues.filter((value) => value !== optionId) });
+      return;
+    }
+
+    const maxSelections = currentQuestion.validation.maxSelections ?? Number.POSITIVE_INFINITY;
+    if (currentValues.length >= maxSelections) {
+      setSelectionIssue("selection-limit");
+      return;
+    }
+
+    const nextAnswers = { ...answers, [currentQuestion.id]: [...currentValues, optionId] };
+    if (hasSelectionConflict(nextAnswers, questions)) {
+      setSelectionIssue("selection-conflict");
+      return;
+    }
+
+    setSelectionIssue(null);
+    setAnswers(nextAnswers);
   }
 
   function moveToQuestion(index: number) {
@@ -148,6 +224,7 @@ export function useInsightQuestionFlow(
 
   function moveBack() {
     setShowValidation(false);
+    setSelectionIssue(null);
     setVisitedQuestionIds((current) => (current.length > 1 ? current.slice(0, -1) : current));
   }
 
@@ -192,6 +269,7 @@ export function useInsightQuestionFlow(
     setVisitedQuestionIds(firstQuestionId ? [firstQuestionId] : []);
     setAnswers(createEmptyAnswers(questions));
     setShowValidation(false);
+    setSelectionIssue(null);
   }
 
   return {
@@ -205,6 +283,7 @@ export function useInsightQuestionFlow(
     moveToQuestion,
     questions: visibleQuestions,
     resetFlow,
+    selectionIssue,
     showValidation,
     totalQuestions,
     updateMultipleAnswer,

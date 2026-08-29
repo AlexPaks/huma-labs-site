@@ -137,6 +137,7 @@ function main() {
   const questions = assessmentDefinition.questions;
   const questionsById = Object.fromEntries(questions.map((q) => [q.id, q]));
   const questionIdsInOrder = [...questions].sort((a, b) => a.order - b.order).map((q) => q.id);
+  const requiredMultiSelectQuestionIds = new Set(["challenge", "impact", "desired-change", "audience"]);
 
   // 1. Structural integrity.
   const seenIds = new Set();
@@ -155,6 +156,18 @@ function main() {
         issues.push(
           `Option "${option.id}" in question "${question.id}" references unknown nextQuestionId "${option.nextQuestionId}"`,
         );
+      }
+
+      if (requiredMultiSelectQuestionIds.has(question.id)) {
+        if (!Array.isArray(option.analysis?.themes) || option.analysis.themes.length === 0) {
+          issues.push(`Option "${option.id}" in "${question.id}" is missing structured analysis themes`);
+        }
+        for (const conflict of option.analysis?.conflictsWith ?? []) {
+          const targetQuestion = questionsById[conflict.questionId];
+          if (!targetQuestion?.options.some((candidate) => candidate.id === conflict.optionId)) {
+            issues.push(`Option "${option.id}" in "${question.id}" has an invalid consistency conflict target`);
+          }
+        }
       }
     }
 
@@ -184,6 +197,21 @@ function main() {
           );
         }
       }
+    }
+
+    if (requiredMultiSelectQuestionIds.has(question.id)) {
+      if (question.type !== "multiple-choice") {
+        issues.push(`Question "${question.id}" must allow multiple selections`);
+      }
+      if (question.validation.minSelections !== 1 || question.validation.maxSelections !== 3) {
+        issues.push(`Question "${question.id}" must require one to three selections`);
+      }
+    }
+  }
+
+  for (const questionId of ["current-state", "tomorrow-problem"]) {
+    if (questionsById[questionId]?.type === "multiple-choice") {
+      issues.push(`Question "${questionId}" must not allow multiple selections`);
     }
   }
 

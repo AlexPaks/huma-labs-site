@@ -39,28 +39,83 @@ export function normalizeAssessmentForPrompt(request) {
     if (question.type === "single-choice") {
       const option = question.options.find((candidate) => candidate.id === answer.value);
       const optionText = option ? readMessageLeaf(messages, option.labelRef) ?? option.id : "(no answer)";
-      return { questionId: question.id, questionText, answerText: optionText };
+      return {
+        questionId: question.id,
+        questionText,
+        answerText: optionText,
+        selectedOptions: option
+          ? [{ label: optionText, themes: option.analysis?.themes ?? [], capability: question.capabilityMapping?.[option.id] ?? null }]
+          : [],
+        openText: null,
+      };
     }
 
     if (question.type === "multiple-choice") {
-      const optionTexts = answer.value.map((optionId) => {
+      const selectedOptions = answer.value.flatMap((optionId) => {
         const option = question.options.find((candidate) => candidate.id === optionId);
-        return option ? readMessageLeaf(messages, option.labelRef) ?? option.id : optionId;
+        if (!option) {
+          return [];
+        }
+        return [{
+          label: readMessageLeaf(messages, option.labelRef) ?? option.id,
+          themes: option.analysis?.themes ?? [],
+          capability: question.capabilityMapping?.[option.id] ?? null,
+          audienceScope: option.analysis?.audienceScope ?? null,
+          isAmbiguous: option.analysis?.isAmbiguous === true,
+        }];
       });
-      return { questionId: question.id, questionText, answerText: optionTexts.join(", ") || "(no answer)" };
+      return {
+        questionId: question.id,
+        questionText,
+        answerText: selectedOptions.map((option) => option.label).join(", ") || "(no answer)",
+        selectedOptions,
+        openText: null,
+      };
     }
 
     const { sanitized, flagged } = sanitizeOpenTextForPrompt(answer.value || "(no answer)");
     if (flagged) {
       anyFlagged = true;
     }
-    return { questionId: question.id, questionText, answerText: sanitized };
+    return { questionId: question.id, questionText, answerText: sanitized, selectedOptions: [], openText: sanitized };
   });
+
+  const capabilitySignals = [...new Set(normalizedAnswers.flatMap((answer) =>
+    answer.selectedOptions.map((option) => option.capability).filter(Boolean),
+  ))];
+  const themeSignals = [...new Set(normalizedAnswers.flatMap((answer) =>
+    answer.selectedOptions.flatMap((option) => option.themes),
+  ))];
+  const questionTextsByTheme = new Map();
+  for (const answer of normalizedAnswers) {
+    for (const theme of answer.selectedOptions.flatMap((option) => option.themes)) {
+      const questionTexts = questionTextsByTheme.get(theme) ?? new Set();
+      questionTexts.add(answer.questionText);
+      questionTextsByTheme.set(theme, questionTexts);
+    }
+  }
+  const logicalLinks = [...questionTextsByTheme.entries()]
+    .filter(([, questionTexts]) => questionTexts.size > 1)
+    .map(([theme, questionTexts]) => ({ theme, questions: [...questionTexts] }));
+  const targetAudiences = normalizedAnswers
+    .find((answer) => answer.questionId === "audience")
+    ?.selectedOptions.map((option) => option.label) ?? [];
+  const ambiguityFlags = normalizedAnswers
+    .filter((answer) => answer.selectedOptions.some((option) => option.isAmbiguous))
+    .map((answer) => answer.questionText);
 
   return {
     language: request.language,
     quizVersion: request.quizVersion,
     answers: normalizedAnswers,
+    structuredContext: {
+      capabilitySignals,
+      themeSignals,
+      logicalLinks,
+      targetAudiences,
+      ambiguityFlags,
+      consistency: { status: "validated", conflicts: [] },
+    },
     promptInjectionFlagged: anyFlagged,
   };
 }

@@ -14,7 +14,11 @@
     "controls": {
       "back": "Back",
       "continue": "Continue",
-      "progress": "Question {{current}} of {{total}}"
+      "progress": "Question {{current}} of {{total}}",
+      "selectionCount": "{{selected}} of {{max}} selected",
+      "selectionLimit": "You can choose up to {{max}} options for this question.",
+      "selectionConflict": "These options cannot be selected together because they conflict.",
+      "answersCleared": "Later selections that no longer matched your updated answer were cleared."
     },
     "journey": {
       "eyebrow": "6 Questions",

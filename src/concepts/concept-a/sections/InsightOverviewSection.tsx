@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ConceptAThread } from "../components/ConceptAThread";
 import { ConceptASectionHeading } from "../components/ConceptASectionHeading";
 
 type InsightQuestionPreview = {
@@ -85,17 +84,6 @@ export function InsightOverviewSection({
             ) : null}
           </div>
         </ConceptASectionHeading>
-
-        <ConceptAThread
-          className="concept-insight-overview__thread"
-          dots={[
-            { cx: 146, cy: 24, r: 6, filled: true },
-            { cx: 438, cy: 96, r: 7 },
-            { cx: 846, cy: 96, r: 6, filled: true },
-          ]}
-          path="M146 24 C146 72 238 96 366 96 L846 96"
-          viewBox="0 0 900 132"
-        />
       </div>
     </section>
   );

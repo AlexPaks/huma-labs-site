@@ -139,6 +139,7 @@ export function InsightPage() {
         id: option.id,
         label: tRef(option.labelRef),
         nextQuestionId: option.nextQuestionId ?? null,
+        analysis: option.analysis,
       })),
       validation: question.validation,
       visibleWhen: question.visibleWhen ?? null,
@@ -155,6 +156,18 @@ export function InsightPage() {
   const [pageState, setPageState] = useState<InsightPageState>(() =>
     questionFlow.hasResumedProgress ? "question" : "intro",
   );
+
+  const selectionFeedbackRefByIssue = {
+    "selection-limit": "assessment:page.controls.selectionLimit",
+    "selection-conflict": "assessment:page.controls.selectionConflict",
+    "answers-cleared": "assessment:page.controls.answersCleared",
+  } as const;
+  const currentMaxSelections = questionFlow.currentQuestion?.validation.maxSelections ?? 3;
+  const selectionFeedback = questionFlow.selectionIssue
+    ? tRef(selectionFeedbackRefByIssue[questionFlow.selectionIssue], { max: currentMaxSelections })
+    : null;
+  const selectionCountLabel = (selected: number, max: number) =>
+    tRef("assessment:page.controls.selectionCount", { selected, max });
 
   function handleRestart() {
     questionFlow.resetFlow();
@@ -300,6 +313,8 @@ export function InsightPage() {
           questions={questionFlow.questions}
           sectionId="insight-flow"
           showValidation={questionFlow.showValidation}
+          selectionCountLabel={selectionCountLabel}
+          selectionFeedback={selectionFeedback}
           totalQuestions={questionFlow.totalQuestions}
           validationMessage={tRef("validation:required")}
         />
@@ -369,6 +384,8 @@ export function InsightPage() {
           questions={questionFlow.questions}
           sectionId="insight-flow"
           showValidation={questionFlow.showValidation}
+          selectionCountLabel={selectionCountLabel}
+          selectionFeedback={selectionFeedback}
           totalQuestions={questionFlow.totalQuestions}
           validationMessage={tRef("validation:required")}
           variant="page"

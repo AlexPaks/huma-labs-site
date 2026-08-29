@@ -4,6 +4,12 @@ export interface AssessmentOption {
   id: string;
   labelRef: string;
   nextQuestionId?: string | null;
+  analysis?: {
+    themes?: string[];
+    audienceScope?: string;
+    isAmbiguous?: boolean;
+    conflictsWith?: Array<{ questionId: string; optionId: string }>;
+  };
 }
 
 export interface VisibleWhenCondition {

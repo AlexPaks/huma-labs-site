@@ -1,12 +1,12 @@
 {
   "quizId": "organizational-insight",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "routingId": "organizational-insight",
   "questions": [
     {
       "id": "challenge",
       "order": 1,
-      "type": "single-choice",
+      "type": "multiple-choice",
       "required": true,
       "questionRef": "assessment:questions.challenge.question",
       "previewRef": "assessment:preview.challenge",
@@ -15,36 +15,43 @@
       "options": [
         {
           "id": "coping-with-change",
-          "labelRef": "assessment:questions.challenge.options.copingWithChange"
+          "labelRef": "assessment:questions.challenge.options.copingWithChange",
+          "analysis": { "themes": ["change", "uncertainty"] }
         },
         {
           "id": "load-and-burnout",
-          "labelRef": "assessment:questions.challenge.options.loadAndBurnout"
+          "labelRef": "assessment:questions.challenge.options.loadAndBurnout",
+          "analysis": { "themes": ["workload", "resilience"] }
         },
         {
           "id": "leadership-and-management",
-          "labelRef": "assessment:questions.challenge.options.leadershipAndManagement"
+          "labelRef": "assessment:questions.challenge.options.leadershipAndManagement",
+          "analysis": { "themes": ["leadership", "management"] }
         },
         {
           "id": "communication-and-collaboration",
-          "labelRef": "assessment:questions.challenge.options.communicationAndCollaboration"
+          "labelRef": "assessment:questions.challenge.options.communicationAndCollaboration",
+          "analysis": { "themes": ["communication", "collaboration"] }
         },
         {
           "id": "initiative-and-engagement",
-          "labelRef": "assessment:questions.challenge.options.initiativeAndEngagement"
+          "labelRef": "assessment:questions.challenge.options.initiativeAndEngagement",
+          "analysis": { "themes": ["initiative", "engagement"] }
         },
         {
           "id": "presence-and-influence",
-          "labelRef": "assessment:questions.challenge.options.presenceAndInfluence"
+          "labelRef": "assessment:questions.challenge.options.presenceAndInfluence",
+          "analysis": { "themes": ["presence", "influence"] }
         },
         {
           "id": "other",
-          "labelRef": "assessment:questions.challenge.options.other"
+          "labelRef": "assessment:questions.challenge.options.other",
+          "analysis": { "themes": ["other"] }
         }
       ],
       "validation": {
         "minSelections": 1,
-        "maxSelections": 1
+        "maxSelections": 3
       },
       "visibleWhen": null,
       "capabilityMapping": {
@@ -60,7 +67,7 @@
     {
       "id": "impact",
       "order": 2,
-      "type": "single-choice",
+      "type": "multiple-choice",
       "required": true,
       "questionRef": "assessment:questions.impact.question",
       "previewRef": "assessment:preview.impact",
@@ -69,40 +76,60 @@
       "options": [
         {
           "id": "decision-making",
-          "labelRef": "assessment:questions.impact.options.decisionMaking"
+          "labelRef": "assessment:questions.impact.options.decisionMaking",
+          "analysis": { "themes": ["decision-making", "leadership"] }
         },
         {
           "id": "employee-performance",
-          "labelRef": "assessment:questions.impact.options.employeePerformance"
+          "labelRef": "assessment:questions.impact.options.employeePerformance",
+          "analysis": { "themes": ["performance", "engagement"] }
         },
         {
           "id": "manager-capability",
-          "labelRef": "assessment:questions.impact.options.managerCapability"
+          "labelRef": "assessment:questions.impact.options.managerCapability",
+          "analysis": { "themes": ["leadership", "management"] }
         },
         {
           "id": "cross-team-communication",
-          "labelRef": "assessment:questions.impact.options.crossTeamCommunication"
+          "labelRef": "assessment:questions.impact.options.crossTeamCommunication",
+          "analysis": { "themes": ["communication", "collaboration"] }
         },
         {
           "id": "initiative-and-ownership",
-          "labelRef": "assessment:questions.impact.options.initiativeAndOwnership"
+          "labelRef": "assessment:questions.impact.options.initiativeAndOwnership",
+          "analysis": { "themes": ["initiative", "ownership"] }
         },
         {
           "id": "load-and-change",
-          "labelRef": "assessment:questions.impact.options.loadAndChange"
+          "labelRef": "assessment:questions.impact.options.loadAndChange",
+          "analysis": { "themes": ["workload", "change"] }
         },
         {
           "id": "effectiveness",
-          "labelRef": "assessment:questions.impact.options.effectiveness"
+          "labelRef": "assessment:questions.impact.options.effectiveness",
+          "analysis": { "themes": ["performance", "effectiveness"] }
         },
         {
           "id": "unclear-impact",
-          "labelRef": "assessment:questions.impact.options.unclearImpact"
+          "labelRef": "assessment:questions.impact.options.unclearImpact",
+          "analysis": {
+            "themes": ["ambiguity"],
+            "isAmbiguous": true,
+            "conflictsWith": [
+              { "questionId": "impact", "optionId": "decision-making" },
+              { "questionId": "impact", "optionId": "employee-performance" },
+              { "questionId": "impact", "optionId": "manager-capability" },
+              { "questionId": "impact", "optionId": "cross-team-communication" },
+              { "questionId": "impact", "optionId": "initiative-and-ownership" },
+              { "questionId": "impact", "optionId": "load-and-change" },
+              { "questionId": "impact", "optionId": "effectiveness" }
+            ]
+          }
         }
       ],
       "validation": {
         "minSelections": 1,
-        "maxSelections": 1
+        "maxSelections": 3
       },
       "visibleWhen": null,
       "capabilityMapping": {
@@ -119,7 +146,7 @@
     {
       "id": "desired-change",
       "order": 3,
-      "type": "single-choice",
+      "type": "multiple-choice",
       "required": true,
       "questionRef": "assessment:questions.desiredChange.question",
       "previewRef": "assessment:preview.desiredChange",
@@ -128,40 +155,48 @@
       "options": [
         {
           "id": "confident-employees",
-          "labelRef": "assessment:questions.desiredChange.options.confidentEmployees"
+          "labelRef": "assessment:questions.desiredChange.options.confidentEmployees",
+          "analysis": { "themes": ["confidence", "independence"] }
         },
         {
           "id": "effective-managers",
-          "labelRef": "assessment:questions.desiredChange.options.effectiveManagers"
+          "labelRef": "assessment:questions.desiredChange.options.effectiveManagers",
+          "analysis": { "themes": ["leadership", "management"] }
         },
         {
           "id": "open-communication",
-          "labelRef": "assessment:questions.desiredChange.options.openCommunication"
+          "labelRef": "assessment:questions.desiredChange.options.openCommunication",
+          "analysis": { "themes": ["communication", "clarity"] }
         },
         {
           "id": "adaptable-teams",
-          "labelRef": "assessment:questions.desiredChange.options.adaptableTeams"
+          "labelRef": "assessment:questions.desiredChange.options.adaptableTeams",
+          "analysis": { "themes": ["change", "adaptability"] }
         },
         {
           "id": "load-resilience",
-          "labelRef": "assessment:questions.desiredChange.options.loadResilience"
+          "labelRef": "assessment:questions.desiredChange.options.loadResilience",
+          "analysis": { "themes": ["workload", "resilience"] }
         },
         {
           "id": "initiative-ownership",
-          "labelRef": "assessment:questions.desiredChange.options.initiativeOwnership"
+          "labelRef": "assessment:questions.desiredChange.options.initiativeOwnership",
+          "analysis": { "themes": ["initiative", "ownership"] }
         },
         {
           "id": "effective-collaboration",
-          "labelRef": "assessment:questions.desiredChange.options.effectiveCollaboration"
+          "labelRef": "assessment:questions.desiredChange.options.effectiveCollaboration",
+          "analysis": { "themes": ["communication", "collaboration"] }
         },
         {
           "id": "other",
-          "labelRef": "assessment:questions.desiredChange.options.other"
+          "labelRef": "assessment:questions.desiredChange.options.other",
+          "analysis": { "themes": ["other"] }
         }
       ],
       "validation": {
         "minSelections": 1,
-        "maxSelections": 1
+        "maxSelections": 3
       },
       "visibleWhen": null,
       "capabilityMapping": {
@@ -178,7 +213,7 @@
     {
       "id": "audience",
       "order": 4,
-      "type": "single-choice",
+      "type": "multiple-choice",
       "required": true,
       "questionRef": "assessment:questions.audience.question",
       "previewRef": "assessment:preview.audience",
@@ -187,36 +222,54 @@
       "options": [
         {
           "id": "leadership",
-          "labelRef": "assessment:questions.audience.options.leadership"
+          "labelRef": "assessment:questions.audience.options.leadership",
+          "analysis": { "themes": ["leadership"], "audienceScope": "leadership" }
         },
         {
           "id": "middle-managers",
-          "labelRef": "assessment:questions.audience.options.middleManagers"
+          "labelRef": "assessment:questions.audience.options.middleManagers",
+          "analysis": { "themes": ["management"], "audienceScope": "middle-management" }
         },
         {
           "id": "employees",
-          "labelRef": "assessment:questions.audience.options.employees"
+          "labelRef": "assessment:questions.audience.options.employees",
+          "analysis": { "themes": ["employees"], "audienceScope": "employees" }
         },
         {
           "id": "specific-team",
-          "labelRef": "assessment:questions.audience.options.specificTeam"
+          "labelRef": "assessment:questions.audience.options.specificTeam",
+          "analysis": { "themes": ["team"], "audienceScope": "specific-team" }
         },
         {
           "id": "change-group",
-          "labelRef": "assessment:questions.audience.options.changeGroup"
+          "labelRef": "assessment:questions.audience.options.changeGroup",
+          "analysis": { "themes": ["change"], "audienceScope": "change-group" }
         },
         {
           "id": "multiple-populations",
-          "labelRef": "assessment:questions.audience.options.multiplePopulations"
+          "labelRef": "assessment:questions.audience.options.multiplePopulations",
+          "analysis": { "themes": ["multiple-audiences"], "audienceScope": "multiple-populations" }
         },
         {
           "id": "unclear",
-          "labelRef": "assessment:questions.audience.options.unclear"
+          "labelRef": "assessment:questions.audience.options.unclear",
+          "analysis": {
+            "themes": ["ambiguity"],
+            "isAmbiguous": true,
+            "conflictsWith": [
+              { "questionId": "audience", "optionId": "leadership" },
+              { "questionId": "audience", "optionId": "middle-managers" },
+              { "questionId": "audience", "optionId": "employees" },
+              { "questionId": "audience", "optionId": "specific-team" },
+              { "questionId": "audience", "optionId": "change-group" },
+              { "questionId": "audience", "optionId": "multiple-populations" }
+            ]
+          }
         }
       ],
       "validation": {
         "minSelections": 1,
-        "maxSelections": 1
+        "maxSelections": 3
       },
       "visibleWhen": null,
       "capabilityMapping": null,

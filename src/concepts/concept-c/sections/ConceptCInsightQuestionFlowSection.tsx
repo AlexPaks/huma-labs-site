@@ -21,6 +21,8 @@ type ConceptCInsightQuestionFlowSectionProps = {
   onContinue: () => void;
   onSingleAnswerChange: (nextValue: string) => void;
   onMultipleAnswerToggle: (optionId: string) => void;
+  selectionFeedback?: string | null;
+  selectionCountLabel?: (selected: number, max: number) => string;
   dataPrimaryState?: "question";
 };
 
@@ -41,11 +43,15 @@ export function ConceptCInsightQuestionFlowSection({
   onContinue,
   onSingleAnswerChange,
   onMultipleAnswerToggle,
+  selectionFeedback,
+  selectionCountLabel,
   dataPrimaryState,
 }: ConceptCInsightQuestionFlowSectionProps) {
   const containerRef = useRef<HTMLElement>(null);
   const initialIndexRef = useRef(currentIndex);
   const validationId = `${currentQuestion.id}-validation`;
+  const selectedCount = Array.isArray(currentAnswer) ? currentAnswer.length : 0;
+  const maxSelections = currentQuestion.validation.maxSelections ?? 0;
 
   useEffect(() => {
     if (currentIndex === initialIndexRef.current) {
@@ -118,8 +124,14 @@ export function ConceptCInsightQuestionFlowSection({
                 />
               </label>
             ) : (
-              <div className="concept-c-insight-flow__answers">
-                {currentQuestion.options.map((option) => {
+              <>
+                {currentQuestion.type === "multiple-choice" && selectionCountLabel ? (
+                  <p aria-live="polite" className="concept-c-insight-flow__helper">
+                    {selectionCountLabel(selectedCount, maxSelections)}
+                  </p>
+                ) : null}
+                <div className="concept-c-insight-flow__answers">
+                  {currentQuestion.options.map((option) => {
                   const isSelected = Array.isArray(currentAnswer)
                     ? currentAnswer.includes(option.id)
                     : currentAnswer === option.id;
@@ -148,9 +160,16 @@ export function ConceptCInsightQuestionFlowSection({
                       <span>{option.label}</span>
                     </button>
                   );
-                })}
-              </div>
+                  })}
+                </div>
+              </>
             )}
+
+            {selectionFeedback ? (
+              <p aria-live="polite" className="concept-c-insight-flow__error">
+                {selectionFeedback}
+              </p>
+            ) : null}
 
             {showValidation ? (
               <p

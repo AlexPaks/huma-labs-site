@@ -4943,6 +4943,22 @@ html[dir="rtl"] .concept-site-shell[data-concept="d"] .concept-insight-flow--pag
   padding-block-start: 1rem;
 }
 
+.concept-site-shell[data-concept="d"] .concept-insight-flow--page .concept-insight-flow__back {
+  min-width: 7.25rem;
+  border-color: rgba(94, 61, 46, 0.58);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.45);
+  box-shadow: none;
+  color: #5e3d2e;
+}
+
+.concept-site-shell[data-concept="d"] .concept-insight-flow--page .concept-insight-flow__back:hover:not(:disabled),
+.concept-site-shell[data-concept="d"] .concept-insight-flow--page .concept-insight-flow__back:focus-visible {
+  border-color: #5e3d2e;
+  background: rgba(181, 108, 73, 0.12);
+  color: #482d21;
+}
+
 .concept-site-shell[data-concept="d"] .concept-d-program-fit__contact {
   gap: clamp(2.25rem, 5vw, 5rem);
   padding-block-start: clamp(3rem, 6vw, 5.5rem);

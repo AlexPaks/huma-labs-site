@@ -26,13 +26,13 @@ function sleep(ms) {
 
 const validRequestBody = {
   quizId: "organizational-insight",
-  quizVersion: "1.0.0",
+  quizVersion: "1.1.0",
   language: "he",
   answers: [
-    { questionId: "challenge", value: "coping-with-change" },
-    { questionId: "impact", value: "decision-making" },
-    { questionId: "desired-change", value: "confident-employees" },
-    { questionId: "audience", value: "leadership" },
+    { questionId: "challenge", value: ["coping-with-change", "leadership-and-management"] },
+    { questionId: "impact", value: ["decision-making", "manager-capability"] },
+    { questionId: "desired-change", value: ["confident-employees", "effective-managers"] },
+    { questionId: "audience", value: ["leadership", "middle-managers"] },
     { questionId: "current-state", value: "know-problem-and-goal" },
     { questionId: "tomorrow-problem", value: "בדיקת Phase 8" },
   ],
@@ -72,8 +72,23 @@ async function main() {
     ["unknown top-level field", { ...validRequestBody, utmSource: "x" }, "INVALID_ASSESSMENT"],
     [
       "unknown option id",
-      { ...validRequestBody, answers: [{ questionId: "challenge", value: "not-a-real-option" }] },
+      { ...validRequestBody, answers: [{ questionId: "challenge", value: ["not-a-real-option"] }] },
       "INVALID_ASSESSMENT",
+    ],
+    [
+      "duplicate multiple-choice option",
+      { ...validRequestBody, answers: [{ questionId: "challenge", value: ["coping-with-change", "coping-with-change"] }] },
+      "INVALID_ASSESSMENT",
+    ],
+    [
+      "too many multiple-choice options",
+      { ...validRequestBody, answers: [{ questionId: "challenge", value: ["coping-with-change", "load-and-burnout", "leadership-and-management", "communication-and-collaboration"] }] },
+      "INVALID_ASSESSMENT",
+    ],
+    [
+      "contradictory structured options",
+      { ...validRequestBody, answers: [{ questionId: "impact", value: ["decision-making", "unclear-impact"] }] },
+      "INCONSISTENT_ASSESSMENT",
     ],
     [
       "over-length open text",
@@ -122,7 +137,7 @@ async function main() {
   for (const language of ["he", "en"]) {
     try {
       const { version, template } = loadPromptTemplate(language);
-      const ok = version === "1.0.0" && template.includes("{{ASSESSMENT_SUMMARY}}");
+      const ok = version === "1.1.0" && template.includes("{{ASSESSMENT_CONTEXT_JSON}}");
       record(`prompt-loader: ${language} loads with version and placeholder`, ok);
     } catch (error) {
       record(`prompt-loader: ${language} loads with version and placeholder`, false, error.message);
@@ -132,8 +147,8 @@ async function main() {
   try {
     const normalized = normalizeAssessmentForPrompt(validRequestBody);
     const { prompt, promptVersion } = composeAnalysisPrompt(normalized);
-    const ok = promptVersion === "1.0.0" && !prompt.includes("{{ASSESSMENT_SUMMARY}}") && prompt.includes("coping-with-change") === false;
-    record("prompt-composer: placeholder replaced with localized answer text", ok);
+    const ok = promptVersion === "1.1.0" && !prompt.includes("{{ASSESSMENT_CONTEXT_JSON}}") && prompt.includes("coping-with-change") === false && prompt.includes("selectedOptions") && prompt.includes("logicalLinks");
+    record("prompt-composer: structured context replaces the prompt placeholder", ok);
   } catch (error) {
     record("prompt-composer: placeholder replaced with localized answer text", false, error.message);
   }
@@ -149,7 +164,7 @@ async function main() {
     try {
       const normalized = normalizeAssessmentForPrompt({ ...validRequestBody, language });
       const { prompt } = composeAnalysisPrompt(normalized);
-      const { raw } = await mockProvider.analyze({ language, prompt, promptVersion: "1.0.0", quizVersion: "1.0.0" });
+      const { raw } = await mockProvider.analyze({ language, prompt, promptVersion: "1.1.0", quizVersion: "1.1.0" });
       validateInsightResultContent(raw);
       record(`mock-provider: produces schema-valid output (${language})`, true);
     } catch (error) {
