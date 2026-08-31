@@ -101,11 +101,27 @@
   },
   "programFit": {
     "title": "Every organization gets the combination it needs.",
-    "subtitle": "Your challenge determines the program.",
-    "illustrationAlt": "A diagram showing strategic needs, tailored design, and a solution tailored to the organization.",
-    "strategicNeeds": "Strategic needs",
-    "tailoredDesign": "Tailored design",
-    "tailoredSolution": "A solution tailored to your organization"
+    "intro": "Your challenge determines the program. We begin with what matters, shape the right response, and connect it to your organization.",
+    "steps": {
+      "strategicNeeds": {
+        "number": "01",
+        "title": "Strategic needs",
+        "description": "We start by understanding the challenge, the people, and the capability that will move the organization forward.",
+        "imageAlt": "A cropped illustration of strategic needs entering the HUMA process."
+      },
+      "personalAdaptation": {
+        "number": "02",
+        "title": "Personal adaptation",
+        "description": "We tailor the learning experience to the roles, reality, and people who need to turn the change into action.",
+        "imageAlt": "A cropped illustration of personal adaptation at the center of the HUMA process."
+      },
+      "organizationalSolution": {
+        "number": "03",
+        "title": "An organizational solution",
+        "description": "The result is a focused program that fits the organization and can be applied in the work itself.",
+        "imageAlt": "A cropped illustration of a solution tailored to an organization."
+      }
+    }
   },
   "capabilities": {
     "presence": {

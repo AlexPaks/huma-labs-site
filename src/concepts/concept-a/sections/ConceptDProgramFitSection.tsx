@@ -1,16 +1,23 @@
 import { ContactForm } from "../../../components/ContactForm";
+import { ConceptASectionHeading } from "../components/ConceptASectionHeading";
 import type { FormId } from "../../../shared/forms/formCatalog";
+
+export type ProgramFitStep = {
+  id: "strategicNeeds" | "personalAdaptation" | "organizationalSolution";
+  number: string;
+  title: string;
+  description: string;
+  imageAlt: string;
+  imageSrc: string;
+};
 
 type ConceptDProgramFitSectionProps = {
   sectionId: string;
   outcomesSectionId: string;
   contactSectionId: string;
   title: string;
-  subtitle: string;
-  illustrationAlt: string;
-  strategicNeedsLabel: string;
-  tailoredDesignLabel: string;
-  tailoredSolutionLabel: string;
+  intro: string;
+  steps: ProgramFitStep[];
   contactLabel: string;
   contactTitle: string;
   contactBody: string;
@@ -22,11 +29,8 @@ export function ConceptDProgramFitSection({
   outcomesSectionId,
   contactSectionId,
   title,
-  subtitle,
-  illustrationAlt,
-  strategicNeedsLabel,
-  tailoredDesignLabel,
-  tailoredSolutionLabel,
+  intro,
+  steps,
   contactLabel,
   contactTitle,
   contactBody,
@@ -36,23 +40,31 @@ export function ConceptDProgramFitSection({
     <>
       <section aria-labelledby={`${sectionId}-heading`} className="concept-section" id={sectionId}>
         <div className="concept-container concept-d-program-fit">
-          <header className="concept-d-program-fit__heading">
-            <h2 id={`${sectionId}-heading`}>{title}</h2>
-            <p>{subtitle}</p>
-          </header>
+          <ConceptASectionHeading
+            align="center"
+            className="concept-d-program-fit__heading"
+            headingId={`${sectionId}-heading`}
+            title={title}
+          >
+            <p>{intro}</p>
+          </ConceptASectionHeading>
 
-          <figure className="concept-d-program-fit__illustration">
-            <img alt={illustrationAlt} src="/images/concept-d/program-fit-illustration.png" />
-            <span className="concept-d-program-fit__illustration-label concept-d-program-fit__illustration-label--needs">
-              {strategicNeedsLabel}
-            </span>
-            <span className="concept-d-program-fit__illustration-label concept-d-program-fit__illustration-label--design">
-              {tailoredDesignLabel}
-            </span>
-            <span className="concept-d-program-fit__illustration-label concept-d-program-fit__illustration-label--solution">
-              {tailoredSolutionLabel}
-            </span>
-          </figure>
+          <ol className="concept-d-program-fit__steps">
+            {steps.map((step) => (
+              <li className="concept-d-program-fit__step" key={step.id}>
+                <article className="concept-d-program-fit__card" tabIndex={0}>
+                  <div className="concept-d-program-fit__image-wrap">
+                    <img alt={step.imageAlt} src={step.imageSrc} />
+                  </div>
+                  <div className="concept-d-program-fit__card-content">
+                    <p className="concept-d-program-fit__number">{step.number}</p>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

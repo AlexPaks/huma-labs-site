@@ -4,6 +4,9 @@
       "maxDuration": 60
     }
   },
+  "redirects": [
+    { "source": "/", "destination": "/he", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

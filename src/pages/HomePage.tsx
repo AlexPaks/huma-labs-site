@@ -9,7 +9,10 @@ import {
   ConceptDCapabilitySystemSection,
   type CapabilitySystemItem,
 } from "../concepts/concept-a/sections/ConceptDCapabilitySystemSection";
-import { ConceptDProgramFitSection } from "../concepts/concept-a/sections/ConceptDProgramFitSection";
+import {
+  ConceptDProgramFitSection,
+  type ProgramFitStep,
+} from "../concepts/concept-a/sections/ConceptDProgramFitSection";
 import { InsightOverviewSection } from "../concepts/concept-a/sections/InsightOverviewSection";
 import { CapabilitiesMethodSection } from "../concepts/concept-a/sections/CapabilitiesMethodSection";
 import { ChallengesFormatsSection } from "../concepts/concept-a/sections/ChallengesFormatsSection";
@@ -38,6 +41,12 @@ function toSentenceFragments(text: string) {
     .map((part) => part.trim().replace(/[.!?]+$/u, ""))
     .filter(Boolean);
 }
+
+const programFitStepIds = [
+  "strategicNeeds",
+  "personalAdaptation",
+  "organizationalSolution",
+] as const;
 
 export function HomePage() {
   const currentConcept = useCurrentConcept();
@@ -99,6 +108,20 @@ export function HomePage() {
     children: capabilitySystemChildKeys[id as CapabilitySystemItem["id"]].map((child) =>
       tRef(`homepage:capabilitySystem.capabilities.${id}.children.${child}`),
     ),
+  }));
+  const programFitSteps: ProgramFitStep[] = programFitStepIds.map((id) => ({
+    id,
+    number: tRef(`homepage:programFit.steps.${id}.number`),
+    title: tRef(`homepage:programFit.steps.${id}.title`),
+    description: tRef(`homepage:programFit.steps.${id}.description`),
+    imageAlt: tRef(`homepage:programFit.steps.${id}.imageAlt`),
+    imageSrc: `/images/concept-d/program-fit-${
+      id === "strategicNeeds"
+        ? "strategic-needs"
+        : id === "personalAdaptation"
+          ? "personal-adaptation"
+          : "organizational-solution"
+    }.png`,
   }));
   const capabilities = homePage.capabilitiesSection.capabilityIds.map((id) => {
     const capability = capabilitiesById[id];
@@ -240,13 +263,10 @@ export function HomePage() {
               contactSectionId="contact"
               contactTitle={tRef(homePage.contactSection.titleRef)}
               formId={homePage.contactSection.formId as FormId}
-              illustrationAlt={tRef("homepage:programFit.illustrationAlt")}
+              intro={tRef("homepage:programFit.intro")}
               outcomesSectionId="organizational-outcomes"
               sectionId="organizational-challenges"
-              strategicNeedsLabel={tRef("homepage:programFit.strategicNeeds")}
-              subtitle={tRef("homepage:programFit.subtitle")}
-              tailoredDesignLabel={tRef("homepage:programFit.tailoredDesign")}
-              tailoredSolutionLabel={tRef("homepage:programFit.tailoredSolution")}
+              steps={programFitSteps}
               title={tRef("homepage:programFit.title")}
             />
           );
